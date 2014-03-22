@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mongoimport');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-env');
-  // grunt.loadNpmTasks('grunt-mongo-drop');
+  grunt.loadNpmTasks('grunt-mongo-drop');
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-mongo-drop');
