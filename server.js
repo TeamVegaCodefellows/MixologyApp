@@ -24,7 +24,7 @@
 	// Users routes
 	app.get('/api/v1/users', users.collection);
 	app.get('/api/v1/users/:id', users.findById);
-	app.post('/api/v1/users', users.create);
+	app.post('/api/v1/createDrink', users.create);
 	app.put('/api/v1/users/:id', users.update);
 	app.delete('/api/v1/users/:id', users.destroy);
 	

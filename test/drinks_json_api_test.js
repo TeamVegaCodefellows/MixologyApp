@@ -9,9 +9,14 @@ var app = require('../server').app;
 
 describe('Users JSON api', function(){
   var id;
+  var entry = {name: 'Smooth sailin', ingredients:['vodka', 'vermouth'], 
+    directions: ['do stuff', 
+    'do another'], img: "https://www.google.com", 
+    tag: "Summer drink", 
+    description: "Summery type drink for the masses" };
 
   it('can create a new user', function(done){
-    superagent.post('http://localhost:3000/api/v1/users')
+    superagent.post('http://localhost:3000/api/v1/createDrink')
       .send({first_name: 'Ford', last_name: 'Prefect'})
       .end(function(e, res){
         expect(e).to.eql(null);
@@ -24,43 +29,43 @@ describe('Users JSON api', function(){
       });
   });
 
-  it('can get users collection', function(done){
-    superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
-      expect(e).to.eql(null);
-      expect(res.body.length).to.be.above(0);
+  // it('can get users collection', function(done){
+  //   superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
+  //     expect(e).to.eql(null);
+  //     expect(res.body.length).to.be.above(0);
 
-      done();
-    });
-  });
+  //     done();
+  //   });
+  // });
 
-  it('can get a single user', function(done){
-    superagent.get('http://localhost:3000/api/v1/users/' + id).end(function(e, res){
-      expect(e).to.eql(null);
-      expect(res.body._id).to.be.eql(id);
-      expect(res.body.first_name).to.be.eql('Ford');
-      expect(res.body.last_name).to.be.eql('Prefect');
+  // it('can get a single user', function(done){
+  //   superagent.get('http://localhost:3000/api/v1/users/' + id).end(function(e, res){
+  //     expect(e).to.eql(null);
+  //     expect(res.body._id).to.be.eql(id);
+  //     expect(res.body.first_name).to.be.eql('Ford');
+  //     expect(res.body.last_name).to.be.eql('Prefect');
 
-      done();
-    });
-  });
+  //     done();
+  //   });
+  // });
 
-  it('can update a user', function(done){
-    superagent.put('http://localhost:3000/api/v1/users/' + id).send({first_name: 'Arthur', last_name: 'Dent'})
-    .end(function(e,res){
-      expect(e).to.eql(null);
-      expect(res.body.msg).to.be.eql('success');
+  // it('can update a user', function(done){
+  //   superagent.put('http://localhost:3000/api/v1/users/' + id).send({first_name: 'Arthur', last_name: 'Dent'})
+  //   .end(function(e,res){
+  //     expect(e).to.eql(null);
+  //     expect(res.body.msg).to.be.eql('success');
 
-      done();
-    });
-  });
+  //     done();
+  //   });
+  // });
 
-  it('can delete a user' , function(done){
-    superagent.del('http://localhost:3000/api/v1/users/' + id).end(function(e,res){
-      expect(e).to.eql(null);
-      expect(res.body.msg).to.be.eql('success');
+  // it('can delete a user' , function(done){
+  //   superagent.del('http://localhost:3000/api/v1/users/' + id).end(function(e,res){
+  //     expect(e).to.eql(null);
+  //     expect(res.body.msg).to.be.eql('success');
 
-      done();
-    });
-  });
+  //     done();
+  //   });
+  // });
   
 });

@@ -108,8 +108,8 @@ module.exports = function(grunt) {
     },
    	watch: {
       all: {
-        files:['server.js']
-        // tasks:['jshint']
+        files:['server.js', 'test/**.js'],
+        tasks:['test1']
       },
       express: {
         files:  [ 'server.js'],
@@ -125,6 +125,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
   grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
+  grunt.registerTask('test1', ['env:dev', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
 
 };
