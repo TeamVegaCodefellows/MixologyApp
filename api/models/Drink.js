@@ -6,8 +6,8 @@ var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
   name: String,
-  ingredients: [],
-  directions: [],
+  ingredients: String,
+  directions: String,
   img: String,
   tag: String,
   description: String,

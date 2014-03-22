@@ -11,8 +11,8 @@ describe('Users JSON api', function(){
   var id;
   var entry = {name: 'Smooth sailin',
     description: "Summery type drink for the masses",
-    ingredients:['vodka', 'vermouth'],
-    directions: ['do stuff', 'do another'],
+    ingredients:"Vodka, Vermouth",
+    directions: "Do this, do that",
     tag: "Summer drink",
     servings: '2',
     img: "https://www.google.com"
@@ -21,8 +21,8 @@ describe('Users JSON api', function(){
 
   var entry1 = {name: 'Smooth sailin', 
     description: "Summery type drink for the masses",
-    ingredients:['vodka', 'vermouth'], 
-    directions: ['do stuff', 'do another'], 
+    ingredients:"Vodka, Vermouth",
+    directions: "Do this, do that",
     tag: "Summer drink", 
     servings: '2',
     img: "https://www.google.com"
@@ -37,8 +37,8 @@ describe('Users JSON api', function(){
         expect(res.body._id).to.not.be.eql(null);
         expect(res.body.name).to.be.eql('Smooth sailin');
         expect(res.body.description).to.be.eql('Summery type drink for the masses');
-        expect(res.body.ingredients).to.be.eql(['vodka', 'vermouth']);
-        expect(res.body.directions).to.be.eql(['do stuff', 'do another']);
+        expect(res.body.ingredients).to.be.eql('Vodka, Vermouth');
+        expect(res.body.directions).to.be.eql('Do this, do that');
         expect(res.body.tag).to.be.eql('Summer drink');
         expect(res.body.img).to.be.eql('https://www.google.com');
         // id = res.body._id;
@@ -62,8 +62,8 @@ describe('Users JSON api', function(){
       console.log(res.body[0].name);
       expect(res.body[0].name).to.be.eql('Smooth sailin');
       expect(res.body[0].description).to.be.eql('Summery type drink for the masses');
-      expect(res.body[0].ingredients).to.be.eql(['vodka', 'vermouth']);
-      expect(res.body[0].directions).to.be.eql(['do stuff', 'do another']);
+      expect(res.body[0].ingredients).to.be.eql('Vodka, Vermouth');
+      expect(res.body[0].directions).to.be.eql('Do this, do that');
       expect(res.body[0].tag).to.be.eql('Summer drink');
       expect(res.body[0].img).to.be.eql('https://www.google.com');
 
