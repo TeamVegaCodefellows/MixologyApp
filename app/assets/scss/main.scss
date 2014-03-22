@@ -1,0 +1,15 @@
+$background-color: #F7F9E;
+
+
+body {
+  background-color: $background-color;
+}
+
+.button {
+  border-radius: .8em;
+  background-color: #00827A;
+}
+
+.button:hover {
+  background-color: #006B65;
+}
