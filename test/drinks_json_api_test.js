@@ -18,6 +18,16 @@ describe('Users JSON api', function(){
     img: "https://www.google.com"
   };
 
+  var entry1 = {name: 'Smooth sailin', 
+    description: "Summery type drink for the masses",
+    ingredients:['vodka', 'vermouth'], 
+    directions: ['do stuff', 'do another'], 
+    tag: "Summer drink", 
+    servings: '2',
+    img: "https://www.google.com"
+  };
+
+
   it('can create a new user', function(done){
     superagent.post('http://localhost:3000/api/v1/createDrink')
       .send(entry)
@@ -48,12 +58,13 @@ describe('Users JSON api', function(){
   it('can find a user', function(done){
     superagent.get('http://localhost:3000/api/v1/getDrink/' + entry.name + '/' + entry.tag).end(function(e, res){
       expect(e).to.eql(null);
-      expect(res.body.name).to.be.eql('Smooth sailin');
-      expect(res.body.description).to.be.eql('Summery type drink for the masses');
-      expect(res.body.ingredients).to.be.eql(['vodka', 'vermouth']);
-      expect(res.body.directions).to.be.eql(['do stuff', 'do another']);
-      expect(res.body.tag).to.be.eql('Summer drink');
-      expect(res.body.img).to.be.eql('https://www.google.com');
+      console.log(res.body[0].name);
+      expect(res.body[0].name).to.be.eql('Smooth sailin');
+      expect(res.body[0].description).to.be.eql('Summery type drink for the masses');
+      expect(res.body[0].ingredients).to.be.eql(['vodka', 'vermouth']);
+      expect(res.body[0].directions).to.be.eql(['do stuff', 'do another']);
+      expect(res.body[0].tag).to.be.eql('Summer drink');
+      expect(res.body[0].img).to.be.eql('https://www.google.com');
 
       done();
     });

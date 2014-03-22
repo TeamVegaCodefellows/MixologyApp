@@ -17,7 +17,7 @@ exports.findById = function(req, res) {
   var name = req.params.name;
   var tag  = req.params.tag;
   console.log(name, tag);
-  User.findOne({name: name, tag:tag}, function(err, responseUser) {
+  User.find({name: name, tag:tag}, function(err, responseUser) {
     if(err) {
       res.send(500, {'error': err});
     } else {
