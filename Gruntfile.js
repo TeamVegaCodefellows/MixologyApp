@@ -18,6 +18,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-mongo-drop');
+  grunt.loadNpmTasks('grunt-mongoimport');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -122,11 +123,35 @@ module.exports = function(grunt) {
         }
       }
     }, 
+    mongoimport: {
+      options: {
+        db : 'mixology-prod',
+        //optional
+        //host : 'localhost',
+        //port: '27017',
+        //username : 'username',
+        //password : 'password',
+        //stopOnError : false,
+        collections : [
+          {
+            name : 'drinks',
+            type : 'json',
+            file : 'db/seeds/users.json',
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
+        ]
+      }
+    },
     mongo_drop: {
       test: {
         'uri' : 'mongodb://localhost/mixology-development'
-      }
-    }       
+      },
+      prod: {
+        'uri' : 'mongodb://localhost/mixology-prod'
+      }      
+    },       
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
