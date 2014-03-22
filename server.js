@@ -3,23 +3,30 @@
 	var http     = require('http');
 	var mongoose = require('mongoose'); 			
 
-
-	mongoose.connect('mongodb://node:node@mongo.onmodulus.net:27017/uwO3mypu'); 
-
 	app.configure(function() {
 		app.use(express.static(__dirname + '/build')); 		
 		app.use(express.logger('dev')); 						
 		app.use(express.bodyParser()); 						
   	app.use(express.cookieParser());
+  	var session_secret = process.env.OAA_SESSION_SECRET || 'CHANGEMECHANGEMECHANGEMECHANGEME';
+  	app.use(express.session({secret:session_secret}));
 		app.use(express.methodOverride()); 				
 	});
 
-	
-
-	app.get('/', function(err, res){
-		res.send('this');
+	app.configure('development', function() {
+  	app.use(express.errorHandler());
+  	mongoose.connect('mongodb://localhost/mixology-development');
 	});
 
+	var users = require('./api/routes/userRoutes');
+	
+
+	// Users routes
+	app.get('/api/v1/users', users.collection);
+	app.get('/api/v1/users/:id', users.findById);
+	app.post('/api/v1/users', users.create);
+	app.put('/api/v1/users/:id', users.update);
+	app.delete('/api/v1/users/:id', users.destroy);
 	
 
 	var server = http.createServer(app);

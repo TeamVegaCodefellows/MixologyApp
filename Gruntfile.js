@@ -20,6 +20,19 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    env: {
+      options: {
+
+      },
+      dev: {
+        NODE_ENV: 'development'
+      },
+      test: {
+        NODE_ENV: 'test'
+      }
+    },    
+
     browserify: {
       prod: {
         src: ['app/assets/js/*.js'],
@@ -111,5 +124,7 @@ module.exports = function(grunt) {
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
+  grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
+  grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
 
 };
