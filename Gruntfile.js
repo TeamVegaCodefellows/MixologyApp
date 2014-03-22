@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       test: {
         NODE_ENV: 'test'
       }
-    },    
+    },
 
     browserify: {
       prod: {
@@ -74,6 +74,18 @@ module.exports = function(grunt) {
           script: 'server.js',
           node_env: 'test'
         }
+      }
+    },
+    sass: {
+      dist: {
+        files: {'build/css/main.css': 'app/assets/scss/main.scss'}
+      },
+      dev: {
+        options: {
+          includePaths: ['app/assets/scss/'],
+          sourceComments: 'map'
+        },
+        files: {'build/css/main.css': 'app/assets/scss/main.scss'}
       }
     },
     mochacov: {
@@ -122,7 +134,7 @@ module.exports = function(grunt) {
           spawn: false
         }
       }
-    }, 
+    },
     mongoimport: {
       options: {
         db : 'mixology-prod',
@@ -150,8 +162,8 @@ module.exports = function(grunt) {
       },
       prod: {
         'uri' : 'mongodb://localhost/mixology-prod'
-      }      
-    },       
+      }
+    },
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
