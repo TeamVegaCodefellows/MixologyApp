@@ -34,7 +34,6 @@ module.exports = function(grunt) {
         NODE_ENV: 'test'
       }
     },
-
     browserify: {
       prod: {
         src: ['app/assets/js/*.js'],
