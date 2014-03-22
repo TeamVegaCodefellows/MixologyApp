@@ -17,6 +17,7 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-mongo-drop');
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-mongo-drop');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -120,12 +121,17 @@ module.exports = function(grunt) {
           spawn: false
         }
       }
-    },    
+    }, 
+    mongo_drop: {
+      test: {
+        'uri' : 'mongodb://localhost/mixology-development'
+      }
+    }       
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
   grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
-  grunt.registerTask('test1', ['env:dev', 'mochacov:unit', 'watch']);
+  grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
 
 };

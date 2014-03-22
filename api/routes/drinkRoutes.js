@@ -14,8 +14,10 @@ exports.collection = function(req, res) {
 
 exports.findById = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var id = req.params.id;
-  User.findOne({'_id': String(id)}, function(err, responseUser) {
+  var name = req.params.name;
+  var tag  = req.params.tag;
+  console.log(name, tag);
+  User.findOne({name: name, tag:tag}, function(err, responseUser) {
     if(err) {
       res.send(500, {'error': err});
     } else {

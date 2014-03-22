@@ -9,21 +9,28 @@ var app = require('../server').app;
 
 describe('Users JSON api', function(){
   var id;
-  var entry = {name: 'Smooth sailin', ingredients:['vodka', 'vermouth'], 
-    directions: ['do stuff', 
-    'do another'], img: "https://www.google.com", 
+  var entry = {name: 'Smooth sailin', 
+    description: "Summery type drink for the masses",
+    ingredients:['vodka', 'vermouth'], 
+    directions: ['do stuff', 'do another'], 
     tag: "Summer drink", 
-    description: "Summery type drink for the masses" };
+    servings: '2',
+    img: "https://www.google.com"
+  };
 
   it('can create a new user', function(done){
     superagent.post('http://localhost:3000/api/v1/createDrink')
-      .send({first_name: 'Ford', last_name: 'Prefect'})
+      .send(entry)
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body._id).to.not.be.eql(null);
-        expect(res.body.first_name).to.be.eql('Ford');
-        expect(res.body.last_name).to.be.eql('Prefect');
-        id = res.body._id;
+        expect(res.body.name).to.be.eql('Smooth sailin');
+        expect(res.body.description).to.be.eql('Summery type drink for the masses');
+        expect(res.body.ingredients).to.be.eql(['vodka', 'vermouth']);
+        expect(res.body.directions).to.be.eql(['do stuff', 'do another']);
+        expect(res.body.tag).to.be.eql('Summer drink');
+        expect(res.body.img).to.be.eql('https://www.google.com');
+        // id = res.body._id;
 
         done();
       });
@@ -37,6 +44,21 @@ describe('Users JSON api', function(){
   //     done();
   //   });
   // });
+
+  it('can find a user', function(done){
+    superagent.get('http://localhost:3000/api/v1/getDrink/' + entry.name + '/' + entry.tag).end(function(e, res){
+      expect(e).to.eql(null);
+      expect(res.body.name).to.be.eql('Smooth sailin');
+      expect(res.body.description).to.be.eql('Summery type drink for the masses');
+      expect(res.body.ingredients).to.be.eql(['vodka', 'vermouth']);
+      expect(res.body.directions).to.be.eql(['do stuff', 'do another']);
+      expect(res.body.tag).to.be.eql('Summer drink');
+      expect(res.body.img).to.be.eql('https://www.google.com');
+
+      done();
+    });
+  });
+
 
   // it('can get a single user', function(done){
   //   superagent.get('http://localhost:3000/api/v1/users/' + id).end(function(e, res){

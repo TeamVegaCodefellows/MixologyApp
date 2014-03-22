@@ -10,7 +10,8 @@ var schema = new mongoose.Schema({
   directions: [],
   img: String,
   tag: String,
-  description: String
+  description: String,
+ 	serving: String
 });
 
 // generate a secure hash
