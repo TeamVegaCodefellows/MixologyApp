@@ -9,16 +9,16 @@ var app = require('../server').app;
 
 describe('Users JSON api', function(){
   var id;
-  var entry = {name: 'Smooth sailin', 
+  var entry = {name: 'Smooth sailin',
     description: "Summery type drink for the masses",
-    ingredients:['vodka', 'vermouth'], 
-    directions: ['do stuff', 'do another'], 
-    tag: "Summer drink", 
+    ingredients:['vodka', 'vermouth'],
+    directions: ['do stuff', 'do another'],
+    tag: "Summer drink",
     servings: '2',
     img: "https://www.google.com"
   };
 
-  it('can create a new user', function(done){
+  it('can create a new drink', function(done){
     superagent.post('http://localhost:3000/api/v1/createDrink')
       .send(entry)
       .end(function(e, res){
@@ -45,7 +45,7 @@ describe('Users JSON api', function(){
   //   });
   // });
 
-  it('can find a user', function(done){
+  it('can find a drink', function(done){
     superagent.get('http://localhost:3000/api/v1/getDrink/' + entry.name + '/' + entry.tag).end(function(e, res){
       expect(e).to.eql(null);
       expect(res.body.name).to.be.eql('Smooth sailin');
@@ -89,5 +89,5 @@ describe('Users JSON api', function(){
   //     done();
   //   });
   // });
-  
+
 });
