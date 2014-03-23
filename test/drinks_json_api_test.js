@@ -30,39 +30,33 @@ describe('Users JSON api', function(){
     img: "https://www.google.com"
   };
 
+  it('can create a new drink', function(done){
+    superagent.post('http://localhost:3000/api/v1/createDrink')
+      .send(entry)
+      .end(function(e, res){
+        expect(res.body.name).to.be.eql('Smooth sailin');
+        expect(res.body.description).to.be.eql('Summery type drink for the masses');
+        expect(res.body.ingredients).to.be.eql('Vodka, Vermouth');
+        expect(res.body.directions).to.be.eql('Do this, do that');
+        expect(res.body.tag).to.be.eql('Summer drink');
+        expect(res.body.img).to.be.eql('https://www.google.com');
+        id = res.body._id;
 
-  // it('can create a new drink', function(done){
-  //   superagent.post('http://localhost:5000/api/v1/createDrink')
-  //     .send(entry)
-  //     .end(function(e, res){
-  //       expect(e).to.eql(null);
-  //       expect(res.body._id).to.not.be.eql(null);
-  //       expect(res.body.name).to.be.eql('Smooth sailin');
-  //       expect(res.body.description).to.be.eql('Summery type drink for the masses');
-  //       expect(res.body.ingredients).to.be.eql('Vodka, Vermouth');
-  //       expect(res.body.directions).to.be.eql('Do this, do that');
-  //       expect(res.body.tag).to.be.eql('Summer drink');
-  //       expect(res.body.img).to.be.eql('https://www.google.com');
-  //       // id = res.body._id;
-
-  //       done();
-  //     });
-  // });
+        done();
+      });
+  });
 
   it('can create a new drink', function(done){
-    superagent.post('http://localhost:5000/api/v1/createDrink')
+    superagent.post('http://localhost:3000/api/v1/createDrink')
       .send(entry1)
       .end(function(e, res){
-        console.log(entry1);
-        expect(e).to.eql(null);
-        expect(res.body._id).to.not.be.eql(null);
         expect(res.body.name).to.be.eql('Smooth sailin');
         expect(res.body.description).to.be.eql('type drink for the masses');
         expect(res.body.ingredients).to.be.eql('Vodka, Whiskey');
         expect(res.body.directions).to.be.eql('Do this, do that');
         expect(res.body.tag).to.be.eql('Summer drink');
         expect(res.body.img).to.be.eql('https://www.google.com');
-        // id = res.body._id;
+        id = res.body._id;
 
         done();
       });
@@ -84,7 +78,7 @@ describe('Users JSON api', function(){
       expect(e).to.eql(null);
       expect(res.body[0].name).to.be.eql('Smooth sailin');
       expect(res.body[0].description).to.be.eql('Summery type drink for the masses');
-      // expect(res.body[0].ingredients).to.be.eql('Vodka, Vermouth');
+      expect(res.body[0].ingredients).to.be.eql('Vodka, Vermouth');
       expect(res.body[0].directions).to.be.eql('Do this, do that');
       expect(res.body[0].tag).to.be.eql('Summer drink');
       expect(res.body[0].img).to.be.eql('https://www.google.com');
