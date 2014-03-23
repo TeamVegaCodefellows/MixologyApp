@@ -197,10 +197,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default',['express:dev', 'watch:express']);
   grunt.registerTask('server', ['clean:dev','build:dev', 'express:dev', 'watch:dev']);
   grunt.registerTask('server1', ['mongoimport', 'express:dev', 'watch:express']);
-  grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
-  grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
+  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
-  grunt.registerTask('server2', ['mongo_drop', 'mongoimport', 'env:dev',  'mochacov:unit', 'watch']);
-
 };
