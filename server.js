@@ -3,16 +3,21 @@ var app      = express();
 var http     = require('http');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/mydb';
+var uristring =
+process.env.MONGOLAB_URI ||
+'mongodb://localhost/mydb';
 
-mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('mydocs', function(er, collection) {
-    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-    });
-  });
-});
+var theport = process.env.PORT || 5000;
+// var mongoUri = process.env.MONGOLAB_URI ||
+//   process.env.MONGOHQ_URL ||
+//   'mongodb://localhost/mydb';
+
+// mongo.Db.connect(mongoUri, function (err, db) {
+//   db.collection('mydocs', function(er, collection) {
+//     collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+//     });
+//   });
+// });
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
@@ -22,6 +27,14 @@ app.configure(function() {
 	var session_secret = process.env.OAA_SESSION_SECRET || 'CHANGEMECHANGEMECHANGEMECHANGEME';
 	app.use(express.session({secret:session_secret}));
 	app.use(express.methodOverride());
+});
+
+mongoose.connect(uristring, function(err, res) {
+	if(err) {
+		console.log('ERROR connecting to: ' + uristring + '. ' + err);
+	} else {
+		console.log('Successfully connected to: ' + uristring);
+	}
 });
 
 app.configure('development', function() {
