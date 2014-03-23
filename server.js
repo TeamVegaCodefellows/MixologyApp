@@ -2,17 +2,13 @@ var express  = require('express');
 var app      = express();
 var http     = require('http');
 var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var mongo = require('mongodb');
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/mydb';
+var uristring =
+process.env.MONGOLAB_URI ||
+'mongodb://localhost/mydb';
 
-mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('mydocs', function(er, collection) {
-    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-    });
-  });
-});
+var theport = process.env.PORT || 5000;
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
@@ -24,23 +20,38 @@ app.configure(function() {
 	app.use(express.methodOverride());
 });
 
-app.configure('development', function() {
-	app.use(express.errorHandler());
-	mongoose.connect('mongodb://localhost/mixology-development');
+mongoose.connect(uristring, function(err, res) {
+	if(err) {
+		console.log('ERROR connecting to: ' + uristring + '. ' + err);
+	} else {
+		console.log('Successfully connected to: ' + uristring);
+	}
 });
+
+var users = require('./api/routes/drinkRoutes');
+
+// app.configure('development', function() {
+// 	app.use(express.errorHandler());
+// 	mongoose.connect('mongodb://localhost/mixology-development');
+// });
 
 var drinks = require('./api/routes/drinkRoutes');
 
 // Users routes
-//app.get('/', users.collection);
+// app.get('/api/v1/users', users.collection);
 
-app.get('/api/v1/getDrink/:servings', drinks.findById);
-app.post('/api/v1/createDrink', drinks.create);
+app.get('/api/v1/getDrink/:name/:tag', users.findById);
+app.post('/api/v1/createDrink', users.create);
 
 // app.put('/api/v1/users/:id', users.update);
 // app.delete('/api/v1/users/:id', users.destroy);
 
+
 var server = http.createServer(app);
-server.listen(5000, function() {
+server.listen(3000, function() {
+	console.log("App listening on port 3000");
+})
+
+server.listen(process.env.PORT || 5000, function() {
 	console.log('App listening on port 5000');
 });

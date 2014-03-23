@@ -15,8 +15,9 @@ exports.collection = function(req, res) {
 exports.findById = function(req, res) {
   console.log(req.params);
   res.setHeader('Content-Type', 'application/json');
-  //var servings = req.params.servings;
-  Drink.find({servings: 2}, function(err, responseDrink) {
+  var name = req.params.name;
+  var tag  = req.params.tag;
+  User.find({name: name, tag:tag}, function(err, responseUser) {
     if(err) {
       res.send(500, {'error': err});
     } else {
