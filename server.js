@@ -6,8 +6,7 @@ var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var uristring =
 process.env.MONGOLAB_URI ||
-'mongodb://localhost/mixology-development' ||
-'mongodb://localhost/mydb';
+'mongodb://localhost/mixology-development';
 
 var theport = process.env.PORT || 3000;
 
