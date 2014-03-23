@@ -165,7 +165,7 @@ module.exports = function(grunt) {
     },
     mongoimport: {
       options: {
-        db : 'mixology-prod',
+        db : 'mixology-development',
         //optional
         //host : 'localhost',
         //port: '27017',
@@ -201,5 +201,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
+  grunt.registerTask('server2', ['mongo_drop', 'mongoimport', 'env:dev',  'mochacov:unit', 'watch']);
 
 };
