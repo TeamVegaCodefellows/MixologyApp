@@ -172,7 +172,7 @@ module.exports = function(grunt) {
           {
             name : 'drinks',
             type : 'json',
-            file : 'db/seeds/convertcsv.json',
+            file : 'db/seeds/drinks.json',
             jsonArray : true,  //optional
             upsert : true,  //optional
             drop : true  //optional
@@ -191,10 +191,10 @@ module.exports = function(grunt) {
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
-  grunt.registerTask('server', ['mongoimport', 'build:dev', 'express:dev', 'watch:express']);
+  grunt.registerTask('server', ['mongoimport', 'express:dev', 'watch:express']);
   grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
-  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
 
 };
