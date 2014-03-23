@@ -7,6 +7,7 @@ module.exports = Backbone.Router.extend({
 
   start: function(){
     Backbone.history.start({pushState: false});
+    console.log("asdf");
   },
 
   initialize: function(){
