@@ -75,10 +75,10 @@ describe('Users JSON api', function(){
   //   });
   // });
 
+
   it('can find a drink', function(done){
-    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'whiskey' + '/' + entry.tag).end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/getDrink/' + entry.name + '/' + entry.tag).end(function(e, res){
       expect(e).to.eql(null);
-      console.log(res.body);
       expect(res.body[0].name).to.be.eql('Smooth sailin');
       expect(res.body[0].description).to.be.eql('Summery type drink for the masses');
       // expect(res.body[0].ingredients).to.be.eql('Vodka, Vermouth');
