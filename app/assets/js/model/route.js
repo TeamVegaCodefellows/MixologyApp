@@ -8,7 +8,7 @@ var View = Backbone.View.extend({
 
 	render: function() {
 		$.ajax({
-			url: '/api/v1/getDrink/Smooth sailin/Summer drink'
+			url: '/api/v1/getDrink/Vodka/brunch'
 		}).done(function(result) {
 			var source = $('#drinkTemplate').html();
 			var template = Handlebars.compile(source);
