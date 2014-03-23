@@ -147,7 +147,7 @@ module.exports = function(grunt) {
    	watch: {
       all: {
         files:['server.js', 'test/**.js'],
-        tasks:['test1']
+        tasks:['test']
       },
       dev: {
         files:['app/assets/js/model/**/*'],
