@@ -147,7 +147,7 @@ module.exports = function(grunt) {
    	watch: {
       all: {
         files:['server.js', 'test/**.js'],
-        tasks:['test1']
+        tasks:['test']
       },
       dev: {
         files:['app/assets/js/model/**/*'],
@@ -196,8 +196,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
   grunt.registerTask('server', ['clean:dev','build:dev', 'express:dev', 'watch:dev']);
-  grunt.registerTask('server1', ['mongoimport', 'express:dev', 'watch:express']);
-  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage', 'watch']);
+  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:coverage', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
 };
