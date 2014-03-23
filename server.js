@@ -4,7 +4,7 @@
 	var mongoose = require('mongoose');
 
 	app.configure(function() {
-		app.use(express.static(__dirname + '/app/assets'));
+		app.use(express.static(__dirname + '/build'));
 		app.use(express.logger('dev'));
 		app.use(express.bodyParser());
   	app.use(express.cookieParser());

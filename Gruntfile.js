@@ -34,6 +34,37 @@ module.exports = function(grunt) {
         NODE_ENV: 'test'
       }
     },
+<<<<<<< HEAD
+=======
+
+    clean: {
+      build: ['build'],
+      dev: {
+        src: ['build/**/*']
+      },
+      prod: ['dist']
+    },
+
+    copy: {
+      prod: {
+        expand: true,
+        cwd: 'app/assets',
+        src: ['css/*.css', '*.html', 'images/**/*' ],
+        dest: 'dist/',
+        flatten: false,
+        filter: 'isFile'
+      },
+      dev: {
+        expand: true,
+        cwd: 'app/assets',
+        src: ['css/*.css', '*.html', 'images/**/*' , 'js/vendor/**/*'],
+        dest: 'build/',
+        flatten: false,
+        filter: 'isFile'
+      }
+    },
+
+>>>>>>> 254cc7be038ef6ec8364bcce6022e74a80b1de53
     browserify: {
       prod: {
         src: ['app/assets/js/*.js'],
@@ -166,8 +197,10 @@ module.exports = function(grunt) {
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
+  grunt.registerTask('server', ['build:dev', 'express:dev', 'watch:express']);
   grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev']);
 
 };
