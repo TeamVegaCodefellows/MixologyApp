@@ -44,6 +44,6 @@ app.post('/api/v1/createDrink', drinks.create);
 // app.delete('/api/v1/users/:id', users.destroy);
 
 var server = http.createServer(app);
-server.listen(5000, function() {
+server.listen(process.env.PORT || 5000, function() {
 	console.log('App listening on port 5000');
 });
