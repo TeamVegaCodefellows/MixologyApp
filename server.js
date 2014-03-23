@@ -9,7 +9,7 @@ process.env.MONGOLAB_URI ||
 'mongodb://localhost/mixology-development' ||
 'mongodb://localhost/mydb';
 
-var theport = process.env.PORT || 5000;
+var theport = process.env.PORT || 3000;
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
