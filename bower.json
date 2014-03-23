@@ -1,0 +1,27 @@
+{
+  "name": "oaa",
+  "version": "0.0.0",
+  "homepage": "https://github.com/codefellows/oaa",
+  "authors": [
+    "Ivan Storck <ivanoats@gmail.com>"
+  ],
+  "description": "Our Agenda App",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "backbone": "~1.1.2"
+  },
+  "moduleType": [
+    "node"
+  ]
+}

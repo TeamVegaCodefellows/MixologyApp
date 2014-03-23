@@ -10,7 +10,8 @@
     "coveralls": "^2.8.0",
     "mocha-lcov-reporter": "0.0.1",
     "connect-flash": "^0.1.1",
-    "consolidate": "^0.10.0"
+    "consolidate": "^0.10.0",
+    "logfmt": "^1.0.0"
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",

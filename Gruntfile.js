@@ -18,7 +18,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-mongo-drop');
-  grunt.loadNpmTasks('grunt-mongoimport');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -34,7 +33,6 @@ module.exports = function(grunt) {
         NODE_ENV: 'test'
       }
     },
-
     clean: {
       build: ['build'],
       dev: {
@@ -61,7 +59,6 @@ module.exports = function(grunt) {
         filter: 'isFile'
       }
     },
-
     browserify: {
       prod: {
         src: ['app/assets/js/*.js'],
@@ -179,7 +176,7 @@ module.exports = function(grunt) {
           {
             name : 'drinks',
             type : 'json',
-            file : 'db/seeds/users.json',
+            file : 'db/seeds/drinks.json',
             jsonArray : true,  //optional
             upsert : true,  //optional
             drop : true  //optional
@@ -199,9 +196,10 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
   grunt.registerTask('server', ['build:dev', 'express:dev', 'watch:dev']);
+  grunt.registerTask('server1', ['mongoimport', 'express:dev', 'watch:express']);
   grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
-  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
 
 };
