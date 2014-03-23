@@ -37,8 +37,24 @@
       </div>
     </div>
 
-    <script src="js/vendor/jquery.js"></script>
+    <script id="drinkTemplate" type="text/x-handlebars-template">
+      {{#each}}
+      <ul>
+        <li>{{name}}</li>
+        <li>{{description}}</li>
+        <li>{{ingredients}}</li>
+        <li>{{directions}}</li>
+        <li>{{tag}}</li>      
+      </ul>
+      {{/each}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script src="js/model/route.js"></script>
     <script>
       $(document).foundation();
     </script>
