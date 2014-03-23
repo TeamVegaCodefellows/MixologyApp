@@ -14,7 +14,7 @@ var View = Backbone.View.extend({
 			var template = Handlebars.compile(source);
 			var context = result;
 			var html = template(context)
-			console.log('test', html);
+			console.log(html);
 			$('body').append(html);
 		});
 	}
