@@ -40,7 +40,7 @@ var drinks = require('./api/routes/drinkRoutes');
 // Users routes
 // app.get('/api/v1/users', users.collection);
 
-app.get('/api/v1/getDrink/:name/:tag', drinks.findById);
+app.get('/api/v1/getDrink/:ingredient/:tag', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
 // app.put('/api/v1/users/:id', users.update);

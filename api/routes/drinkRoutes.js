@@ -14,10 +14,9 @@ var Drink = require('../models/Drink');
 
 exports.findById = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var name = req.params.name;
+  var ingredient = req.params.ingredient;
   var tag  = req.params.tag;
-  console.log(name, tag);
-  Drink.find({name: name, tag:tag}, function(err, responseDrink) {
+  Drink.find({ ingredients: { $regex: ingredient, $options: 'i' }  , tag:tag}, function(err, responseDrink) {
     if(err) {
       res.send(500, {'error': err});
     } else {
