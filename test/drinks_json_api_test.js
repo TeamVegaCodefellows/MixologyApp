@@ -49,10 +49,11 @@ describe('Users JSON api', function(){
         expect(res.body.tag).to.be.eql('Summer drink');
         expect(res.body.img).to.be.eql('https://www.google.com');
         id = res.body._id;
-
+ 
         done();
       });
   });
+
 
   it('can create a new drink', function(done){
     superagent.post('http://localhost:3000/api/v1/createDrink')
