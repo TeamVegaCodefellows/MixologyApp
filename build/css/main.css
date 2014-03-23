@@ -8,7 +8,7 @@ nav {
   position: relative;
   margin: 0;
   width: 100%;
-  background-color: #FF6938;
+  background-color: #40403D;
   padding: 0.15em; }
 
 .question {
@@ -17,13 +17,13 @@ nav {
   -o-border-radius: 0.3em;
   background-color: #71A4B0;
   color: white;
-  padding: 0.3em;
+  padding: 1em;
   margin: 0; }
 
 button {
   background-color: #FF6938;
   padding: 0.4em;
-  margin: 0 0 0.05rem;
+  margin: 1em 1em 1em 1em;
   border-color: black;
   border-radius: 0.3em;
   width: 100%;
