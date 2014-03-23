@@ -13,10 +13,26 @@
 
     <div class="row">
       <div class = "small-12 text-center">
-        <nav>Toastie<img src="images/icon_15588.svg" alt="Alcohol" style="padding-left:0.05em;padding-bottom:0.3em"/></nav>
+        <nav>Toastie</nav>
       </div>
-      <div class = "large-6 medium-6 small-8 large-centered medium centered small-centered columns text-center">
-      
+
+      <br>
+
+    <script id="firstQuestion" type="text/x-handlebars-template">
+      {{#each}}
+      <ul>
+        <li>{{name}}</li>
+        <li>{{description}}</li>
+        <li>{{ingredients}}</li>
+        <li>{{directions}}</li>
+        <li>{{tag}}</li>
+      </ul>
+      {{/each}}
+    </script>
+
+      <div class="question full">What's on your mind?</div>
+      <div class = "small-12 small-centered columns text-center">
+
         <div class="question full">1. What's on your mind?</div>
         <br>
         <button>Snuggy</button>
@@ -47,8 +63,6 @@
     <script src="js/vendor/foundation.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script src="browser.js"></script>
-    <script src="js/model/route.js"></script>
-
     <script>
       $(document).foundation();
     </script>

@@ -4,11 +4,16 @@ var View = Backbone.View.extend({
 
 	initialize: function() {
 		this.render();
+		this.getInputs();
+	},
+
+	getInputs: function() {
+		console.log('this');
 	},
 
 	render: function() {
 		$.ajax({
-			url: '/api/v1/getDrink/Vodka/brunch'
+			url: '/api/v1/getDrink/a/brunch'
 		}).done(function(result) {
 			var source = $('#drinkTemplate').html();
 			var template = Handlebars.compile(source);
