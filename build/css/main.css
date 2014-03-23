@@ -1,11 +1,39 @@
 body {
-  background-color: #007f7a; }
+  background-color: #EFEFE3;
+  font-size: 1em;
+  font-family: 'Abel', sans-serif !important;
+  color: white; }
 
-.button {
-  border-radius: 0.8em;
-  background-color: #00827A; }
+nav {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  background-color: #FF6938;
+  padding: 0.15em; }
 
-.button:hover {
-  background-color: #006B65; }
+.question {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  background-color: #71A4B0;
+  color: white;
+  padding: 0.3em;
+  margin: 0; }
+
+button {
+  background-color: #FF6938;
+  padding: 0.4em;
+  margin: 0 0 0.05rem;
+  border-color: black;
+  border-radius: 0.3em;
+  width: 100%;
+  font-family: 'Abel', sans-serif;
+  font-size: 0.8em; }
+
+button:hover {
+  background-color: #006360; }
+
+.full {
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
