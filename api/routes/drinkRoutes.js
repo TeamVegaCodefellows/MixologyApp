@@ -14,10 +14,9 @@ exports.collection = function(req, res) {
 
 exports.findById = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var name = req.params.name;
+  var ingredients = req.params.ingredient;
   var tag  = req.params.tag;
-  console.log(name, tag);
-  User.find({name: name, tag:tag}, function(err, responseUser) {
+  User.find({ingredients: ingredients, tag:tag}, function(err, responseUser) {
     if(err) {
       res.send(500, {'error': err});
     } else {
@@ -40,8 +39,8 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   var id = req.params.id;
   delete req.body._id;
-  var user = req.body;
   User.update({'_id': String(id)}, user, function(err){
+  var user = req.body;
     if(err) {
       res.send(500, {'error': err});
     } else {
