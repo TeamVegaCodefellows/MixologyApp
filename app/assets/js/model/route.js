@@ -5,6 +5,7 @@ var View = Backbone.View.extend({
 	initialize: function() {
 		this.render();
 	},
+
 	render: function() {
 		$.ajax({
 			url: '/api/v1/getDrink/Smooth sailin/Summer drink'

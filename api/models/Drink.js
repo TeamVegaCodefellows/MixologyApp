@@ -11,7 +11,7 @@ var schema = new mongoose.Schema({
   img: String,
   tag: String,
   description: String,
- 	serving: String
+ 	servings: String
 });
 
 // generate a secure hash

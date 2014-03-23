@@ -1,5 +1,5 @@
 'use strict';
-var User = require('../models/Drink');
+var Drink = require('../models/Drink');
 
 exports.collection = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
@@ -13,25 +13,25 @@ exports.collection = function(req, res) {
 };
 
 exports.findById = function(req, res) {
+  console.log(req.params);
   res.setHeader('Content-Type', 'application/json');
-  var ingredients = req.params.ingredient;
-  var tag  = req.params.tag;
-  User.find({ingredients: ingredients, tag:tag}, function(err, responseUser) {
+  //var servings = req.params.servings;
+  Drink.find({servings: 2}, function(err, responseDrink) {
     if(err) {
       res.send(500, {'error': err});
     } else {
-      res.send(responseUser);
+      res.send(responseDrink);
     }
   });
 };
 
 exports.create = function(req, res) {
-  var user = new User(req.body);
-  user.save(function(err, responseUser) {
+  var drink = new Drink(req.body);
+  drink.save(function(err, responseDrink) {
     if(err) {
       res.send(500, {'error': err});
     } else {
-      res.send(responseUser);
+      res.send(responseDrink);
     }
   });
 };
