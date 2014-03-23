@@ -13,7 +13,7 @@ var View = Backbone.View.extend({
 			var template = Handlebars.compile(source);
 			var context = result;
 			var html = template(context)
-			console.log(html);
+			console.log('test', html);
 			$('body').append(html);
 		});
 	}
