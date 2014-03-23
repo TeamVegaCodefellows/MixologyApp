@@ -1,0 +1,11 @@
+body {
+  background-color: #007f7a; }
+
+.button {
+  border-radius: 0.8em;
+  background-color: #00827A; }
+
+.button:hover {
+  background-color: #006B65; }
+
+/*# sourceMappingURL=main.css.map */
