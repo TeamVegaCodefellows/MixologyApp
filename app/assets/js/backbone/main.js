@@ -22,6 +22,7 @@ drinkCollections.fetch({
 	success: function() {
 		var DrinkCollectionsView = require('./views/DrinkCollectionsView');
 		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
+		$('body').append(drinkCollectionsView.el);
 	}
 });
 
