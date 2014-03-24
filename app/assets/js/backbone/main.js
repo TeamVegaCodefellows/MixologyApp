@@ -33,3 +33,7 @@ function renderDrinkCollectionsView (){
 var Routes = require('./routers/Routes.js');
 var routes = new Routes();
 Backbone.history.start();
+
+var FirstQuestion = require('./views/firstQuestion.js');
+var firstQuestion = new FirstQuestion();
+$('.firstQuestion').replaceWith(firstQuestion.el);
