@@ -18,7 +18,10 @@ console.log(drinkView.el);
 ////
 var DrinkCollection = require('./models/DrinkCollections.js');
 var drinkCollections = new DrinkCollection([], {ingredient:'a', tag:'brunch'});
-drinkCollections.fetch();
+drinkCollections.fetch({
+	success: function() {
+		var DrinkCollectionsView = require('./views/DrinkCollectionsView');
+		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
+	}
+});
 
-var DrinkCollectionsView = require('./views/DrinkCollectionsView');
-var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
