@@ -8,6 +8,4 @@ module.exports = Backbone.View.extend({
 		this.$el.html(template(this.model.toJSON()));
 		return this;
 	}
-
-
 });

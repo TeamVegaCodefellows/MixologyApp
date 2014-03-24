@@ -17,6 +17,6 @@ console.log(drinkView.el);
 ////
 ////
 var DrinkCollection = require('./models/DrinkCollections.js');
-var drinkCollections = new DrinkCollection();
+var drinkCollections = new DrinkCollection([], {ingredient:'vodka', tag:'brunch'});
 drinkCollections.fetch();
 console.log(drinkCollections);
