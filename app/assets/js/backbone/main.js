@@ -14,5 +14,9 @@ var drink = new Drink({
 
 var drinkView = new DrinkView({model:drink});
 console.log(drinkView.el);
-
-
+////
+////
+var DrinkCollection = require('./models/DrinkCollections.js');
+var drinkCollections = new DrinkCollection();
+drinkCollections.fetch();
+console.log(drinkCollections);
