@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       dev: {
         expand: true,
         cwd: 'app/assets',
-        src: ['css/*.css', '*.html', 'images/**/*' , 'js/vendor/**/*', 'js/model/**/*'],
+        src: ['css/*.css', '*.html', 'images/**/*' , 'js/vendor/**/*', 'templates/**/*'],
         dest: 'build/',
         flatten: false,
         filter: 'isFile'
@@ -153,6 +153,10 @@ module.exports = function(grunt) {
         files:['app/assets/js/model/**/*'],
         tasks:['server']
       },
+      backbone: {
+        files: ['app/assets/js/backbone/**/*.js'],
+        tasks: ['build:dev', 'express:dev']
+      },
       express: {
         files:  [ 'server.js'],
         // tasks:  [ 'clean', 'copy', 'sass:dev', 'browserify:dev', 'express:dev' ],
@@ -195,8 +199,8 @@ module.exports = function(grunt) {
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
-  grunt.registerTask('server', ['clean:dev','build:dev', 'express:dev', 'watch:dev']);
-  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:coverage', 'watch']);
+  grunt.registerTask('server', ['build:dev', 'express:dev','watch:backbone']);
+  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:coverage', 'watch:backbone']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
 };
