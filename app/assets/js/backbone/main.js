@@ -17,7 +17,7 @@ console.log(drinkView.el);
 ////
 ////
 var DrinkCollection = require('./models/DrinkCollections.js');
-var drinkCollections = new DrinkCollection([], {ingredient:'a', tag:'brunch'});
+var drinkCollections = new DrinkCollection([], {ingredient:'b', tag:'classic'});
 drinkCollections.fetch({
 	success: function() {
 		renderDrinkCollectionsView();
@@ -29,3 +29,7 @@ function renderDrinkCollectionsView (){
 		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
 		$('body').append(drinkCollectionsView.el);	
 }
+
+var Routes = require('./routers/Routes.js');
+var routes = new Routes();
+Backbone.history.start();
