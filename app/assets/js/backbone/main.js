@@ -20,9 +20,12 @@ var DrinkCollection = require('./models/DrinkCollections.js');
 var drinkCollections = new DrinkCollection([], {ingredient:'a', tag:'brunch'});
 drinkCollections.fetch({
 	success: function() {
-		var DrinkCollectionsView = require('./views/DrinkCollectionsView');
-		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
-		$('body').append(drinkCollectionsView.el);
+		renderDrinkCollectionsView();
 	}
 });
 
+function renderDrinkCollectionsView (){
+		var DrinkCollectionsView = require('./views/DrinkCollectionsView');
+		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
+		$('body').append(drinkCollectionsView.el);	
+}
