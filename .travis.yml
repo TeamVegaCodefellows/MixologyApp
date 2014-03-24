@@ -11,6 +11,3 @@ install:
 before_script:
 - grunt mongoimport
 - grunt build:dev
-env:
-  global:
-    CODECLIMATE_REPO_TOKEN=f25dc3e29ed854855d4a251fb89470af0d87fad671eded6870c4188f2e12cbe4
