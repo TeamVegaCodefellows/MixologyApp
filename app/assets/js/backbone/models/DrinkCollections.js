@@ -7,4 +7,3 @@ module.exports = Backbone.Collection.extend({
 	},
 	model: Drink,
 });
-//test
