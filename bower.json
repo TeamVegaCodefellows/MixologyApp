@@ -19,7 +19,8 @@
   ],
   "dependencies": {
     "jquery": "~2.1.0",
-    "backbone": "~1.1.2"
+    "backbone": "~1.1.2",
+    "async": "~0.2.10"
   },
   "moduleType": [
     "node"

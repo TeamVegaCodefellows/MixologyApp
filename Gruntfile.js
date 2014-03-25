@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       dev: {
         expand: true,
         cwd: 'app/assets',
-        src: ['css/*.css', '*.html', 'images/**/*' , 'js/vendor/**/*', 'js/model/**/*'],
+        src: ['css/*.css', '*.html', 'images/**/*' , 'js/vendor/**/*', 'templates/**/*'],
         dest: 'build/',
         flatten: false,
         filter: 'isFile'
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
         }
       },
       dev: {
-        src: ['app/assets/js/*.js'],
+        src: ['app/assets/js/backbone/**/*.js'],
         dest: 'build/browser.js',
         options: {
           transform: ['debowerify','hbsfy'],
@@ -147,11 +147,15 @@ module.exports = function(grunt) {
    	watch: {
       all: {
         files:['server.js', 'test/**.js'],
-        tasks:['test1']
+        tasks:['test']
       },
       dev: {
         files:['app/assets/js/model/**/*'],
         tasks:['server']
+      },
+      backbone: {
+        files: ['app/assets/js/backbone/**/*.js'],
+        tasks: ['build:dev', 'express:dev']
       },
       express: {
         files:  [ 'server.js'],
@@ -181,6 +185,22 @@ module.exports = function(grunt) {
             upsert : true,  //optional
             drop : true  //optional
           },
+          {
+            name : 'firstQuestion',
+            type : 'json',
+            file : 'db/seeds/firstQuestion.json',
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
+          {
+            name : 'secondQuestion',
+            type : 'json',
+            file : 'db/seeds/secondQuestion.json',
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
         ]
       }
     },
@@ -195,12 +215,8 @@ module.exports = function(grunt) {
   });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
-  grunt.registerTask('server', ['build:dev', 'express:dev', 'watch:dev']);
-  grunt.registerTask('server1', ['mongoimport', 'express:dev', 'watch:express']);
-  grunt.registerTask('test', ['env:dev', 'mochacov:unit', 'mochacov:coverage']);
-  grunt.registerTask('test1', ['env:dev','mongo_drop', 'mochacov:unit', 'watch']);
+  grunt.registerTask('server', ['build:dev', 'express:dev','watch:backbone']);
+  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
-  grunt.registerTask('server2', ['mongo_drop', 'mongoimport', 'env:dev',  'mochacov:unit', 'watch']);
-
 };

@@ -42,7 +42,7 @@
     "grunt-cli": "^0.1.13"
   },
   "scripts": {
-    "test": "mkdir -p build && grunt travis --trace --verbose"
+    "test": "grunt travis"
   },
   "config": {
     "blanket": {
