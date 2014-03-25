@@ -9,7 +9,7 @@ var drink = new Drink({
 	img: "http://www.google.com",
 	tag: "brunch",
 	description: "great for hangovers",
-	servings: "2"	
+	servings: "2"
 });
 
 var drinkView = new DrinkView({model:drink});
@@ -27,7 +27,7 @@ drinkCollections.fetch({
 function renderDrinkCollectionsView (){
 		var DrinkCollectionsView = require('./views/DrinkCollectionsView');
 		var drinkCollectionsView = new DrinkCollectionsView({collection:drinkCollections});
-		$('body').append(drinkCollectionsView.el);	
+		$('body').append(drinkCollectionsView.el);
 }
 
 var Routes = require('./routers/Routes.js');
