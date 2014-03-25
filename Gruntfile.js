@@ -185,6 +185,22 @@ module.exports = function(grunt) {
             upsert : true,  //optional
             drop : true  //optional
           },
+          {
+            name : 'firstQuestion',
+            type : 'json',
+            file : 'db/seeds/firstQuestion.json',
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
+          {
+            name : 'secondQuestion',
+            type : 'json',
+            file : 'db/seeds/secondQuestion.json',
+            jsonArray : true,  //optional
+            upsert : true,  //optional
+            drop : true  //optional
+          },
         ]
       }
     },

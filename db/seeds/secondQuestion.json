@@ -1,0 +1,56 @@
+[
+	{
+		"Question" : "What sort of flavors do you like?",
+		"First option" : [
+			{
+				"Label" : "Clean"
+			},
+			{
+				"Ingredient" : "Vodka"
+			}
+		],
+		"Second option" : [
+			{
+				"Label" : "Spicy"
+			},
+			{
+				"Ingredient" : "Gin"
+			}
+		],		
+		"Third option" : [
+			{
+				"Label" : "Bold"
+			},
+			{
+				"Ingredient" : "Whiskey"
+			}
+		]		
+	},
+	{
+		"Question" : "My favorite food is season is - ",
+		"First option" : [
+			{
+				"Label" : "Spring"
+			},
+			{
+				"Ingredient" : "Vodka"
+			}
+		],
+		"Second option" : [
+			{
+				"Label" : "Summer"
+			},
+			{
+				"Ingredient" : "Gin"
+			}
+		],		
+		"Third option" : [
+			{
+				"Label" : "Winter"
+			},
+			{
+				"Ingredient" : "Whiskey"
+			}
+		]		
+	}	
+]
