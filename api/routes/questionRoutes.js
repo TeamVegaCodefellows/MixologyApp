@@ -16,7 +16,7 @@ var SecondQuestion = require('../models/SecondQuestion');
 exports.getFirstQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   var rand = Math.ceil(Math.random()*2);
-  console.log(rand);
+  //console.log(rand);
   FirstQuestion.findOne({ }, function(err, responseQuestion) {
     console.log(responseQuestion);
     if(err) {
@@ -39,9 +39,21 @@ exports.getSecondQuestion = function(req, res) {
   });
 };
 
-exports.create = function(req, res) {
+exports.createFirstQuestion = function(req, res) {
   //console.log(req);
   var question = new FirstQuestion(req.body);
+  question.save(function(err, responseQuestion) {
+    if(err) {
+      res.send(500, {'error': err});
+    } else {
+      res.send(responseQuestion);
+    }
+  });
+};
+
+exports.createSecondQuestion = function(req, res) {
+  //console.log(req);
+  var question = new SecondQuestion(req.body);
   question.save(function(err, responseQuestion) {
     if(err) {
       res.send(500, {'error': err});

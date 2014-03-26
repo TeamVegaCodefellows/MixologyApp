@@ -52,7 +52,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     copy: {
       prod: {
         expand: true,
