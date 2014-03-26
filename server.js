@@ -4,11 +4,11 @@ var http     = require('http');
 var mongoose = require('mongoose');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
-var uristring =
-process.env.MONGOLAB_URI ||
-'mongodb://localhost/mixology-development';
-
-var theport = process.env.PORT || 3000;
+//var uristring =
+//process.env.MONGOLAB_URI ||
+//'mongodb://localhost/mixology-development';
+//
+//var theport = process.env.PORT || 3000;
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
@@ -36,13 +36,13 @@ app.configure('development', function() {
 });
 
 
-mongoose.connect(uristring, function(err, res) {
-	if(err) {
-		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-	} else {
-		console.log('Successfully connected to: ' + uristring);
-	}
-});
+//mongoose.connect(uristring, function(err, res) {
+//	if(err) {
+//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
+//	} else {
+//		console.log('Successfully connected to: ' + uristring);
+//	}
+//});
 
 
 var drinks = require('./api/routes/drinkRoutes');
