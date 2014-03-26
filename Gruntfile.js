@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-mongo-drop');
     grunt.loadNpmTasks('grunt-mocha-cov');
     grunt.loadNpmTasks('grunt-concurrent');
-   
+
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
