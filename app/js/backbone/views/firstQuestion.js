@@ -7,8 +7,8 @@ module.exports = Backbone.View.extend({
 	},
 
 	render: function() {
-		var firstQuestion = template("");
-		this.$el.html(firstQuestion);
+		var index = template("");
+		this.$el.html(index);
 		return this;
 	}
 
