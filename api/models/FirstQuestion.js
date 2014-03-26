@@ -29,7 +29,8 @@ var schema = new mongoose.Schema({
       {
         tag : String
       }
-    ]
+    ],
+    random: Number
 
 });
 

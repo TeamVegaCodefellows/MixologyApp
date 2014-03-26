@@ -24,7 +24,8 @@
 			{
 				"Tag" : "Bold"
 			}
-		]
+		],
+		"Random" : 1
 	},
 	{
 		"Question" : "How are you feeling today?",
@@ -51,6 +52,7 @@
 			{
 				"Tag" : "Bold"
 			}
-		]
+		],
+		"Random" : 2
 	}
 ]

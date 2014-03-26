@@ -22,7 +22,7 @@ describe('Questions JSON api', function(){
     ]
   };
 
-  it('can create a new question', function(done){
+  it('can create a new first question', function(done){
     superagent.post('http://localhost:3000/api/v1/createQuestion')
       .send(entry)
       .end(function(e, res){
@@ -36,7 +36,7 @@ describe('Questions JSON api', function(){
     superagent.get('http://localhost:3000/api/v1/getFirstQuestion').end(function(e, res){
         expect(e).to.eql(null);
         console.log(res.body);
-        expect(res.body.question).to.not.be.eql(null);
+        expect(res.body.question).to.not.be.eql(null || undefined);
         done();
     });
   });
@@ -44,8 +44,8 @@ describe('Questions JSON api', function(){
   it('can get a random second question', function(done){
     superagent.get('http://localhost:3000/api/v1/getSecondQuestion').end(function(e, res){
         expect(e).to.eql(null);
-        console.log(res.body);
-        expect(res.body.question).to.not.be.eql(null);
+        console.log(res.body.question);
+        expect(res.body.question).to.not.be.eql(null || undefined);
         done();
     });
   });

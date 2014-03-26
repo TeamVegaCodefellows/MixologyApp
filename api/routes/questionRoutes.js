@@ -15,8 +15,10 @@ var SecondQuestion = require('../models/SecondQuestion');
 
 exports.getFirstQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  //console.log(req);
+  var rand = Math.ceil(Math.random()*2);
+  console.log(rand);
   FirstQuestion.findOne({ }, function(err, responseQuestion) {
+    console.log(responseQuestion);
     if(err) {
       res.send(500, {'error': err});
     } else {
