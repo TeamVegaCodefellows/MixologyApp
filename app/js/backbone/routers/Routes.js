@@ -5,7 +5,8 @@ var DrinkCollectionsView = require('../views/DrinkCollectionsView.js');
 module.exports = Backbone.Router.extend({
 	routes: {
 		"test/:id" : "test",
-		"results/:ingredient/:tag": 'getResults'
+		"results/:ingredient/:tag": 'getResults',
+		"this" : "reroute"
 	},
 	initialize: function() {
 		console.log('initialized');
@@ -26,4 +27,9 @@ module.exports = Backbone.Router.extend({
 		})
 	},
 	
+	reroute: function() {
+		console.log('reroute');
+		this.navigate('results/vodka/brunch', {trigger:true});
+	}
+
 });
