@@ -40,7 +40,17 @@ module.exports = function (grunt) {
             },
             prod: ['dist']
         },
-
+        casper: {
+          acceptance : {
+            options : {
+              test : true,
+              //'log-level': 'debug'
+            },
+            files : {
+              'test/acceptance/casper-results.xml' : ['test/acceptance/*_test.js']
+            }
+          }
+        },
         copy: {
             prod: {
                 expand: true,
@@ -179,8 +189,7 @@ module.exports = function (grunt) {
             },
             express: {
                 files: ['server.js', 'api/**/*', 'app/**/*', 'app/js/*.js'],
-                tasks: ['clean', 'copy', 'sass:dev', 'browserify:dev', 'express:dev'],
-
+                tasks: ['build:dev', 'browserify:dev', 'express:dev'],
                 options: {
                     // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
                     // Without this option specified express won't be reloaded
@@ -189,41 +198,41 @@ module.exports = function (grunt) {
             }
         },
         mongoimport: {
-            options: {
-                db: 'mixology-development',
-                //optional
-                //host : 'localhost',
-                //port: '27017',
-                //username : 'username',
-                //password : 'password',
-                //stopOnError : false,
-                collections: [
-                    {
-                        name: 'drinks',
-                        type: 'json',
-                        file: 'db/seeds/drinks.json',
-                        jsonArray: true, //optional
-                        upsert: true, //optional
-                        drop: true //optional
-          },
-                    {
-                        name: 'firstQuestion',
-                        type: 'json',
-                        file: 'db/seeds/firstQuestion.json',
-                        jsonArray: true, //optional
-                        upsert: true, //optional
-                        drop: true //optional
-          },
-                    {
-                        name: 'secondQuestion',
-                        type: 'json',
-                        file: 'db/seeds/secondQuestion.json',
-                        jsonArray: true, //optional
-                        upsert: true, //optional
-                        drop: true //optional
-          },
-        ]
-            }
+          options: {
+              db: 'mixology-development',
+              //optional
+              //host : 'localhost',
+              //port: '27017',
+              //username : 'username',
+              //password : 'password',
+              //stopOnError : false,
+              collections: [
+                  {
+                      name: 'drinks',
+                      type: 'json',
+                      file: 'db/seeds/drinks.json',
+                      jsonArray: true, //optional
+                      upsert: true, //optional
+                      drop: true //optional
+                  },
+                  {
+                      name: 'firstQuestion',
+                      type: 'json',
+                      file: 'db/seeds/firstQuestion.json',
+                      jsonArray: true, //optional
+                      upsert: true, //optional
+                      drop: true //optional
+                  },
+                  {
+                      name: 'secondQuestion',
+                      type: 'json',
+                      file: 'db/seeds/secondQuestion.json',
+                      jsonArray: true, //optional
+                      upsert: true, //optional
+                      drop: true //optional
+                  },
+            ]
+          }
         },
         mongo_drop: {
             test: {
@@ -235,9 +244,10 @@ module.exports = function (grunt) {
         },
     });
 
-    grunt.registerTask('default', ['express:dev', 'watch:express']);
-    grunt.registerTask('server', ['build:dev', 'express:dev', 'watch:backbone']);
-    grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
-    grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
-    grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
+	grunt.registerTask('default',['express:dev', 'watch:express']);
+  grunt.registerTask('server', ['build:dev', 'express:dev','watch:backbone']);
+  grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
+  grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
+  grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'browserify:dev', 'copy:dev']);
 };
