@@ -11,7 +11,7 @@ describe('Questions JSON api', function(){
 
   var entry = {
     "question" : "this is a first question",
-    "first_option" : [
+    "choices" : [
       {
         "label" : "test",
         "tag" : "test"
@@ -30,7 +30,7 @@ describe('Questions JSON api', function(){
 
   var entry2 = {
     "question" : "this is a second question",
-    "first_option" : [
+    "choices" : [
       {
         "label" : "test",
         "ingredient" : "test"
@@ -53,8 +53,7 @@ describe('Questions JSON api', function(){
       .end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body.question).to.be.eql("this is a first question");
-        console.log(res.body);
-        expect(res.body.first_option[0].label).to.not.be.eql(null || undefined);
+        expect(res.body.choices[0].label).to.be.eql("test");
         done();
       });
   });
@@ -64,7 +63,7 @@ describe('Questions JSON api', function(){
       .send(entry2)
       .end(function(e, res){
         expect(e).to.eql(null);
-        expect(res.body.question).to.be.eql("this is a second question");
+        expect(res.body.choices[0].label).to.be.eql("test");
         done();
       });
   });
@@ -72,7 +71,6 @@ describe('Questions JSON api', function(){
   it('can get a random first question', function(done){
     superagent.get('http://localhost:3000/api/v1/getFirstQuestion').end(function(e, res){
         expect(e).to.eql(null);
-        console.log(res.body.question);
         expect(res.body.question).to.not.be.eql(null || undefined);
         done();
     });
@@ -81,7 +79,6 @@ describe('Questions JSON api', function(){
   it('can get a random second question', function(done){
     superagent.get('http://localhost:3000/api/v1/getSecondQuestion').end(function(e, res){
         expect(e).to.eql(null);
-        console.log(res.body.question);
         expect(res.body.question).to.not.be.eql(null || undefined);
         done();
     });

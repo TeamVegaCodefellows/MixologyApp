@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
     question : String,
-    options : [
+    choices : [
       {
         label: String,
         tag : String

@@ -38,7 +38,6 @@ exports.getSecondQuestion = function(req, res) {
 };
 
 exports.createFirstQuestion = function(req, res) {
-  console.log(req.body);
   var question = new FirstQuestion(req.body);
   question.save(function(err, responseQuestion) {
     if(err) {
