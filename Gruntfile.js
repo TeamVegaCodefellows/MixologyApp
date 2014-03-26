@@ -21,7 +21,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         env: {
             options: {
 
@@ -210,7 +209,7 @@ module.exports = function (grunt) {
                       drop: true //optional
                   },
                   {
-                      name: 'firstQuestion',
+                      name: 'firstquestions',
                       type: 'json',
                       file: 'db/seeds/firstQuestion.json',
                       jsonArray: true, //optional
@@ -218,7 +217,7 @@ module.exports = function (grunt) {
                       drop: true //optional
                   },
                   {
-                      name: 'secondQuestion',
+                      name: 'secondquestions',
                       type: 'json',
                       file: 'db/seeds/secondQuestion.json',
                       jsonArray: true, //optional

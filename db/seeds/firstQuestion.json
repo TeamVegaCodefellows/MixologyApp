@@ -1,56 +1,38 @@
 [
 	{
-		"Question" : "What's on your mind?",
-		"First option" : [
+		"question" : "What's on your mind?",
+		"options" : [
 			{
-				"Label" : "Snuggy"
+				"label" : "Snuggy",
+				"tag" : "Easy"
 			},
 			{
-				"Tag" : "Easy"
+				"label" : "Cigars",
+				"tag" : "Classy"
+			},
+			{
+				"label" : "Hardcore Parkour",
+				"tag" : "Bold"
 			}
 		],
-		"Second option" : [
-			{
-				"Label" : "Cigars"
-			},
-			{
-				"Tag" : "Classy"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Hardcore Parkour"
-			},
-			{
-				"Tag" : "Bold"
-			}
-		]		
+		"random" : 1
 	},
 	{
-		"Question" : "How are you feeling today?",
-		"First option" : [
+		"question" : "How are you feeling today?",
+		"options" : [
 			{
-				"Label" : "Happy"
+				"label" : "Happy",
+				"tag" : "Easy"
 			},
 			{
-				"Tag" : "Easy"
+				"label" : "Indifferent",
+				"tag" : "Classy"
+			},
+			{
+				"label" : "Mad",
+				"tag" : "Bold"
 			}
 		],
-		"Second option" : [
-			{
-				"Label" : "Indifferent"
-			},
-			{
-				"Tag" : "Classy"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Mad"
-			},
-			{
-				"Tag" : "Bold"
-			}
-		]		
+		"random" : 2
 	}
 ]
