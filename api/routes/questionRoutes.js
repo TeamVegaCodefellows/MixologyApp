@@ -1,5 +1,6 @@
 'use strict';
-var Drink = require('../models/Drink');
+var FirstQuestion = require('../models/FirstQuestion');
+var SecondQuestion = require('../models/SecondQuestion');
 
 // exports.collection = function(req, res) {
 //   res.setHeader('Content-Type', 'application/json');
@@ -12,27 +13,38 @@ var Drink = require('../models/Drink');
 //   });
 // };
 
-exports.findById = function(req, res) {
+exports.getFirstQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  console.log(req.params);
-  var ingredient = req.params.ingredient;
-  var tag  = req.params.tag;
-  Drink.find({ ingredients: { $regex: ingredient, $options: 'i' }  , tag:tag}, function(err, responseDrink) {
+  //console.log(req);
+  FirstQuestion.findOne({ }, function(err, responseQuestion) {
     if(err) {
       res.send(500, {'error': err});
     } else {
-      res.send(responseDrink);
+      res.send(responseQuestion);
+    }
+  });
+};
+
+exports.getSecondQuestion = function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  //console.log(req);
+  SecondQuestion.findOne({ }, function(err, responseQuestion) {
+    if(err) {
+      res.send(500, {'error': err});
+    } else {
+      res.send(responseQuestion);
     }
   });
 };
 
 exports.create = function(req, res) {
-  var drink = new Drink(req.body);
-  drink.save(function(err, responseDrink) {
+  //console.log(req);
+  var question = new FirstQuestion(req.body);
+  question.save(function(err, responseQuestion) {
     if(err) {
       res.send(500, {'error': err});
     } else {
-      res.send(responseDrink);
+      res.send(responseQuestion);
     }
   });
 };

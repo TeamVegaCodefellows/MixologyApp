@@ -1,35 +1,39 @@
-// var DrinkCollection = require('../models/DrinkCollection');
-// var DrinkCollectionView = require('../views/DrinkCollctionsView');
+var Question = require('../models/Question');
+var QuestionCollection = require('../models/QuestionCollection');
+var QuestionView = require('../views/QuestionView');
 
-// var Question = require('../models/Question');
-// var QuestionView = require('../views/QuestionView');
+module.exports = Backbone.Router.extend({
 
-// module.exports = Backbone.Router.extend(){
+  routes: {
+            '/questions' : 'questionOne',
+            '/questions/:tag' : 'questionTwo',
+            '/questions/:tag/:ingredient' : 'results'
+          },
 
-//   routes: {
-//             '/question' : 'question',
-//             '/results' : 'results'
-//           },
+  start: function(){
+    Backbone.history.start();
+  },
 
-//   start: function(){
-//     Backbone.history.start();
-//   },
+  initialize: function(){
 
-//   initialize: function(){
-//     this.questionOne = new Question();
-//     this.questionOneView = new QuestionOneView({ model : this.questionOne });
-//   },
+  },
 
-//   question: function(){
-//     this.questionOne.fetch();
-//     this.questionOneView.render();
-//   },
+  questionOne: function(){
+    this.questionOne = new Question();
+    this.questionOne.fetch();
+    this.questionView = new QuestionView({ model : questionOne });
+    this.questionView.render();
+  },
 
-//   results: function(){
-//     this.drinkCollection = new DrinkCollection();
-//     this.drinkCollectionView = new DrinkCollectionView({ collection: this.drinkCollection });
-//     this.drinkCollection.fetch();
-//     this.drinkCollectionView.render();
-//   }
+  questionTwo: function(){
+    this.questionTwo = new Question();
+    this.questionTwo.fetch();
+    this.questionView = new QuestionView({ model : questionOne });
+    this.questionView.render();
+  },
 
-// }
+  results: function(){
+
+  }
+
+});

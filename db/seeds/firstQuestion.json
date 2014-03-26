@@ -16,7 +16,7 @@
 			{
 				"Tag" : "Classy"
 			}
-		],		
+		],
 		"Third option" : [
 			{
 				"Label" : "Hardcore Parkour"
@@ -24,7 +24,7 @@
 			{
 				"Tag" : "Bold"
 			}
-		]		
+		]
 	},
 	{
 		"Question" : "How are you feeling today?",
@@ -43,7 +43,7 @@
 			{
 				"Tag" : "Classy"
 			}
-		],		
+		],
 		"Third option" : [
 			{
 				"Label" : "Mad"
@@ -51,6 +51,6 @@
 			{
 				"Tag" : "Bold"
 			}
-		]		
+		]
 	}
 ]
