@@ -46,10 +46,15 @@ app.configure('development', function() {
 
 
 var drinks = require('./api/routes/drinkRoutes');
+var questions = require('./api/routes/questionRoutes');
 
 // Users routes
 // app.get('/api/v1/users', users.collection);
 
+app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
+app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
+app.get('/api/v1/getFirstQuestion', questions.getFirstQuestion);
+app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
 app.get('/api/v1/getDrink/:ingredient/:tag', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
