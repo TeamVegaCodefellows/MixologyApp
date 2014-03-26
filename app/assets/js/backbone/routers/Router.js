@@ -1,6 +1,6 @@
-var Question = require('../models/Question');
+var FirstQuestion = require('../models/Question');
 var QuestionCollection = require('../models/QuestionCollection');
-var QuestionView = require('../views/QuestionView');
+var QuestionCollectionView = require('../views/QuestionCollectionView');
 
 module.exports = Backbone.Router.extend({
 
@@ -15,21 +15,19 @@ module.exports = Backbone.Router.extend({
   },
 
   initialize: function(){
-
+    this.questionOne = new FirstQuestion();
+    this.questionOne.fetch();
+    this.questionCollectionView = new QuestionCollectionView({ model : questionOne });
   },
 
   questionOne: function(){
-    this.questionOne = new Question();
-    this.questionOne.fetch();
-    this.questionView = new QuestionView({ model : questionOne });
-    this.questionView.render();
+    this.questionCollectionView.render();
   },
 
   questionTwo: function(){
     this.questionTwo = new Question();
     this.questionTwo.fetch();
-    this.questionView = new QuestionView({ model : questionOne });
-    this.questionView.render();
+    this.questionCollectionView.render();
   },
 
   results: function(){
