@@ -189,7 +189,7 @@ module.exports = function (grunt) {
             },
             express: {
                 files: ['server.js', 'api/**/*', 'app/**/*', 'app/js/*.js'],
-                tasks: ['clean', 'copy', 'sass:dev', 'browserify:dev', 'express:dev'],
+                tasks: ['build:dev', 'browserify:dev', 'express:dev'],
                 options: {
                     // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
                     // Without this option specified express won't be reloaded
@@ -249,5 +249,5 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
-  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'copy:dev', 'browserify:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'browserify:dev', 'copy:dev']);
 };
