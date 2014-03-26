@@ -4,34 +4,14 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-
     question : String,
-    first_option : [
+    options : [
       {
-        label : String
-      },
-      {
-        tag : String
-      }
-    ],
-    second_option : [
-      {
-        label : String
-      },
-      {
-        tag : String
-      }
-    ],
-    third_option : [
-      {
-        label : String
-      },
-      {
+        label: String,
         tag : String
       }
     ],
     random: Number
-
 });
 
-module.exports = mongoose.model('firstQuestion', schema);
+module.exports = mongoose.model('firstquestions', schema);

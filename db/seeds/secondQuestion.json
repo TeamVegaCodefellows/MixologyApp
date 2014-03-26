@@ -1,56 +1,38 @@
 [
 	{
-		"Question" : "What sort of flavors do you like?",
-		"First option" : [
+		"question" : "What sort of flavors do you like?",
+		"options" : [
 			{
-				"Label" : "Clean"
+				"label" : "Clean",
+				"ingredient" : "Vodka"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"label" : "Spicy",
+				"ingredient" : "Gin"
+			},
+			{
+				"label" : "Bold",
+				"ingredient" : "Whiskey"
 			}
 		],
-		"Second option" : [
-			{
-				"Label" : "Spicy"
-			},
-			{
-				"Ingredient" : "Gin"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Bold"
-			},
-			{
-				"Ingredient" : "Whiskey"
-			}
-		]		
+		"random" : 1
 	},
 	{
-		"Question" : "My favorite food is season is - ",
-		"First option" : [
+		"question" : "My favorite food is season is - ",
+		"options" : [
 			{
-				"Label" : "Spring"
+				"label" : "Spring",
+				"ingredient" : "Vodka"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"label" : "Summer",
+				"ingredient" : "Gin"
+			},
+			{
+				"label" : "Winter",
+				"ingredient" : "Whiskey"
 			}
 		],
-		"Second option" : [
-			{
-				"Label" : "Summer"
-			},
-			{
-				"Ingredient" : "Gin"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Winter"
-			},
-			{
-				"Ingredient" : "Whiskey"
-			}
-		]		
-	}	
+		"random" : 2
+	}
 ]

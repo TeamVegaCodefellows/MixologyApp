@@ -29,8 +29,9 @@ var schema = new mongoose.Schema({
       {
         ingredient : String
       }
-    ]
+    ],
+    random : Number
 
 });
 
-module.exports = mongoose.model('secondQuestion', schema);
+module.exports = mongoose.model('secondquestions', schema);

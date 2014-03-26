@@ -1,27 +1,17 @@
 [
 	{
 		"question" : "What's on your mind?",
-		"first_option" : [
+		"options" : [
 			{
-				"label" : "Snuggy"
-			},
-			{
+				"label" : "Snuggy",
 				"tag" : "Easy"
-			}
-		],
-		"second option" : [
-			{
-				"label" : "Cigars"
 			},
 			{
+				"label" : "Cigars",
 				"tag" : "Classy"
-			}
-		],
-		"third option" : [
-			{
-				"label" : "Hardcore Parkour"
 			},
 			{
+				"label" : "Hardcore Parkour",
 				"tag" : "Bold"
 			}
 		],
@@ -29,27 +19,17 @@
 	},
 	{
 		"question" : "How are you feeling today?",
-		"first option" : [
+		"options" : [
 			{
-				"label" : "Happy"
-			},
-			{
+				"label" : "Happy",
 				"tag" : "Easy"
-			}
-		],
-		"second option" : [
-			{
-				"label" : "Indifferent"
 			},
 			{
+				"label" : "Indifferent",
 				"tag" : "Classy"
-			}
-		],
-		"third option" : [
-			{
-				"label" : "Mad"
 			},
 			{
+				"label" : "Mad",
 				"tag" : "Bold"
 			}
 		],
