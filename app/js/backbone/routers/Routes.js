@@ -15,7 +15,7 @@ module.exports = Backbone.Router.extend({
     },
 
     initialize: function () {
-        console.log('initialized');
+        this.showFirstQuestion();
     },
     
     showFirstQuestion: function() {
