@@ -24,6 +24,7 @@ app.configure(function() {
 	app.use(flash());
 });
 
+require('./app/js/backbone/routers/Routes.js')(app, passport);
 // mongoose.connect(uristring, function(err, res) {
 // 	if(err) {
 // 		console.log('ERROR connecting to: ' + uristring + '. ' + err);

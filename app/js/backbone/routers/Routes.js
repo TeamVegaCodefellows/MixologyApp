@@ -13,7 +13,7 @@ module.exports = Backbone.Router.extend({
     initialize: function () {
         console.log('initialized');
     },
-    
+
     renderIndex: function () {
         var indexView = new IndexView();
         $('body').empty();
@@ -27,7 +27,7 @@ module.exports = Backbone.Router.extend({
             success: function(model){
                 console.log(model);
             }
-        }); 
+        });
     },
 
     getResults: function (ingredient, tag) {
