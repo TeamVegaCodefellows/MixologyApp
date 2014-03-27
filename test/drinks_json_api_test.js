@@ -94,7 +94,7 @@ describe('Drinks JSON api', function(){
   });
 
   it('can find a drink', function(done){
-    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'vodka' + '/' + 'brunch').end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'brunch' + '/' + 'vodka').end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body[0].name).to.be.eql(bloodyMary.name);
         expect(res.body[0].description).to.be.eql(bloodyMary.description);
