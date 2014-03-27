@@ -47,26 +47,26 @@ describe('Questions JSON api', function(){
     "random" : 3
   };
 
-  it('can create a new first question', function(done){
-    superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
-      .send(entry)
-      .end(function(e, res){
-        expect(e).to.eql(null);
-        expect(res.body.question).to.be.eql("this is a first question");
-        expect(res.body.choices[0].label).to.be.eql("test");
-        done();
-      });
-  });
+  // it('can create a new first question', function(done){
+  //   superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
+  //     .send(entry)
+  //     .end(function(e, res){
+  //       expect(e).to.eql(null);
+  //       expect(res.body.question).to.be.eql("this is a first question");
+  //       expect(res.body.choices[0].label).to.be.eql("test");
+  //       done();
+  //     });
+  // });
 
-  it('can create a new second question', function(done){
-    superagent.post('http://localhost:3000/api/v1/createSecondQuestion')
-      .send(entry2)
-      .end(function(e, res){
-        expect(e).to.eql(null);
-        expect(res.body.choices[0].label).to.be.eql("test");
-        done();
-      });
-  });
+  // it('can create a new second question', function(done){
+  //   superagent.post('http://localhost:3000/api/v1/createSecondQuestion')
+  //     .send(entry2)
+  //     .end(function(e, res){
+  //       expect(e).to.eql(null);
+  //       expect(res.body.choices[0].label).to.be.eql("test");
+  //       done();
+  //     });
+  // });
 
   it('can get a random first question', function(done){
     superagent.get('http://localhost:3000/api/v1/getFirstQuestion').end(function(e, res){

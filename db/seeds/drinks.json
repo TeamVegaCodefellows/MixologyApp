@@ -4,7 +4,7 @@
     "description":"This fabulous recipe for a menning mimosa is a perfect cocktail to serve at any celebration.",
     "ingredients":"6 tablespoons freshly squeezed orange juice 2 tablespoons freshly squeezed lemon juice 2 tablespoons orange flavored liqueur, such as Grand Marnier Prosecco, chilled Fresh mint leaf",
     "directions":"In a Champagne flute, mix together orange juice, lemon juice, and liqueur. Fill with Prosecco. Garnish with mint leaf and serve immediately.",
-    "tag":"brunch",
+    "tag":"Easy",
     "servings":1,
     "img":""
   },
@@ -13,7 +13,7 @@
     "description":"Semifreddo means \"half cold\" in Italian. Here it refers to the slushy mixture that brings texture and flavor to this classic Champagne cocktail.",
     "ingredients":"1 cup peeled, chopped peaches, frozen until hardened 1/4 cup peach schnapps 3/4 cup plus 2 tablespoons chilled Champagne or sparkling white wine 2 tablespoons superfine sugar 1 cup small ice cubes Peach slices, for garnish",
     "directions":"Blend peaches, peach schnapps, 2 tablespoons Champagne, the sugar, and ice in a blender until smooth. Divide mixture between 2 glasses; top off each glass with 1/4 cup plus 2 tablespoons Champagne, and serve.",
-    "tag":"brunch",
+    "tag":"Easy",
     "servings":2,
     "img":""
   },
@@ -22,7 +22,7 @@
     "description":"This recipe for spicy, refreshing Bloody Marys is a perfect accompaniment to eggs benedict or other brunch favorites.",
     "ingredients":"4 cups tomato juice Juice of 2 large lemons 1 to 2 tablespoons Worcestershire sauce 1 heaping tablespoon prepared horseradish 1 1/2 cloves garlic, passed through a garlic press 2 teaspoons coarsely ground pepper 1/4 to 1/2 teaspoon Tabasco sauce Unflavored vodka, to taste Lemon wedges, for serving Celery sticks, for serving and munching",
     "directions":"STEP 1 Place tomato juice in a large container with a tight-fitting lid. Add lemon juice, Worcestershire sauce, horseradish, garlic, pepper, and Tabasco; shake vigorously. Taste, and adjust for seasoning; the mixture should be quite spicy.  STEP 2 Pour 1 part vodka and 3 parts Bloody Mary mix over ice in a shaker. Shake well. Pour into glasses. Squeeze a wedge of lemon over drink (do not subsequently stir or shake drink), discard used wedge. Garnish with a large stick of celery (reserve extra stalks for munching) and a large lemon wedge.",
-    "tag":"brunch",
+    "tag":"Classy",
     "servings":6,
     "img":""
   },
@@ -31,7 +31,7 @@
     "description":"Try serving this classic cocktail at your next gathering.",
     "ingredients":"2 1/2 ounces bourbon or rye 1/2 ounce sweet vermouth 2 dashes Angostura bitters Ice cubes Maraschino cherry, for garnish",
     "directions":"Shake bourbon, vermouth, and bitters over ice. Strain into a cocktail glass; garnish with cherry.",
-    "tag":"classic",
+    "tag":"Classy",
     "servings":1,
     "img":""
   },
@@ -40,7 +40,7 @@
     "description":"Besides being an incredibly well-balanced drink, it’s also a cocktail that’s hard to make badly—and this means that no matter where in the world you happen to be, if you order a Negroni you’re more or less guaranteed a great quaff. Try one. It won’t be your last.",
     "ingredients":"1 ounce gin 1 ounce Campari 1 ounce sweet vermouth Orange twist, for garnish",
     "directions":"Pour all ingredients into an ice-filled mixing glass. Stir well. Strain into a cocktail glass. (Alternatively, combine ingredients in a tumbler and serve in the same glass.) Garnish with an orange twist.",
-    "tag":"classic",
+    "tag":"Bold",
     "servings":1,
     "img":""
   },
@@ -49,7 +49,7 @@
     "description":"The less vermouth in it, the drier the martini.",
     "ingredients":"3/4 cup vodka or gin 2 teaspoons dry vermouth Cocktail olives",
     "directions":"In a cocktail shaker half full of ice cubes, combine gin or vodka and vermouth. Shake well, and strain into martini glasses. Garnish with olives, and serve.",
-    "tag":"classic",
+    "tag":"Bold",
     "servings":4,
     "img":""
   },
