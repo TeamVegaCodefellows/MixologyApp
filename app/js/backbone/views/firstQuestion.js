@@ -6,10 +6,18 @@ module.exports = Backbone.View.extend({
 		this.render();
 	},
 
+	events: {
+		'click #tag' : 'getTag'
+	},
+
+	getTag: function(e) {
+		var tag = $(e.currentTarget).attr('class');
+		Backbone.history.navigate('secondQuestion/'+ tag,
+			{trigger:true});
+	},
+
 	render: function() {
-		console.log(this.model.toJSON());
 		var index = template(this.model.toJSON());
-		// console.log(index);
 		this.$el.html(index);
 		return this;
 	}
