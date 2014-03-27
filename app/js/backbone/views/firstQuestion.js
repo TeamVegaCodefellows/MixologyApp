@@ -7,9 +7,7 @@ module.exports = Backbone.View.extend({
 	},
 
 	render: function() {
-		console.log(this.model.toJSON());
 		var index = template(this.model.toJSON());
-		// console.log(index);
 		this.$el.html(index);
 		return this;
 	}

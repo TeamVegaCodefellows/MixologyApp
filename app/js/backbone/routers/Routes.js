@@ -7,29 +7,22 @@ var FirstQuestionView = require('../views/firstQuestion.js');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        "test": "test",
         "results/:ingredient/:tag": "getResults",
-        "":"renderIndex"
+        "":"showFirstQuestion"
     },
+
     initialize: function () {
         console.log('initialized');
     },
     
-    renderIndex: function () {
-        // var indexView = new IndexView();
-        // $('body').empty();
-        // $('body').append(indexView.el);
-    },
-
-    test: function() {
-        console.log('here');
+    showFirstQuestion: function() {
         var firstQuestion = new FirstQuestion();
         firstQuestion.fetch({
             success: function(model){
                 var firstQuestionView = new FirstQuestionView({
                   model:firstQuestion
                 });
-                console.log(firstQuestionView.el);
+                $('.Result').empty();
                 $('.Question').html(firstQuestionView.el);
             }
         });
@@ -40,7 +33,8 @@ module.exports = Backbone.Router.extend({
             var drinkCollectionsView = new DrinkCollectionsView({
                 collection: drinkCollection
             });
-            $('.Results').html(drinkCollectionsView.el);
+            $('.Question').empty();
+            $('.Result').html(drinkCollectionsView.el);
         }
 
         var drinkCollection = new DrinkCollection([], {
@@ -53,5 +47,4 @@ module.exports = Backbone.Router.extend({
             }
         })
     },
-
 });
