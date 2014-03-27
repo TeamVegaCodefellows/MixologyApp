@@ -26,7 +26,7 @@ app.configure('development', function() {
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
 
-require('./app/js/backbone/routers/Routes.js')(app, passport); // load routes and pass in app and fully configured passport
+require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
 var drinks = require('./api/routes/drinkRoutes');
 var questions = require('./api/routes/questionRoutes');
