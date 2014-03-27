@@ -1,7 +1,7 @@
 [
 	{
 		"question" : "What sort of flavors do you like?",
-		"options" : [
+		"choices" : [
 			{
 				"label" : "Clean",
 				"ingredient" : "Vodka"
@@ -19,7 +19,7 @@
 	},
 	{
 		"question" : "My favorite food is season is - ",
-		"options" : [
+		"choices" : [
 			{
 				"label" : "Spring",
 				"ingredient" : "Vodka"

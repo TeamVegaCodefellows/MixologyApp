@@ -70,6 +70,7 @@ describe('Questions JSON api', function(){
 
   it('can get a random first question', function(done){
     superagent.get('http://localhost:3000/api/v1/getFirstQuestion').end(function(e, res){
+        console.log(res.body);
         expect(e).to.eql(null);
         expect(res.body.question).to.not.be.eql(null || undefined);
         done();

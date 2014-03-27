@@ -1,7 +1,7 @@
 [
 	{
 		"question" : "What's on your mind?",
-		"options" : [
+		"choices" : [
 			{
 				"label" : "Snuggy",
 				"tag" : "Easy"
@@ -19,7 +19,7 @@
 	},
 	{
 		"question" : "How are you feeling today?",
-		"options" : [
+		"choices" : [
 			{
 				"label" : "Happy",
 				"tag" : "Easy"
