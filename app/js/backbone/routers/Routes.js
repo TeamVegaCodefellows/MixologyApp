@@ -1,7 +1,7 @@
 var Drink = require('../models/Drink.js');
 var DrinkCollection = require('../models/DrinkCollections.js');
 var DrinkCollectionsView = require('../views/DrinkCollectionsView.js');
-var IndexView = require('../views/index.js');
+var IndexView = require('../views/IndexView.js');
 var FirstQuestion = require('../models/Question.js');
 var FirstQuestionView = require('../views/firstQuestion.js');
 
@@ -16,17 +16,21 @@ module.exports = Backbone.Router.extend({
     },
     
     renderIndex: function () {
-        var indexView = new IndexView();
-        $('body').empty();
-        $('body').append(indexView.el);
+        // var indexView = new IndexView();
+        // $('body').empty();
+        // $('body').append(indexView.el);
     },
 
     test: function() {
+        console.log('here');
         var firstQuestion = new FirstQuestion();
         firstQuestion.fetch({
             success: function(model){
-                var firstQuestionView = new FirstQuestionView({model:firstQuestion});
-                $('body').append(firstQuestionView.el);
+                var firstQuestionView = new FirstQuestionView({
+                  model:firstQuestion
+                });
+                console.log(firstQuestionView.el);
+                $('.Question').html(firstQuestionView.el);
             }
         });
     },
@@ -36,8 +40,7 @@ module.exports = Backbone.Router.extend({
             var drinkCollectionsView = new DrinkCollectionsView({
                 collection: drinkCollection
             });
-            $('body').empty();
-            $('body').append(drinkCollectionsView.el);
+            $('.Results').html(drinkCollectionsView.el);
         }
 
         var drinkCollection = new DrinkCollection([], {

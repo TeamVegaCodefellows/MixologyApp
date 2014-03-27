@@ -242,6 +242,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
-  grunt.registerTask('build:dev', ['clean:dev', 'copy:dev', 'sass:dev', 'browserify:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'browserify:dev', 'copy:dev']);
   grunt.registerTask('server:notest', ['build:dev', 'express:dev', 'watch:notest'])
 };
