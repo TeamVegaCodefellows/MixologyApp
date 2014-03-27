@@ -5,11 +5,6 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var flash = require('connect-flash');
-//var uristring =
-//process.env.MONGOLAB_URI ||
-//'mongodb://localhost/mixology-development';
-//
-//var theport = process.env.PORT || 3000;
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
@@ -25,36 +20,14 @@ app.configure(function() {
 });
 
 require('./app/js/backbone/routers/Routes.js')(app, passport);
-// mongoose.connect(uristring, function(err, res) {
-// 	if(err) {
-// 		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-// 	} else {
-// 		console.log('Successfully connected to: ' + uristring);
-// 	}
-// });
-
-// var users = require('./api/routes/drinkRoutes');
 
 app.configure('development', function() {
 	app.use(express.errorHandler());
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
 
-
-//mongoose.connect(uristring, function(err, res) {
-//	if(err) {
-//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-//	} else {
-//		console.log('Successfully connected to: ' + uristring);
-//	}
-//});
-
-
 var drinks = require('./api/routes/drinkRoutes');
 var questions = require('./api/routes/questionRoutes');
-
-// Users routes
-// app.get('/api/v1/users', users.collection);
 
 app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
 app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
@@ -63,11 +36,7 @@ app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
 app.get('/api/v1/getDrink/:ingredient/:tag', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
-// app.put('/api/v1/users/:id', users.update);
-// app.delete('/api/v1/users/:id', users.destroy);
-
-
 var server = http.createServer(app);
 server.listen(3000, function() {
-	console.log("App listening on port 3000");
-})
+	console.log('App listening on port 3000');
+});
