@@ -10,67 +10,66 @@ var app = require('../server').app;
 describe('Questions JSON api', function(){
 
   var entry = {
-    "question" : "this is a first question",
+    "question" : "What's your favorite color?",
     "choices" : [
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Blue",
+        "tag" : "Easy"
       },
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Black",
+        "tag" : "Classy"
       },
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Red",
+        "tag" : "Bold"
       }
     ],
     "random" : 3
   };
 
   var entry2 = {
-    "question" : "this is a second question",
+    "question" : "What's your favorite food?",
     "choices" : [
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Pizza",
+        "ingredient" : "Beer"
       },
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Pasta",
+        "ingredient" : "Wine"
       },
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Steaks",
+        "ingredient" : "Whiskey"
       }
     ],
     "random" : 3
   };
 
-  // it('can create a new first question', function(done){
-  //   superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
-  //     .send(entry)
-  //     .end(function(e, res){
-  //       expect(e).to.eql(null);
-  //       expect(res.body.question).to.be.eql("this is a first question");
-  //       expect(res.body.choices[0].label).to.be.eql("test");
-  //       done();
-  //     });
-  // });
+  it('can create a new first question', function(done){
+    superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
+      .send(entry)
+      .end(function(e, res){
+        expect(e).to.eql(null);
+        expect(res.body.question).to.be.eql("What's your favorite color?");
+        expect(res.body.choices[0].label).to.be.eql("Blue");
+        done();
+      });
+  });
 
-  // it('can create a new second question', function(done){
-  //   superagent.post('http://localhost:3000/api/v1/createSecondQuestion')
-  //     .send(entry2)
-  //     .end(function(e, res){
-  //       expect(e).to.eql(null);
-  //       expect(res.body.choices[0].label).to.be.eql("test");
-  //       done();
-  //     });
-  // });
+  it('can create a new second question', function(done){
+    superagent.post('http://localhost:3000/api/v1/createSecondQuestion')
+      .send(entry2)
+      .end(function(e, res){
+        expect(e).to.eql(null);
+        expect(res.body.choices[0].label).to.be.eql("Pizza");
+        done();
+      });
+  });
 
   it('can get a random first question', function(done){
     superagent.get('http://localhost:3000/api/v1/getFirstQuestion').end(function(e, res){
-        console.log(res.body);
         expect(e).to.eql(null);
         expect(res.body.question).to.not.be.eql(null || undefined);
         done();

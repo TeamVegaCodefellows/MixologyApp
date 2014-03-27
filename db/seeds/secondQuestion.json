@@ -18,7 +18,7 @@
 		"random" : 1
 	},
 	{
-		"question" : "My favorite food is season is - ",
+		"question" : "My favorite season is - ",
 		"choices" : [
 			{
 				"label" : "Spring",

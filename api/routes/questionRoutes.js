@@ -15,7 +15,7 @@ var SecondQuestion = require('../models/SecondQuestion');
 
 exports.getFirstQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var rand = Math.ceil(Math.random()*2);
+  var rand = Math.ceil(Math.random()*3);
   FirstQuestion.findOne({ random: rand }, function(err, responseQuestion) {
     if(err) {
       res.send(500, {'error': err});
@@ -27,7 +27,7 @@ exports.getFirstQuestion = function(req, res) {
 
 exports.getSecondQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var rand = Math.ceil(Math.random()*2);
+  var rand = Math.ceil(Math.random()*3);
   SecondQuestion.findOne({ random: rand }, function(err, responseQuestion) {
     if(err) {
       res.send(500, {'error': err});
