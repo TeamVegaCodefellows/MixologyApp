@@ -5,6 +5,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var flash = require('connect-flash');
+// require('./config/passport')(passport); // pass for passport configuration
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
@@ -17,14 +18,15 @@ app.configure(function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(flash());
+	app.use(app.router);
 });
-
-require('./app/js/backbone/routers/Routes.js')(app, passport);
 
 app.configure('development', function() {
 	app.use(express.errorHandler());
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
+
+require('./app/js/backbone/routers/Routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
 var drinks = require('./api/routes/drinkRoutes');
 var questions = require('./api/routes/questionRoutes');
