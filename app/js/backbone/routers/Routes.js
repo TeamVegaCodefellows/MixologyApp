@@ -2,10 +2,11 @@ var Drink = require('../models/Drink.js');
 var DrinkCollection = require('../models/DrinkCollections.js');
 var DrinkCollectionsView = require('../views/DrinkCollectionsView.js');
 var IndexView = require('../views/index.js');
+var FirstQuestion = require('../models/Question.js');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        "test/:id": "test",
+        "test": "test",
         "results/:ingredient/:tag": "getResults",
         "":"renderIndex"
     },
@@ -18,6 +19,17 @@ module.exports = Backbone.Router.extend({
         $('body').empty();
         $('body').append(indexView.el);
     },
+
+    test: function() {
+        var firstQuestion = new FirstQuestion();
+        console.log(firstQuestion);
+        firstQuestion.fetch({
+            success: function(model){
+                console.log(model);
+            }
+        }); 
+    },
+
     getResults: function (ingredient, tag) {
         function renderDrinkCollection() {
             var drinkCollectionsView = new DrinkCollectionsView({
