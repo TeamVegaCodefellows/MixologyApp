@@ -1,56 +1,137 @@
 [
-	{
-		"Question" : "What's on your mind?",
-		"First option" : [
-			{
-				"Label" : "Snuggy"
-			},
-			{
-				"Tag" : "Easy"
-			}
-		],
-		"Second option" : [
-			{
-				"Label" : "Cigars"
-			},
-			{
-				"Tag" : "Classy"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Hardcore Parkour"
-			},
-			{
-				"Tag" : "Bold"
-			}
-		]		
-	},
-	{
-		"Question" : "How are you feeling today?",
-		"First option" : [
-			{
-				"Label" : "Happy"
-			},
-			{
-				"Tag" : "Easy"
-			}
-		],
-		"Second option" : [
-			{
-				"Label" : "Indifferent"
-			},
-			{
-				"Tag" : "Classy"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Mad"
-			},
-			{
-				"Tag" : "Bold"
-			}
-		]		
-	}
+    {
+        "Question": "What's on your mind?",
+        "First option": [
+            {
+                "Label": "Classy"
+   },
+            {
+                "Tag": "Whiskey"
+   }
+  ],
+        "Second option": [
+            {
+                "Label": "Party"
+   },
+            {
+                "Tag": "Gin"
+   }
+  ],
+        "Third option": [
+            {
+                "Label": "Business"
+   },
+            {
+                "Tag": "Vokda"
+   }
+  ]
+ },
+    {
+        "Question": "What are you goals for tonight?",
+        "First option": [
+            {
+                "Label": "Classy"
+   },
+            {
+                "Tag": "Whiskey"
+   }
+  ],
+        "Second option": [
+            {
+                "Label": "Business"
+   },
+            {
+                "Tag": "Rum"
+   }
+  ],
+        "Third option": [
+            {
+                "Label": "Party"
+   },
+            {
+                "Tag": "Gin"
+   }
+  ]
+ },
+    {
+        "Question": "What will you wear to bed tonight?",
+        "First option": [
+            {
+                "Label": "Classy"
+   },
+            {
+                "Tag": "Whiskey"
+   }
+  ],
+        "Second option": [
+            {
+                "Label": "Party"
+   },
+            {
+                "Tag": "Gin"
+   }
+  ],
+        "Third option": [
+            {
+                "Label": "Business"
+   },
+            {
+                "Tag": "Vokda"
+   }
+  ]
+ },
+    {
+        "Question": "What are you wearing?",
+        "First option": [
+            {
+                "Label": "Classy"
+   },
+            {
+                "Tag": "Whiskey"
+   }
+  ],
+        "Second option": [
+            {
+                "Label": "Party"
+   },
+            {
+                "Tag": "Gin"
+   }
+  ],
+        "Third option": [
+            {
+                "Label": "Business"
+   },
+            {
+                "Tag": "Vokda"
+   }
+  ]
+ },
+    {
+        "Question": "Which movie could you watch right now?",
+        "First option": [
+            {
+                "Label": "Classy"
+   },
+            {
+                "Tag": "Whiskey"
+   }
+  ],
+        "Second option": [
+            {
+                "Label": "Party"
+   },
+            {
+                "Tag": "Gin"
+   }
+  ],
+        "Third option": [
+            {
+                "Label": "Business"
+   },
+            {
+                "Tag": "Vokda"
+   }
+  ]
+ }
 ]

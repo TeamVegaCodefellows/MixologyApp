@@ -1,9 +1,9 @@
 [
 	{
-		"Question" : "What sort of flavors do you like?",
+		"Question" : "Which food are you in the mood for?",
 		"First option" : [
 			{
-				"Label" : "Clean"
+				"Label" : "Classy"
 			},
 			{
 				"Ingredient" : "Vodka"
@@ -11,7 +11,7 @@
 		],
 		"Second option" : [
 			{
-				"Label" : "Spicy"
+				"Label" : "Business"
 			},
 			{
 				"Ingredient" : "Gin"
@@ -19,7 +19,7 @@
 		],		
 		"Third option" : [
 			{
-				"Label" : "Bold"
+				"Label" : "Party"
 			},
 			{
 				"Ingredient" : "Whiskey"
@@ -27,10 +27,10 @@
 		]		
 	},
 	{
-		"Question" : "My favorite food is season is - ",
+		"Question" : "What’s the atmosphere tonight?",
 		"First option" : [
 			{
-				"Label" : "Spring"
+				"Label" : "Classy"
 			},
 			{
 				"Ingredient" : "Vodka"
@@ -38,7 +38,7 @@
 		],
 		"Second option" : [
 			{
-				"Label" : "Summer"
+				"Label" : "Business"
 			},
 			{
 				"Ingredient" : "Gin"
@@ -46,11 +46,65 @@
 		],		
 		"Third option" : [
 			{
-				"Label" : "Winter"
+				"Label" : "Party"
 			},
 			{
 				"Ingredient" : "Whiskey"
 			}
 		]		
-	}	
+	},	
+    {
+		"Question" : "You are about to get into a fight, what is it?",
+		"First option" : [
+			{
+				"Label" : "Classy"
+			},
+			{
+				"Ingredient" : "Vodka"
+			}
+		],
+		"Second option" : [
+			{
+				"Label" : "Business"
+			},
+			{
+				"Ingredient" : "Gin"
+			}
+		],		
+		"Third option" : [
+			{
+				"Label" : "Party"
+			},
+			{
+				"Ingredient" : "Whiskey"
+			}
+		]		
+	},
+     {
+		"Question" : "If you were to dance right now, what would it be?",
+		"First option" : [
+			{
+				"Label" : "Classy"
+			},
+			{
+				"Ingredient" : "Vodka"
+			}
+		],
+		"Second option" : [
+			{
+				"Label" : "Business"
+			},
+			{
+				"Ingredient" : "Gin"
+			}
+		],		
+		"Third option" : [
+			{
+				"Label" : "Party"
+			},
+			{
+				"Ingredient" : "Whiskey"
+			}
+		]		
+	}
 ]
