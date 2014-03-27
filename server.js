@@ -1,9 +1,10 @@
 var express  = require('express');
 var app      = express();
 var http     = require('http');
-var mongoose = require('mongoose');
+var passport = require('passport');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
+var flash = require('connect-flash');
 //var uristring =
 //process.env.MONGOLAB_URI ||
 //'mongodb://localhost/mixology-development';
@@ -18,6 +19,9 @@ app.configure(function() {
 	var session_secret = process.env.OAA_SESSION_SECRET || 'CHANGEMECHANGEMECHANGEMECHANGEME';
 	app.use(express.session({secret:session_secret}));
 	app.use(express.methodOverride());
+	app.use(passport.initialize());
+	app.use(passport.session());
+	app.use(flash());
 });
 
 // mongoose.connect(uristring, function(err, res) {
