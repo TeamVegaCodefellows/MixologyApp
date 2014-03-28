@@ -1,11 +1,16 @@
 var express  = require('express');
 var app      = express();
+var cons 		 = require('consolidate');
 var http     = require('http');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var flash = require('connect-flash');
 // require('./config/passport')(passport); // pass for passport configuration
+
+app.engine('hbs', cons.handlebars);
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/app/templates');
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/build'));
