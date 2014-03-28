@@ -40,7 +40,7 @@ app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
 app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
 app.get('/api/v1/getFirstQuestion', questions.getFirstQuestion);
 app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
-app.get('/api/v1/getDrink/:ingredient/:tag', drinks.findById);
+app.get('/api/v1/getDrink/:tag/:ingredient', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
 var server = http.createServer(app);

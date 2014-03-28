@@ -10,38 +10,38 @@ var app = require('../server').app;
 describe('Questions JSON api', function(){
 
   var entry = {
-    "question" : "this is a first question",
+    "question" : "What's your favorite color?",
     "choices" : [
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Blue",
+        "tag" : "Easy"
       },
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Black",
+        "tag" : "Classy"
       },
       {
-        "label" : "test",
-        "tag" : "test"
+        "label" : "Red",
+        "tag" : "Bold"
       }
     ],
     "random" : 3
   };
 
   var entry2 = {
-    "question" : "this is a second question",
+    "question" : "What's your favorite food?",
     "choices" : [
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Pizza",
+        "ingredient" : "Beer"
       },
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Pasta",
+        "ingredient" : "Wine"
       },
       {
-        "label" : "test",
-        "ingredient" : "test"
+        "label" : "Steaks",
+        "ingredient" : "Whiskey"
       }
     ],
     "random" : 3
@@ -52,8 +52,8 @@ describe('Questions JSON api', function(){
       .send(entry)
       .end(function(e, res){
         expect(e).to.eql(null);
-        expect(res.body.question).to.be.eql("this is a first question");
-        expect(res.body.choices[0].label).to.be.eql("test");
+        expect(res.body.question).to.be.eql("What's your favorite color?");
+        expect(res.body.choices[0].label).to.be.eql("Blue");
         done();
       });
   });
@@ -63,7 +63,7 @@ describe('Questions JSON api', function(){
       .send(entry2)
       .end(function(e, res){
         expect(e).to.eql(null);
-        expect(res.body.choices[0].label).to.be.eql("test");
+        expect(res.body.choices[0].label).to.be.eql("Pizza");
         done();
       });
   });

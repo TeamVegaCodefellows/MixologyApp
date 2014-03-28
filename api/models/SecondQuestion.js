@@ -8,7 +8,7 @@ var schema = new mongoose.Schema({
     choices : [
       {
         label: String,
-        tag : String
+        ingredient : String
       }
     ],
     random: Number

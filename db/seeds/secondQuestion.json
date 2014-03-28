@@ -1,7 +1,8 @@
 [
 	{
+
 		"question" : "What sort of flavors do you like?",
-		"options" : [
+		"choices" : [
 			{
 				"label" : "Clean",
 				"ingredient" : "Vodka"
@@ -16,23 +17,5 @@
 			}
 		],
 		"random" : 1
-	},
-	{
-		"question" : "My favorite food is season is - ",
-		"options" : [
-			{
-				"label" : "Spring",
-				"ingredient" : "Vodka"
-			},
-			{
-				"label" : "Summer",
-				"ingredient" : "Gin"
-			},
-			{
-				"label" : "Winter",
-				"ingredient" : "Whiskey"
-			}
-		],
-		"random" : 2
 	}
 ]

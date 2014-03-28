@@ -10,8 +10,8 @@ module.exports = Backbone.View.extend({
 	render: function() {
 		var index = template("");
 		this.$el.html(index);
-        firstQuestion = new FirstQuestion();
-        this.$el.append(firstQuestion.el);
+    var firstQuestion = new FirstQuestion();
+    this.$el.append(firstQuestion.el);
 		return this;
 	}
 

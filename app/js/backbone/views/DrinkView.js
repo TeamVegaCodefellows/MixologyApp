@@ -4,7 +4,7 @@ module.exports = Backbone.View.extend({
 		this.render();
 	},
 	render: function() {
-		var template = require('../../../templates/test_template.hbs');
+		var template = require('../../../templates/resultsView.hbs');
 		this.$el.html(template(this.model.toJSON()));
 		return this;
 	}
