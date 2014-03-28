@@ -6,7 +6,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var flash = require('connect-flash');
-// require('./config/passport')(passport); // pass for passport configuration
+require('./config/passport')(passport); // pass for passport configuration
 
 app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs');
