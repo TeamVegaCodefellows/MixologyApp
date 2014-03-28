@@ -1,39 +1,94 @@
-
+[
 	{
-		"question" : "What's on your mind?",
+		"question" : "Which of these cities do you want to visit right now?",
 		"choices" : [
 			{
-				"label" : "Snuggy",
-				"tag" : "Easy"
+				"label" : "Paris",
+				"tag" : "classy"
 			},
 			{
-				"label" : "Cigars",
-				"tag" : "Classy"
+				"label" : "Cancun",
+				"tag" : "party"
 			},
 			{
-				"label" : "Hardcore Parkour",
-				"tag" : "Bold"
+				"label" : "London",
+				"tag" : "business"
+			}
+		],
+		"random" : 1
+	},
+{
+		"question" : "What will you wear to bed tonight?",
+		"choices" : [
+			{
+				"label" : "Nothing",
+				"tag" : "party"
+			},
+			{
+				"label" : "PJs",
+				"tag" : "business"
+			},
+			{
+				"label" : "t shirt",
+				"tag" : "classy"
+			}
+		],
+		"random" : 1
+	},
+{
+		"question" : "What are you wearing?",
+		"choices" : [
+			{
+				"label" : "Black dress/ or tie",
+				"tag" : "classy"
+			},
+			{
+				"label" : "bikini",
+				"tag" : "party"
+			},
+			{
+				"label" : "business casual",
+				"tag" : "business"
+			}
+		],
+		"random" : 1
+	},
+{
+		"question" : "Which movie could you watch right now?",
+		"choices" : [
+			{
+				"label" : "Talladega Nights",
+				"tag" : "party"
+			},
+			{
+				"label" : "The Devil Wears Prada",
+				"tag" : "classy"
+			},
+			{
+				"label" : "Godfather",
+				"tag" : "business"
 			}
 		],
 		"random" : 1
 	},
 	{
-		"question" : "How are you feeling today?",
+		"question" : "What are you goals for tonight?",
 		"choices" : [
 			{
-				"label" : "Happy",
-				"tag" : "Easy"
+				"label" : "Get drunk",
+				"tag" : "party"
 			},
 			{
-				"label" : "Indifferent",
-				"tag" : "Classy"
+				"label" : "Meet people",
+				"tag" : "business"
 			},
 			{
-				"label" : "Mad",
-				"tag" : "Bold"
+				"label" : "Relax and enjoy",
+				"tag" : "classy"
 			}
 		],
 		"random" : 2
 	}
+
 ]
 

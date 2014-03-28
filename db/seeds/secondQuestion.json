@@ -1,19 +1,76 @@
 [
 	{
 
-		"question" : "What sort of flavors do you like?",
+		"question" : "Which food are you in the mood for?",
 		"choices" : [
 			{
-				"label" : "Clean",
-				"ingredient" : "Vodka"
+				"label" : "pizza",
+				"ingredient" : "rum"
 			},
 			{
-				"label" : "Spicy",
-				"ingredient" : "Gin"
+				"label" : "steak",
+				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "Bold",
-				"ingredient" : "Whiskey"
+				"label" : "tuna tartar",
+				"ingredient" : "gin"
+			}
+		],
+		"random" : 1
+	},
+    {
+
+		"question" : "You are about to get into a fight, what is it?",
+		"choices" : [
+			{
+				"label" : "Pillow fight",
+				"ingredient" : "champagne"
+			},
+			{
+				"label" : "Wrestling in a mud pitt",
+				"ingredient" : "rum"
+			},
+			{
+				"label" : "Fight club style",
+				"ingredient" : "whiskey"
+			}
+		],
+		"random" : 1
+	},
+    {
+
+		"question" : "If you were to dance right now, what would it be?",
+		"choices" : [
+			{
+				"label" : "Ballroom dancing",
+				"ingredient" : "gin"
+			},
+			{
+				"label" : "Salsa",
+				"ingredient" : "rum"
+			},
+			{
+				"label" : "Dougie at a hip hop club",
+				"ingredient" : "whiskey"
+			}
+		],
+		"random" : 1
+	},
+    {
+
+		"question" : "What’s the atmosphere tonight?",
+		"choices" : [
+			{
+				"label" : "Dark and smokey",
+				"ingredient" : "whiskey"
+			},
+			{
+				"label" : "Flashing lights",
+				"ingredient" : "vodka"
+			},
+			{
+				"label" : "Light and airy",
+				"ingredient" : "gin"
 			}
 		],
 		"random" : 1
