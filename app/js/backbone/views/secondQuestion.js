@@ -2,20 +2,20 @@ var template = require('../../../templates/secondQuestion.hbs');
 
 module.exports = Backbone.View.extend({
 
-	initialize: function(options) {
-		this.options = options || {};
-		this.render();
-	},
+	initialize: function() {},
 
 	events: {
 		'click #ingredient' : 'getIngredient'
 	},
 
+	setTag: function(tag) {
+		this.tag = tag;
+	},
+
 	getIngredient: function(e) {
 		var ingredient = $(e.currentTarget).attr('class');
-		console.log(ingredient, this.options.tag);
-		Backbone.history.navigate('results/'+ this.options.tag +'/'+ ingredient,
-			{trigger:true});
+		console.log(this.tag, ingredient);
+		Backbone.history.navigate( 'results/'+ this.tag +'/'+ ingredient, {trigger:true} );
 	},
 
 	render: function() {
