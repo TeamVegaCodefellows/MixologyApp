@@ -1,137 +1,39 @@
-[
-    {
-        "Question": "Which of these cities do you want to visit right now?",
-        "First option": [
-            {
-                "Label": "Paris"
-   },
-            {
-                "Tag": "classy"
-   }
-  ],
-        "Second option": [
-            {
-                "Label": "Cancun"
-   },
-            {
-                "Tag": "party"
-   }
-  ],
-        "Third option": [
-            {
-                "Label": "London"
-   },
-            {
-                "Tag": "business"
-   }
-  ]
- },
-    {
-        "Question": "What are you goals for tonight?",
-        "First option": [
-            {
-                "Label": "Get drunk."
-   },
-            {
-                "Tag": "party"
-   }
-  ],
-        "Second option": [
-            {
-                "Label": "Meet people."
-   },
-            {
-                "Tag": "business"
-   }
-  ],
-        "Third option": [
-            {
-                "Label": "Relax and enjoy."
-   },
-            {
-                "Tag": "classy"
-   }
-  ]
- },
-    {
-        "Question": "What will you wear to bed tonight?",
-        "First option": [
-            {
-                "Label": "Nothing"
-   },
-            {
-                "Tag": "party"
-   }
-  ],
-        "Second option": [
-            {
-                "Label": "PJs"
-   },
-            {
-                "Tag": "business"
-   }
-  ],
-        "Third option": [
-            {
-                "Label": "t shirt"
-   },
-            {
-                "Tag": "classy"
-   }
-  ]
- },
-    {
-        "Question": "What are you wearing?",
-        "First option": [
-            {
-                "Label": "Black dress/ or tie"
-   },
-            {
-                "Tag": "classy"
-   }
-  ],
-        "Second option": [
-            {
-                "Label": "bikini"
-   },
-            {
-                "Tag": "party"
-   }
-  ],
-        "Third option": [
-            {
-                "Label": "business casual"
-   },
-            {
-                "Tag": "business"
-   }
-  ]
- },
-    {
-        "Question": "Which movie could you watch right now?",
-        "First option": [
-            {
-                "Label": "Talladega Nights"
-   },
-            {
-                "Tag": "party"
-   }
-  ],
-        "Second option": [
-            {
-                "Label": "The Devil Wears Prada"
-   },
-            {
-                "Tag": "classy"
-   }
-  ],
-        "Third option": [
-            {
-                "Label": "Godfather"
-   },
-            {
-                "Tag": "business"
-   }
-  ]
- }
+
+	{
+		"question" : "What's on your mind?",
+		"choices" : [
+			{
+				"label" : "Snuggy",
+				"tag" : "Easy"
+			},
+			{
+				"label" : "Cigars",
+				"tag" : "Classy"
+			},
+			{
+				"label" : "Hardcore Parkour",
+				"tag" : "Bold"
+			}
+		],
+		"random" : 1
+	},
+	{
+		"question" : "How are you feeling today?",
+		"choices" : [
+			{
+				"label" : "Happy",
+				"tag" : "Easy"
+			},
+			{
+				"label" : "Indifferent",
+				"tag" : "Classy"
+			},
+			{
+				"label" : "Mad",
+				"tag" : "Bold"
+			}
+		],
+		"random" : 2
+	}
 ]
+

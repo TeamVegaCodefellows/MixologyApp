@@ -21,7 +21,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         env: {
             options: {
 
@@ -160,42 +159,36 @@ module.exports = function (grunt) {
         },
         watch: {
             all: {
-                files: ['server.js', 'test/**.js'],
-                tasks: ['test']
+                files: ['server.js', 'test/**.js', 'app/**/*', 'api/**/*'],
+                options: {
+                  livereload: true
+                },
+                tasks: ['test', 'build:dev']
             },
             dev: {
                 files: ['app/js/model/**/*'],
                 tasks: ['server']
             },
-            sass: {
-                dist: {
-                    files: {
-                        'build/styles/main.css': 'app/styles/main.scss'
-                    }
-                },
-                dev: {
-                    options: {
-                        includePaths: ['app/styles/'],
-                        sourceComments: 'map'
-                    },
-                    files: {
-                        'build/styles/main.css': 'app/styles/main.scss'
-                    }
-                }
-            },
             backbone: {
                 files: ['app/js/backbone/**/*.js'],
                 tasks: ['build:dev', 'express:dev']
             },
-            express: {
-                files: ['server.js', 'api/**/*', 'app/**/*', 'app/js/*.js'],
-                tasks: ['build:dev', 'browserify:dev', 'express:dev'],
-                options: {
-                    // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
-                    // Without this option specified express won't be reloaded
-                    spawn: false
-                }
+            notest: {
+              files: ['server.js', 'test/**.js', 'app/**/*', 'api/**/*'],
+              options: {
+                livereload: true
+              },
+              tasks: ['build:dev']
             }
+            // express: {
+            //     files: ['server.js', 'api/**/*', 'app/**/*', 'app/js/*.js'],
+            //     tasks: ['build:dev', 'browserify:dev', 'express:dev'],
+            //     options: {
+            //         // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions.
+            //         // Without this option specified express won't be reloaded
+            //         spawn: false
+            //     }
+            // }
         },
         mongoimport: {
           options: {
@@ -216,7 +209,7 @@ module.exports = function (grunt) {
                       drop: true //optional
                   },
                   {
-                      name: 'firstQuestion',
+                      name: 'firstquestions',
                       type: 'json',
                       file: 'db/seeds/firstQuestion.json',
                       jsonArray: true, //optional
@@ -224,7 +217,7 @@ module.exports = function (grunt) {
                       drop: true //optional
                   },
                   {
-                      name: 'secondQuestion',
+                      name: 'secondquestions',
                       type: 'json',
                       file: 'db/seeds/secondQuestion.json',
                       jsonArray: true, //optional
@@ -245,9 +238,10 @@ module.exports = function (grunt) {
     });
 
 	grunt.registerTask('default',['express:dev', 'watch:express']);
-  grunt.registerTask('server', ['build:dev', 'express:dev','watch:backbone']);
+  grunt.registerTask('server', ['build:dev', 'express:dev','watch:all']);
   grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
   grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
   grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
   grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('server:notest', ['build:dev', 'express:dev', 'watch:notest'])
 };

@@ -3,7 +3,7 @@
   "description": "MIXOLOGY_APP",
   "version": "0.0.1",
   "dependencies": {
-    "express": "*",
+    "express": "~3.5.1",
     "mongodb": "*",
     "mongoose": "*",
     "newrelic": "^1.3.2",

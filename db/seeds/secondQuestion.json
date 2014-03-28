@@ -1,110 +1,21 @@
 [
 	{
-		"Question" : "Which food are you in the mood for?",
-		"First option" : [
+
+		"question" : "What sort of flavors do you like?",
+		"choices" : [
 			{
-				"Label" : "Pizza"
+				"label" : "Clean",
+				"ingredient" : "Vodka"
 			},
 			{
-				"Ingredient" : "rum"
+				"label" : "Spicy",
+				"ingredient" : "Gin"
+			},
+			{
+				"label" : "Bold",
+				"ingredient" : "Whiskey"
 			}
 		],
-		"Second option" : [
-			{
-				"Label" : "Steak"
-			},
-			{
-				"Ingredient" : "whiskey"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "tuna tartar"
-			},
-			{
-				"Ingredient" : "gin"
-			}
-		]		
-	},
-	{
-		"Question" : "What’s the atmosphere tonight?",
-		"First option" : [
-			{
-				"Label" : "Dark and smokey"
-			},
-			{
-				"Ingredient" : "whiskey"
-			}
-		],
-		"Second option" : [
-			{
-				"Label" : "Flashing lights"
-			},
-			{
-				"Ingredient" : "vodka"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Light and airy"
-			},
-			{
-				"Ingredient" : "gin"
-			}
-		]		
-	},	
-    {
-		"Question" : "You are about to get into a fight, what is it?",
-		"First option" : [
-			{
-				"Label" : "Pillow fight"
-			},
-			{
-				"Ingredient" : "champagne"
-			}
-		],
-		"Second option" : [
-			{
-				"Label" : "Wrestling in a mud pitt"
-			},
-			{
-				"Ingredient" : "rum"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Fight club style"
-			},
-			{
-				"Ingredient" : "Whiskey"
-			}
-		]		
-	},
-     {
-		"Question" : "If you were to dance right now, what would it be?",
-		"First option" : [
-			{
-				"Label" : "Ballroom dancing"
-			},
-			{
-				"Ingredient" : "gin"
-			}
-		],
-		"Second option" : [
-			{
-				"Label" : "Salsa"
-			},
-			{
-				"Ingredient" : "rum"
-			}
-		],		
-		"Third option" : [
-			{
-				"Label" : "Dougie at a hip hop club"
-			},
-			{
-				"Ingredient" : "Whiskey"
-			}
-		]		
+		"random" : 1
 	}
 ]
