@@ -1,28 +1,28 @@
 [
     {
-        "Question": "What's on your mind?",
+        "Question": "Which of these cities do you want to visit right now?",
         "First option": [
             {
-                "Label": "Classy"
+                "Label": "Paris"
    },
             {
-                "Tag": "Whiskey"
+                "Tag": "classy"
    }
   ],
         "Second option": [
             {
-                "Label": "Party"
+                "Label": "Cancun"
    },
             {
-                "Tag": "Gin"
+                "Tag": "party"
    }
   ],
         "Third option": [
             {
-                "Label": "Business"
+                "Label": "London"
    },
             {
-                "Tag": "Vokda"
+                "Tag": "business"
    }
   ]
  },
@@ -30,26 +30,26 @@
         "Question": "What are you goals for tonight?",
         "First option": [
             {
-                "Label": "Classy"
+                "Label": "Get drunk."
    },
             {
-                "Tag": "Whiskey"
+                "Tag": "party"
    }
   ],
         "Second option": [
             {
-                "Label": "Business"
+                "Label": "Meet people."
    },
             {
-                "Tag": "Rum"
+                "Tag": "business"
    }
   ],
         "Third option": [
             {
-                "Label": "Party"
+                "Label": "Relax and enjoy."
    },
             {
-                "Tag": "Gin"
+                "Tag": "classy"
    }
   ]
  },
@@ -57,26 +57,26 @@
         "Question": "What will you wear to bed tonight?",
         "First option": [
             {
-                "Label": "Classy"
+                "Label": "Nothing"
    },
             {
-                "Tag": "Whiskey"
+                "Tag": "party"
    }
   ],
         "Second option": [
             {
-                "Label": "Party"
+                "Label": "PJs"
    },
             {
-                "Tag": "Gin"
+                "Tag": "business"
    }
   ],
         "Third option": [
             {
-                "Label": "Business"
+                "Label": "t shirt"
    },
             {
-                "Tag": "Vokda"
+                "Tag": "classy"
    }
   ]
  },
@@ -84,26 +84,26 @@
         "Question": "What are you wearing?",
         "First option": [
             {
-                "Label": "Classy"
+                "Label": "Black dress/ or tie"
    },
             {
-                "Tag": "Whiskey"
+                "Tag": "classy"
    }
   ],
         "Second option": [
             {
-                "Label": "Party"
+                "Label": "bikini"
    },
             {
-                "Tag": "Gin"
+                "Tag": "party"
    }
   ],
         "Third option": [
             {
-                "Label": "Business"
+                "Label": "business casual"
    },
             {
-                "Tag": "Vokda"
+                "Tag": "business"
    }
   ]
  },
@@ -111,26 +111,26 @@
         "Question": "Which movie could you watch right now?",
         "First option": [
             {
-                "Label": "Classy"
+                "Label": "Talladega Nights"
    },
             {
-                "Tag": "Whiskey"
+                "Tag": "party"
    }
   ],
         "Second option": [
             {
-                "Label": "Party"
+                "Label": "The Devil Wears Prada"
    },
             {
-                "Tag": "Gin"
+                "Tag": "classy"
    }
   ],
         "Third option": [
             {
-                "Label": "Business"
+                "Label": "Godfather"
    },
             {
-                "Tag": "Vokda"
+                "Tag": "business"
    }
   ]
  }

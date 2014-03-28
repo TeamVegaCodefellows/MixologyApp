@@ -3,26 +3,26 @@
 		"Question" : "Which food are you in the mood for?",
 		"First option" : [
 			{
-				"Label" : "Classy"
+				"Label" : "Pizza"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"Ingredient" : "rum"
 			}
 		],
 		"Second option" : [
 			{
-				"Label" : "Business"
+				"Label" : "Steak"
 			},
 			{
-				"Ingredient" : "Gin"
+				"Ingredient" : "whiskey"
 			}
 		],		
 		"Third option" : [
 			{
-				"Label" : "Party"
+				"Label" : "tuna tartar"
 			},
 			{
-				"Ingredient" : "Whiskey"
+				"Ingredient" : "gin"
 			}
 		]		
 	},
@@ -30,26 +30,26 @@
 		"Question" : "What’s the atmosphere tonight?",
 		"First option" : [
 			{
-				"Label" : "Classy"
+				"Label" : "Dark and smokey"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"Ingredient" : "whiskey"
 			}
 		],
 		"Second option" : [
 			{
-				"Label" : "Business"
+				"Label" : "Flashing lights"
 			},
 			{
-				"Ingredient" : "Gin"
+				"Ingredient" : "vodka"
 			}
 		],		
 		"Third option" : [
 			{
-				"Label" : "Party"
+				"Label" : "Light and airy"
 			},
 			{
-				"Ingredient" : "Whiskey"
+				"Ingredient" : "gin"
 			}
 		]		
 	},	
@@ -57,23 +57,23 @@
 		"Question" : "You are about to get into a fight, what is it?",
 		"First option" : [
 			{
-				"Label" : "Classy"
+				"Label" : "Pillow fight"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"Ingredient" : "champagne"
 			}
 		],
 		"Second option" : [
 			{
-				"Label" : "Business"
+				"Label" : "Wrestling in a mud pitt"
 			},
 			{
-				"Ingredient" : "Gin"
+				"Ingredient" : "rum"
 			}
 		],		
 		"Third option" : [
 			{
-				"Label" : "Party"
+				"Label" : "Fight club style"
 			},
 			{
 				"Ingredient" : "Whiskey"
@@ -84,23 +84,23 @@
 		"Question" : "If you were to dance right now, what would it be?",
 		"First option" : [
 			{
-				"Label" : "Classy"
+				"Label" : "Ballroom dancing"
 			},
 			{
-				"Ingredient" : "Vodka"
+				"Ingredient" : "gin"
 			}
 		],
 		"Second option" : [
 			{
-				"Label" : "Business"
+				"Label" : "Salsa"
 			},
 			{
-				"Ingredient" : "Gin"
+				"Ingredient" : "rum"
 			}
 		],		
 		"Third option" : [
 			{
-				"Label" : "Party"
+				"Label" : "Dougie at a hip hop club"
 			},
 			{
 				"Ingredient" : "Whiskey"
