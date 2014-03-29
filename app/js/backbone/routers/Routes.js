@@ -1,16 +1,16 @@
 var Drink = require('../models/Drink.js');
 var DrinkCollection = require('../models/DrinkCollections.js');
 var DrinkCollectionsView = require('../views/DrinkCollectionsView.js');
-var IndexView = require('../views/IndexView.js');
 var FirstQuestion = require('../models/FirstQuestion.js');
 var SecondQuestion = require('../models/SecondQuestion.js');
-var FirstQuestionView = require('../views/firstQuestion.js');
-var SecondQuestionView = require('../views/secondQuestion.js');
+var FirstQuestionView = require('../views/FirstQuestionView.js');
+var SecondQuestionView = require('../views/SecondQuestionView.js');
 
 module.exports = Backbone.Router.extend({
+
     routes: {
         "": "showFirstQuestion",
-        "secondQuestion/:tag": 'showSecondQuestion',
+        ":tag": 'showSecondQuestion',
         "results/:tag/:ingredient": "getResults"
     },
 
@@ -19,33 +19,36 @@ module.exports = Backbone.Router.extend({
             model: {}
         });
         $('body').append(indexView.el);
+        var that = this;
+        this.firstQuestion = new FirstQuestion();
+        this.firstQuestionView = new FirstQuestionView({
+            model: this.firstQuestion
+        });
+        this.firstQuestion.fetch({
+            success: function () {
+                that.firstQuestionView.render();
+            }
+        });
+        this.secondQuestion = new SecondQuestion();
     },
 
     showFirstQuestion: function () {
-        var firstQuestion = new FirstQuestion();
-        firstQuestion.fetch({
-            success: function (model) {
-                var firstQuestionView = new FirstQuestionView({
-                    model: firstQuestion
-                });
-                $('.Result').empty();
-                $('.Question').html(firstQuestionView.el);
+        $('.Result').empty();
+        $('.Question').html(this.firstQuestionView.el);
+    },
+    showSecondQuestion: function (tag) {
+        var that = this;
+        this.secondQuestionView = new SecondQuestionView({
+            model: this.secondQuestion
+        });
+        this.secondQuestion.fetch({
+            success: function () {
+                that.secondQuestionView.render();
             }
         });
-    },
-
-    showSecondQuestion: function (tag) {
-        var secondQuestion = new SecondQuestion();
-        secondQuestion.fetch({
-            success: function (model) {
-                var secondQuestionView = new SecondQuestionView({
-                    model: secondQuestion,
-                    tag: tag
-                });
-                $('.Result').empty();
-                $('.Question').html(secondQuestionView.el);
-            }
-        })
+        this.secondQuestionView.setTag(tag);
+        $('.Result').empty();
+        $('.Question').html(this.secondQuestionView.el);
     },
 
     getResults: function (tag, ingredient) {
@@ -56,7 +59,6 @@ module.exports = Backbone.Router.extend({
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
         }
-
         var drinkCollection = new DrinkCollection([], {
             tag: tag,
             ingredient: ingredient
@@ -65,6 +67,6 @@ module.exports = Backbone.Router.extend({
             success: function (model) {
                 renderDrinkCollection();
             }
-        })
+        });
     },
 });

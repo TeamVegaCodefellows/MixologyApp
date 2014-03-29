@@ -2,3 +2,6 @@ node_modules
 build/
 dist/
 app/bower_components/
+config/
+test/acceptance/*-results.xml
+config/auth.js

@@ -36,12 +36,12 @@ describe('Drinks JSON api', function(){
     img: "https://www.google.com"
   };
 
-  var bloodyMary = { name: 'Bloody Mary',
-    description: 'This recipe for spicy, refreshing Bloody Marys is a perfect accompaniment to eggs benedict or other brunch favorites.',
-    ingredients: '4 cups tomato juice Juice of 2 large lemons 1 to 2 tablespoons Worcestershire sauce 1 heaping tablespoon prepared horseradish 1 1/2 cloves garlic, passed through a garlic press 2 teaspoons coarsely ground pepper 1/4 to 1/2 teaspoon Tabasco sauce Unflavored vodka, to taste Lemon wedges, for serving Celery sticks, for serving and munching',
-    directions: 'STEP 1 Place tomato juice in a large container with a tight-fitting lid. Add lemon juice, Worcestershire sauce, horseradish, garlic, pepper, and Tabasco; shake vigorously. Taste, and adjust for seasoning; the mixture should be quite spicy.  STEP 2 Pour 1 part vodka and 3 parts Bloody Mary mix over ice in a shaker. Shake well. Pour into glasses. Squeeze a wedge of lemon over drink (do not subsequently stir or shake drink), discard used wedge. Garnish with a large stick of celery (reserve extra stalks for munching) and a large lemon wedge.',
-    tag: 'Classy',
-    servings: 6,
+  var bloodyMary = { name: 'Berry Little Cocktail',
+    description: 'Have yourself a Berry Little Cocktail. Stir up this light, bright drink with the tang of citrus and a splash of Champagne to add a festive fizz to your holiday bash.',
+    ingredients: '1/2 cup sugar 1 cup fresh cranberries 1 ounce Charbay ruby red grapefruit vodka 2 ounces Champagne 1 ounce cranberry juice 1 ounce black currant juice',
+    directions: 'In a medium saucepan over medium-high heat, dissolve sugar into 1 1/2 cups water. Add cranberries and simmer for 5 minutes, or until softened. Remove from heat and let cool. Strain, discard liquid, and place cranberries on a tray in the freezer for at least 2 hours. Chill vodka, Champagne, and juices, then mix in a champagne glass. Garnish with skewer of 4 or 5 frozen candied cranberries. Reserve the rest for another drink.',
+    tag: 'classy',
+    servings: 1,
     img: ''
   };
 
@@ -94,7 +94,7 @@ describe('Drinks JSON api', function(){
   });
 
   it('can find a drink', function(done){
-    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'classy' + '/' + 'champagne').end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'classy' + '/' + 'vodka').end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body[0].name).to.not.be.eql(null);
         expect(res.body[0].tag).to.be.eql("classy");

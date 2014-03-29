@@ -12,8 +12,8 @@ module.exports = Backbone.View.extend({
 
 	getTag: function(e) {
 		var tag = $(e.currentTarget).attr('class');
-		Backbone.history.navigate('secondQuestion/'+ tag,
-			{trigger:true});
+		this.$el.detach();
+		Backbone.history.navigate( tag, { trigger:true } );
 	},
 
 	render: function() {
