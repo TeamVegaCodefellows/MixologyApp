@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toastie</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
     <link rel="stylesheet" href="styles/foundation/foundation.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
@@ -17,7 +19,16 @@
     </nav>
 
     <div class=Question></div>
-    <div class=Result></div>	
+    <div class=Result></div>
+
+<div class="question full">
+  <p>
+    <span class="fa fa-lock"> Your Account</span><br>
+    <a href="/login" class="button radius tiny">Local Login</a>
+    <a href="/signup" class="button radius tiny"> Local Signup</a><br>
+    <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+  </p>
+</div>
 </body>
 
 <script src="js/vendor/handlebars-v1.3.0.js"></script>
