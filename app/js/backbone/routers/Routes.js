@@ -5,6 +5,7 @@ var FirstQuestion = require('../models/FirstQuestion.js');
 var SecondQuestion = require('../models/SecondQuestion.js');
 var FirstQuestionView = require('../views/FirstQuestionView.js');
 var SecondQuestionView = require('../views/SecondQuestionView.js');
+var IndexView = require('../views/IndexView.js');
 
 module.exports = Backbone.Router.extend({
 
