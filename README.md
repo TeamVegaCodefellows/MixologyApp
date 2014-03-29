@@ -4,3 +4,13 @@ MixologyApp
 [![Coverage Status](https://coveralls.io/repos/TeamVegaCodefellows/MixologyApp/badge.png?branch=master)](https://coveralls.io/r/TeamVegaCodefellows/MixologyApp?branch=master)
 [![Dependency Status](https://gemnasium.com/TeamVegaCodefellows/MixologyApp.svg)](https://gemnasium.com/TeamVegaCodefellows/MixologyApp)
 [![Code Climate](https://codeclimate.com/github/TeamVegaCodefellows/MixologyApp.png)](https://codeclimate.com/github/TeamVegaCodefellows/MixologyApp)
+
+
+~~~~~~~~~~TeamVega~~~~~~~~~~~
+
+Grunt tasks:
+
+    build:dev - for initial build
+    test - mochacov
+    travis - coveralls
+    server - to run server on 3000
