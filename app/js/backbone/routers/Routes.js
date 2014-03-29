@@ -24,8 +24,6 @@ module.exports = Backbone.Router.extend({
             }
         });
         this.secondQuestion = new SecondQuestion();
-        this.secondQuestionView = new SecondQuestionView({ model: this.secondQuestion });
-        this.secondQuestion.fetch();
     },
 
     showFirstQuestion: function() {
@@ -34,8 +32,14 @@ module.exports = Backbone.Router.extend({
     },
 
     showSecondQuestion: function(tag){
+        var that = this;
+        this.secondQuestionView = new SecondQuestionView({ model: this.secondQuestion });
+        this.secondQuestion.fetch({
+            success: function(){
+                that.secondQuestionView.render();
+            }
+        });
         this.secondQuestionView.setTag(tag);
-        this.secondQuestionView.render();
         $('.Result').empty();
         $('.Question').html(this.secondQuestionView.el);
     },
@@ -48,7 +52,6 @@ module.exports = Backbone.Router.extend({
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
         }
-
         var drinkCollection = new DrinkCollection([], {
             tag: tag,
             ingredient: ingredient
