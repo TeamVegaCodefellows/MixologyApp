@@ -9,7 +9,7 @@ var flash = require('connect-flash');
 require('./config/passport')(passport); // pass for passport configuration
 
 app.engine('hbs', cons.handlebars);
-app.set('view engine', 'hbs');
+app.set('view engine', 'hbs')
 app.set('views', __dirname + '/app/templates');
 
 app.configure(function() {
@@ -30,6 +30,14 @@ app.configure('development', function() {
 	app.use(express.errorHandler());
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
+
+//mongoose.connect(uristring, function(err, res) {
+//	if(err) {
+//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
+//	} else {
+//		console.log('Successfully connected to: ' + uristring);
+//	}
+//});
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
