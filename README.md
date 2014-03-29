@@ -9,6 +9,7 @@ MixologyApp
 ~~~~~~~~~~TeamVega~~~~~~~~~~~
 
 Grunt tasks:
+
     build:dev - for initial build
     test - mochacov
     travis - coveralls
