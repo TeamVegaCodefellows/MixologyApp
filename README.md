@@ -9,7 +9,7 @@ MixologyApp
 ~~~~~~~~~~TeamVega~~~~~~~~~~~
 
 Grunt tasks:
-build:dev - for initial build
-test - mochacov
-travis - coveralls
-server - to run server on 3000
+    build:dev - for initial build
+    test - mochacov
+    travis - coveralls
+    server - to run server on 3000
