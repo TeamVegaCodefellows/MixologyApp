@@ -30,7 +30,6 @@ module.exports = Backbone.Router.extend({
 
     showFirstQuestion: function() {
         $('.Result').empty();
-        this.firstQuestionView.render();
         $('.Question').html(this.firstQuestionView.el);
     },
 

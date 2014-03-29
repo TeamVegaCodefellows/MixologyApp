@@ -14,7 +14,7 @@ module.exports = Backbone.View.extend({
 
 	getIngredient: function(e) {
 		var ingredient = $(e.currentTarget).attr('class');
-		console.log(this.tag, ingredient);
+		this.$el.detach();
 		Backbone.history.navigate( 'results/'+ this.tag +'/'+ ingredient, {trigger:true} );
 	},
 
