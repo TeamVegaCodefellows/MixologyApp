@@ -3,8 +3,8 @@ var DrinkCollection = require('../models/DrinkCollections.js');
 var DrinkCollectionsView = require('../views/DrinkCollectionsView.js');
 var FirstQuestion = require('../models/FirstQuestion.js');
 var SecondQuestion = require('../models/SecondQuestion.js');
-var FirstQuestionView = require('../views/firstQuestion.js');
-var SecondQuestionView = require('../views/secondQuestion.js');
+var FirstQuestionView = require('../views/FirstQuestionView.js');
+var SecondQuestionView = require('../views/SecondQuestionView.js');
 
 module.exports = Backbone.Router.extend({
 
