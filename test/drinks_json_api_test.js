@@ -94,15 +94,12 @@ describe('Drinks JSON api', function(){
   });
 
   it('can find a drink', function(done){
-    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'classy' + '/' + 'vodka').end(function(e, res){
+    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'classy' + '/' + 'champagne').end(function(e, res){
         expect(e).to.eql(null);
-        expect(res.body[0].name).to.be.eql(bloodyMary.name);
-        expect(res.body[0].description).to.be.eql(bloodyMary.description);
-        expect(res.body[0].ingredients).to.be.eql(bloodyMary.ingredients);
-        expect(res.body[0].directions).to.be.eql(bloodyMary.directions);
-        expect(res.body[0].tag).to.be.eql(bloodyMary.tag);
-        expect(res.body[0].servings).to.be.eql(bloodyMary.servings);
-        expect(res.body[0].img).to.be.eql(bloodyMary.img);
+        expect(res.body[0].name).to.not.be.eql(null);
+        expect(res.body[0].tag).to.be.eql("classy");
+        expect(res.body[0].servings).to.be.eql(2);
+        expect(res.body[0].img).to.be.eql("");
         done();
     });
   });

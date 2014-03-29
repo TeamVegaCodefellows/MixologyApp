@@ -1,7 +1,10 @@
-
-<div class = "small-12 small-centered columns text-center">
-  <div class="question full">{{question}}</div>
-	{{#each choices}}
-	  <button id="tag" class={{tag}}>{{label}}</button>
-	{{/each}}
+<div class="row">
+    <div class="question full large-8 medium-8 small-10 large-centered medium-centered small-centered columns text-center">{{question}}</div>
 </div>
+
+{{#each choices}}
+<div class="large-8 medium-8 small-10 large-centered medium-centered small-centered columns text-center">
+    <button id="tag" class={{tag}}>{{label}}</button>
+</div>
+{{/each}}
+

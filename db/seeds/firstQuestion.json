@@ -1,39 +1,94 @@
-
+[
 	{
-		"question" : "What's on your mind?",
+		"question" : "Which of these cities do you want to visit right now?",
 		"choices" : [
 			{
-				"label" : "Snuggy",
-				"tag" : "Easy"
+				"label" : "Paris",
+				"tag" : "classy"
 			},
 			{
-				"label" : "Cigars",
-				"tag" : "Classy"
+				"label" : "Cancun",
+				"tag" : "party"
 			},
 			{
-				"label" : "Hardcore Parkour",
-				"tag" : "Bold"
+				"label" : "London",
+				"tag" : "business"
 			}
 		],
 		"random" : 1
 	},
-	{
-		"question" : "How are you feeling today?",
+{
+		"question" : "What will you wearing to bed tonight?",
 		"choices" : [
 			{
-				"label" : "Happy",
-				"tag" : "Easy"
+				"label" : "Nothing",
+				"tag" : "party"
 			},
 			{
-				"label" : "Indifferent",
-				"tag" : "Classy"
+				"label" : "PJs",
+				"tag" : "business"
 			},
 			{
-				"label" : "Mad",
-				"tag" : "Bold"
+				"label" : "t shirt",
+				"tag" : "classy"
 			}
 		],
 		"random" : 2
+	},
+{
+		"question" : "What are you wearing?",
+		"choices" : [
+			{
+				"label" : "Black dress/ or tie",
+				"tag" : "classy"
+			},
+			{
+				"label" : "bikini",
+				"tag" : "party"
+			},
+			{
+				"label" : "business casual",
+				"tag" : "business"
+			}
+		],
+		"random" : 3
+	},
+{
+		"question" : "Which movie could you watch right now?",
+		"choices" : [
+			{
+				"label" : "Talladega Nights",
+				"tag" : "party"
+			},
+			{
+				"label" : "The Devil Wears Prada",
+				"tag" : "classy"
+			},
+			{
+				"label" : "Godfather",
+				"tag" : "business"
+			}
+		],
+		"random" : 4
+	},
+	{
+		"question" : "What are your goals for tonight?",
+		"choices" : [
+			{
+				"label" : "Get drunk",
+				"tag" : "party"
+			},
+			{
+				"label" : "Meet people",
+				"tag" : "business"
+			},
+			{
+				"label" : "Relax and enjoy",
+				"tag" : "classy"
+			}
+		],
+		"random" : 5
 	}
+
 ]
 

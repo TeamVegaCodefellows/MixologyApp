@@ -1,68 +1,45 @@
-
-$background-color: #9F1501;
-$button-color: #9F1501;
-$button-color-hover: #9F1501;
-$question-color: #9F1501;
-
-//#8C2318
-body {
-  background-color: $background-color;
-  font-size: 1em;
-  font-family: 'Abel', sans-serif;
-  color: white;
-}
-
-nav {
-  position: relative;
-  margin: 0;
-  width: 100%;
-
-  background-color: $button-color;
-  padding-top: 1em;
-
-  padding: .15em;
-}
-nav {
-    text-align: center;
-}
-
-.question {
-  // -webkit-border-radius: .1em;
-  // -moz-border-radius: .1em;
-  // -o-border-radius: .1em;
-  // border-radius: .1em;
-  background-color: $question-color;
-  padding: .3em;
-  color: white;
-  padding: 1em;
-  margin: 0;
-  text-align: center;
-  color: white;
-}
-
-button {
-    -webkit-border-radius: .13em;
-    -moz-border-radius: .13em;
-    -o-border-radius: .13em;
-    border-radius: .13em;
-    background-color: $button-color;
-    padding: 0.4em;
-    margin: 1em 1em 1em 1em;
-    border-color: black;
-    border-radius: 0.3em;
-    width: 100%;
-    font-family: 'Abel', sans-serif;
-    font-size: .8em;
-    width: 100%;
+$red:#9F1501;
+ $peachRed:#CF5240;
+ $brightRed:#EB1F01;
+ $darkRed:#462E2B ;
+ $blue:#0099CC;
+ body {
+    background-color: $peachRed;
+    font-family: 'Open Sans Condensed', sans-serif;
     color: white;
-    border: 1px solid white;
+    font-size: 2em;
+    line-height: 1.3em;
+    ul li {
+        list-style: none;
+    }
+}
+nav {
+    background-color: $darkRed;
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    #logo {
+        height: 1.8em;
+        width: auto;
+        padding-top: 0.2em;
+    }
+}
+.question {
+    background-color: $peachRed;
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+button {
+    border-radius: .2em;
+    border: 2px solid white;
+    background-color: $peachRed;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 0.7em;
+    color: white;
+    width: 100%;
 }
 button:hover {
-  background-color: $button-color;
-  color:black;
-  // border: 1px solid black;
-}
-
-.full {
-  width: 100%;
+    background-color: $peachRed;
 }

@@ -5,37 +5,45 @@ var FirstQuestion = require('../models/FirstQuestion.js');
 var SecondQuestion = require('../models/SecondQuestion.js');
 var FirstQuestionView = require('../views/FirstQuestionView.js');
 var SecondQuestionView = require('../views/SecondQuestionView.js');
+var IndexView = require('../views/IndexView.js');
 
 module.exports = Backbone.Router.extend({
 
     routes: {
-        "" : "showFirstQuestion",
-        ":tag" : 'showSecondQuestion',
+        "": "showFirstQuestion",
+        ":tag": 'showSecondQuestion',
         "results/:tag/:ingredient": "getResults"
     },
 
     initialize: function () {
+        var indexView = new IndexView({
+            model: {}
+        });
+        $('body').append(indexView.el);
         var that = this;
         this.firstQuestion = new FirstQuestion();
-        this.firstQuestionView = new FirstQuestionView({ model: this.firstQuestion });
+        this.firstQuestionView = new FirstQuestionView({
+            model: this.firstQuestion
+        });
         this.firstQuestion.fetch({
-            success: function(){
+            success: function () {
                 that.firstQuestionView.render();
             }
         });
         this.secondQuestion = new SecondQuestion();
     },
 
-    showFirstQuestion: function() {
+    showFirstQuestion: function () {
         $('.Result').empty();
         $('.Question').html(this.firstQuestionView.el);
     },
-
-    showSecondQuestion: function(tag){
+    showSecondQuestion: function (tag) {
         var that = this;
-        this.secondQuestionView = new SecondQuestionView({ model: this.secondQuestion });
+        this.secondQuestionView = new SecondQuestionView({
+            model: this.secondQuestion
+        });
         this.secondQuestion.fetch({
-            success: function(){
+            success: function () {
                 that.secondQuestionView.render();
             }
         });
