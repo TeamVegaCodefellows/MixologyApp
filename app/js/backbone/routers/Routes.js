@@ -60,6 +60,6 @@ module.exports = Backbone.Router.extend({
             success: function (model) {
                 renderDrinkCollection();
             }
-        })
+        });
     },
 });

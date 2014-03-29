@@ -11,7 +11,13 @@
     "mocha-lcov-reporter": "0.0.1",
     "connect-flash": "^0.1.1",
     "consolidate": "^0.10.0",
-    "logfmt": "^1.0.0"
+    "logfmt": "^1.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "passport-local": "^1.0.0",
+    "passport": "^0.2.0",
+    "passport-twitter": "^1.0.2",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.1.5"
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",
