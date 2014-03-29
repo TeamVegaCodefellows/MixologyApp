@@ -9,21 +9,24 @@ var SecondQuestionView = require('../views/secondQuestion.js');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        "" : "showFirstQuestion",
-        "secondQuestion/:tag" : 'showSecondQuestion',
+        "": "showFirstQuestion",
+        "secondQuestion/:tag": 'showSecondQuestion',
         "results/:tag/:ingredient": "getResults"
     },
 
     initialize: function () {
-        this.showFirstQuestion();
+        var indexView = new IndexView({
+            model: {}
+        });
+        $('body').append(indexView.el);
     },
-    
-    showFirstQuestion: function() {
+
+    showFirstQuestion: function () {
         var firstQuestion = new FirstQuestion();
         firstQuestion.fetch({
-            success: function(model){
+            success: function (model) {
                 var firstQuestionView = new FirstQuestionView({
-                  model:firstQuestion
+                    model: firstQuestion
                 });
                 $('.Result').empty();
                 $('.Question').html(firstQuestionView.el);
@@ -31,12 +34,13 @@ module.exports = Backbone.Router.extend({
         });
     },
 
-    showSecondQuestion: function(tag){
+    showSecondQuestion: function (tag) {
         var secondQuestion = new SecondQuestion();
         secondQuestion.fetch({
-            success: function(model){
+            success: function (model) {
                 var secondQuestionView = new SecondQuestionView({
-                    model:secondQuestion, tag:tag
+                    model: secondQuestion,
+                    tag: tag
                 });
                 $('.Result').empty();
                 $('.Question').html(secondQuestionView.el);

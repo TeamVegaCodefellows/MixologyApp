@@ -18,7 +18,7 @@
 		"random" : 1
 	},
 {
-		"question" : "What will you wear to bed tonight?",
+		"question" : "What will you wearing to bed tonight?",
 		"choices" : [
 			{
 				"label" : "Nothing",
@@ -33,7 +33,7 @@
 				"tag" : "classy"
 			}
 		],
-		"random" : 1
+		"random" : 2
 	},
 {
 		"question" : "What are you wearing?",
@@ -51,7 +51,7 @@
 				"tag" : "business"
 			}
 		],
-		"random" : 1
+		"random" : 3
 	},
 {
 		"question" : "Which movie could you watch right now?",
@@ -69,10 +69,10 @@
 				"tag" : "business"
 			}
 		],
-		"random" : 1
+		"random" : 4
 	},
 	{
-		"question" : "What are you goals for tonight?",
+		"question" : "What are your goals for tonight?",
 		"choices" : [
 			{
 				"label" : "Get drunk",
@@ -87,7 +87,7 @@
 				"tag" : "classy"
 			}
 		],
-		"random" : 2
+		"random" : 5
 	}
 
 ]
