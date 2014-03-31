@@ -1,11 +1,13 @@
 $red:#9F1501;
+$lightPeach: #FFE9E5;
  $peachRed:#CF5240;
  $brightRed:#EB1F01;
- $darkRed:#462E2B ;
+ $darkRed:#462E2B;
  $blue:#0099CC;
  body {
     background-color: $peachRed;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
+     font-weight: 300;
     color: white;
     font-size: 2em;
     line-height: 1.3em;
@@ -19,6 +21,7 @@ nav {
     margin: 0;
     width: 100%;
     text-align: center;
+    z-index: 10;
     #logo {
         height: 1.8em;
         width: auto;
@@ -30,16 +33,44 @@ nav {
     text-align: center;
     color: white;
     padding: 1em;
+    font-weight: 300;
 }
 button {
     border-radius: .2em;
-    border: 2px solid white;
+    border: 3px solid white;
     background-color: $peachRed;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 0.7em;
     color: white;
+    font-weight: 300;
     width: 100%;
 }
 button:hover {
     background-color: $peachRed;
+}
+//Recipe Page Styling
+.cocktailRecipeItem {
+    border-bottom: 3px solid $darkRed;
+    color: $darkRed;
+     background-color: $lightPeach;
+}
+.cocktailTitle {
+    padding-top: 0.2em;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: $peachRed;
+    text-transform: uppercase;
+}
+.titleRecipe {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $peachRed;
+}
+.recipeButton {
+    width: 50%;
+    display: inline-block;
+    font-size: 0.5em;
+    padding: 0.3em, 0, 0.3em, 0;
+    border: 3px solid $lightPeach;
+    
 }
