@@ -1,5 +1,5 @@
 module.exports = Backbone.View.extend({
-	tagName: 'ul',
+	tagName: 'div',
 	initialize: function() {
 		this.render();
 	},
