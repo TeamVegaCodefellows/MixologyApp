@@ -1,32 +1,47 @@
 $red:#9F1501;
 $lightPeach: #FFE9E5;
- $peachRed:#CF5240;
- $brightRed:#EB1F01;
- $darkRed:#462E2B;
- $blue:#0099CC;
+$peachRed:#CF5240;
+$brightRed:#EB1F01;
+$darkRed:#462E2B;
+$blue:#0099CC;
+$font-color: #fff;
+ body, html {
+   height:100%;
+ }
  body {
     background-color: $peachRed;
     font-family: 'Oswald', sans-serif;
-     font-weight: 300;
-    color: white;
+    font-weight: 300;
+    color: $font-color;
     font-size: 2em;
     line-height: 1.3em;
     ul li {
         list-style: none;
     }
 }
-nav {
-    background-color: $darkRed;
-    position: fixed;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 10;
-    #logo {
-        height: 1.8em;
-        width: auto;
-        padding-top: 0.2em;
-    }
+
+.tab-bar {
+  background-color: $darkRed;
+  #logo {
+    height: 1.8em;
+    padding-top: 0.1em;
+  }
+}
+
+.left-off-canvas-menu {
+  background-color: $darkRed;
+}
+
+ul.off-canvas-list li a {
+  color: $font-color;
+  text-decoration: none;
+}
+.page {
+  height: 100%;
+}
+
+.off-canvas-wrap, .inner-wrap {
+  height: 100%;
 }
 .question {
     background-color: $peachRed;
@@ -72,5 +87,5 @@ button:hover {
     font-size: 0.5em;
     padding: 0.3em, 0, 0.3em, 0;
     border: 3px solid $lightPeach;
-    
+
 }
