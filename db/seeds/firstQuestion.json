@@ -1,13 +1,13 @@
 [
 	{
-		"question" : "Which of these cities do you want to visit right now?",
+		"question" : "Where would you rather go?",
 		"choices" : [
 			{
 				"label" : "Paris",
 				"tag" : "classy"
 			},
 			{
-				"label" : "Cancun",
+				"label" : "Jersey Shore",
 				"tag" : "party"
 			},
 			{
@@ -88,6 +88,78 @@
 			}
 		],
 		"random" : 5
+	},
+    {
+		"question" : "How do you get a tan?",
+		"choices" : [
+			{
+				"label" : "The Great Outdoors",
+				"tag" : "classy"
+			},
+			{
+				"label" : "Once a year at the beach",
+				"tag" : "business"
+			},
+			{
+				"label" : "Tanning bed",
+				"tag" : "party"
+			}
+		],
+		"random" : 6
+	},
+      {
+		"question" : "Which shoes do you have on?",
+		"choices" : [
+			{
+				"label" : "Toms",
+				"tag" : "classy"
+			},
+			{
+				"label" : "Boots",
+				"tag" : "business"
+			},
+			{
+				"label" : "Heels or Sneakers",
+				"tag" : "party"
+			}
+		],
+		"random" : 7
+	},
+    {
+		"question" : "You take your pictures...",
+		"choices" : [
+			{
+				"label" : "what pictures?",
+				"tag" : "classy"
+			},
+			{
+				"label" : "on your yacht",
+				"tag" : "business"
+			},
+			{
+				"label" : "at arms length",
+				"tag" : "party"
+			}
+		],
+		"random" : 8
+	},
+    {
+		"question" : "What's on your radio",
+		"choices" : [
+			{
+				"label" : "Fleet Foxes",
+				"tag" : "classy"
+			},
+			{
+				"label" : "James Brown",
+				"tag" : "business"
+			},
+			{
+				"label" : "Katy Perry",
+				"tag" : "party"
+			}
+		],
+		"random" : 9
 	}
 
 ]

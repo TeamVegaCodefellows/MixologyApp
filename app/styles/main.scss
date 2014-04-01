@@ -2,7 +2,7 @@ $red:#9F1501;
  $lightCoffee:#D29C77;
  $rustRed:#cc6600;
  $darkRed:#6C1C12;
- $white:white; //#F3E0D2
+ $white:#FFFAF6; //#F3E0D2
  $coffee:#9F460B;
  body,
 html {
@@ -57,9 +57,11 @@ ul.off-canvas-list li a {
     box-shadow: -4px 0 4px rgba($darkRed, 0.5), 4px 0 4px rgba($darkRed, 0.5);
     background: rgba($white, 0.5);
 }
-@media (min-width: 40.063em){.tab-bar-section { 
-    text-align:center;
-}}
+@media (min-width: 40.063em) {
+    .tab-bar-section {
+        text-align: center;
+    }
+}
 .left-small {
     border: none;
 }
@@ -92,7 +94,7 @@ button:hover {
     background-color: $lightCoffee;
 }
 .cocktailTitle {
-    padding-top: 0.2em;
+    padding-top: 1em;
     font-size: 1.2em;
     font-weight: 400;
     color: $darkRed;
