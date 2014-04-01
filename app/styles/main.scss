@@ -1,91 +1,118 @@
 $red:#9F1501;
-$lightPeach: #FFE9E5;
-$peachRed:#CF5240;
-$brightRed:#EB1F01;
-$darkRed:#462E2B;
-$blue:#0099CC;
-$font-color: #fff;
- body, html {
-   height:100%;
- }
- body {
-    background-color: $peachRed;
+ $lightCoffee:#D29C77;
+ $rustRed:#cc6600;
+ $darkRed:#6C1C12;
+ $white:white; //#F3E0D2
+ $coffee:#9F460B;
+ body,
+html {
+    height: 100%;
+}
+body {
+    background-image: url(../assets/images/rough_diagonal.png);
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    color: $font-color;
+    color: $white;
     font-size: 2em;
     line-height: 1.3em;
     ul li {
         list-style: none;
     }
 }
-
-.tab-bar {
-  background-color: $darkRed;
-  #logo {
-    height: 1.8em;
-    padding-top: 0.1em;
-  }
-}
-
-.left-off-canvas-menu {
-  background-color: $darkRed;
-}
-
-ul.off-canvas-list li a {
-  color: $font-color;
-  text-decoration: none;
-}
 .page {
-  height: 100%;
+    height: 100%;
+    background-color: rgba($coffee, 0.5);
 }
-
-.off-canvas-wrap, .inner-wrap {
-  height: 100%;
+//Navbar styling
+.tab-bar {
+    background-color: $darkRed;
+    #logo {
+        height: 1.8em;
+        padding: 0.2em;
+    }
 }
+.left-off-canvas-menu {
+    background-color: $lightCoffee;
+}
+ul.off-canvas-list li a {
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+ul.off-canvas-list li a:hover {
+    background-color: $darkRed;
+}
+.off-canvas-wrap,
+.inner-wrap {
+    height: 100%;
+}
+ul.off-canvas-list li a {
+    border-bottom: 3px solid $white;
+}
+.tab-bar .menu-icon span {
+    -webkit-box-shadow: 1px 0px 1px 1px $white, 1px 7px 1px 1px $white, 1px 14px 1px 1px $white;
+    box-shadow: 0 0px 0 1px $white, 0 7px 0 1px $white, 0 14px 0 1px $white;
+}
+.move-right .exit-off-canvas {
+    box-shadow: -4px 0 4px rgba($darkRed, 0.5), 4px 0 4px rgba($darkRed, 0.5);
+    background: rgba($white, 0.5);
+}
+@media (min-width: 40.063em){.tab-bar-section { 
+    text-align:center;
+}}
+.left-small {
+    border: none;
+}
+//Question styling
 .question {
-    background-color: $peachRed;
     text-align: center;
-    color: white;
+    color: $white;
     padding: 1em;
     font-weight: 300;
 }
 button {
     border-radius: .2em;
-    border: 3px solid white;
-    background-color: $peachRed;
+    border: 3px solid $white;
+    background-color: $lightCoffee;
     font-family: 'Oswald', sans-serif;
     font-size: 0.7em;
-    color: white;
+    color: $white;
     font-weight: 300;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
 button:hover {
-    background-color: $peachRed;
+    background-color: $lightCoffee;
 }
 //Recipe Page Styling
 .cocktailRecipeItem {
     border-bottom: 3px solid $darkRed;
     color: $darkRed;
-     background-color: $lightPeach;
+    background-color: $lightCoffee;
 }
 .cocktailTitle {
     padding-top: 0.2em;
     font-size: 1.2em;
-    font-weight: 700;
-    color: $peachRed;
+    font-weight: 400;
+    color: $darkRed;
     text-transform: uppercase;
 }
 .titleRecipe {
     font-weight: 400;
     text-transform: uppercase;
-    color: $peachRed;
+    color: $darkRed;
 }
 .recipeButton {
-    width: 50%;
+    width: 47%;
     display: inline-block;
     font-size: 0.5em;
-    padding: 0.3em, 0, 0.3em, 0;
-    border: 3px solid $lightPeach;
-
+    border: 3px solid $darkRed;
+    margin: 0.2em 0.2em 0.5em 0.2em;
+    background-color: $darkRed;
+    color: $white;
+    text-transform: uppercase;
+}
+.recipeButton:hover {
+    background-color: $darkRed;
 }

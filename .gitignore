@@ -3,4 +3,7 @@ build/
 dist/
 app/bower_components/
 test/acceptance/*-results.xml
+app/.DS_Store/
+app/styles/.DS_Store/
+app/styles/foundation/.DS_Store/
 

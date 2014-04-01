@@ -54,7 +54,7 @@
 				"ingredient" : "whiskey"
 			}
 		],
-		"random" : 3
+		"random" : 1
 	},
     {
 
@@ -73,6 +73,6 @@
 				"ingredient" : "gin"
 			}
 		],
-		"random" : 4
+		"random" : 2
 	}
 ]
