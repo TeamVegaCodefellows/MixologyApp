@@ -31,13 +31,13 @@ app.configure('development', function() {
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
 
-mongoose.connect(uristring, function(err, res) {
-	if(err) {
-		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-	} else {
-		console.log('Successfully connected to: ' + uristring);
-	}
-});
+// mongoose.connect(uristring, function(err, res) {
+// 	if(err) {
+// 		console.log('ERROR connecting to: ' + uristring + '. ' + err);
+// 	} else {
+// 		console.log('Successfully connected to: ' + uristring);
+// 	}
+// });
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
