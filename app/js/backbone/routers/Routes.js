@@ -37,6 +37,7 @@ module.exports = Backbone.Router.extend({
         $('.Result').empty();
         $('.Question').html(this.firstQuestionView.el);
     },
+
     showSecondQuestion: function (tag) {
         var that = this;
         this.secondQuestionView = new SecondQuestionView({
