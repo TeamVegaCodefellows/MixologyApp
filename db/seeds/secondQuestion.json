@@ -58,6 +58,25 @@
 	},
     {
 
+		"question" : "When you look in the mirror, what do you see?",
+		"choices" : [
+			{
+				"label" : "plaid",
+				"ingredient" : "whiskey"
+			},
+			{
+				"label" : "duck face",
+				"ingredient" : "vodka"
+			},
+			{
+				"label" : "polo",
+				"ingredient" : "gin"
+			}
+		],
+		"random" : 5
+	},
+    {
+
 		"question" : "What’s the atmosphere tonight?",
 		"choices" : [
 			{
@@ -74,5 +93,63 @@
 			}
 		],
 		"random" : 4
+	},
+    {
+
+		"question" : "What’s your hairstyle?",
+		"choices" : [
+			{
+				"label" : "unwashed",
+				"ingredient" : "whiskey"
+			},
+			{
+				"label" : "immaculate",
+				"ingredient" : "vodka"
+			},
+			{
+				"label" : "what hair?",
+				"ingredient" : "gin"
+			}
+		],
+		"random" : 6
+	},
+    {
+
+		"question" : "Which fruit?",
+		"choices" : [
+			{
+				"label" : "cherry",
+				"ingredient" : "whiskey"
+			},
+			{
+				"label" : "cranberry",
+				"ingredient" : "vodka"
+			},
+			{
+				"label" : "pineapple",
+				"ingredient" : "rum"
+			}
+		],
+		"random" : 7
+	},
+     {
+
+		"question" : "What are you reading?",
+		"choices" : [
+			{
+				"label" : "Hemingway",
+				"ingredient" : "whiskey"
+			},
+			{
+				"label" : "tumblr",
+				"ingredient" : "vodka"
+			},
+			{
+				"label" : "Daily Mail",
+				"ingredient" : "rum"
+			}
+		],
+		"random" : 8
 	}
+    
 ]
