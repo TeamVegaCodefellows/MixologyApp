@@ -1,20 +1,17 @@
-<div>
-  <h1>Log in</h1>
-  <p>
-    Need to sign up? You can <a href="/signup">sign up here.</a>
-  </p>
-  <form class="loginForm" action="/login" method="post">
-    <div>
-      <label for="email">Email</label><br>
-      <input class="shortInput" id="email" type="text"><br>
+<div class="small-12 medium-8 large-8 small-centered medium-centered large-centered columns">
+    <h1>Log in</h1>
 
-      <label for="password">Password</label><br>
-      <input class="shortInput" id="password" type="text"><br>
+    <form class="loginForm" action="/login" method="post">
 
-      <a href="">Forgot your password?</a>
-    </div><!-- end column 2 contact form -->
-    <div>
-      <button type="submit" class="button">Create account</button>
-    </div>
-  </form>
+        <label for="email">Email</label>
+        <input class="shortInput" id="email" type="text">
+
+        <label for="password">Password</label>
+        <input class="shortInput" id="password" type="text">
+
+        <button type="submit">Login</button>
+
+        <a class="sub-line" href="">Forgot your password?</a>
+    </form>
+    <a href="/signup">Create an Account</a>
 </div>
