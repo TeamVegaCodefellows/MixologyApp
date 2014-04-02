@@ -31,14 +31,6 @@ app.configure('development', function() {
 	mongoose.connect('mongodb://localhost/mixology-development');
 });
 
-//mongoose.connect(uristring, function(err, res) {
-//	if(err) {
-//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-//	} else {
-//		console.log('Successfully connected to: ' + uristring);
-//	}
-//});
-
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
 var drinks = require('./api/routes/drinkRoutes');
@@ -50,6 +42,8 @@ app.get('/api/v1/getFirstQuestion', questions.getFirstQuestion);
 app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
 app.get('/api/v1/getDrink/:tag/:ingredient', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
+
+//var server = require('./app/secureServer.js')(app,3000);
 
 var server = http.createServer(app);
 server.listen(3000, function() {
