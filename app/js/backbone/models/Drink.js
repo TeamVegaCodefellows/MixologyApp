@@ -1,10 +1,11 @@
 module.exports = Backbone.Model.extend({
 	defaults: {
-		img: "",
-        name: "",
-        description: "",
-		servings: "",
+    name: "",
+    description: "",
 		ingredients: "",
-		directions: ""
+		directions: "",
+		tag: "",
+		servings: "",
+		img: ""
 	}
 });
