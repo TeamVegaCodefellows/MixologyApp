@@ -25,7 +25,7 @@ describe('Questions JSON api', function(){
         "tag" : "Bold"
       }
     ],
-    "random" : 3
+    "random" : 100
   };
 
   var entry2 = {
@@ -44,7 +44,7 @@ describe('Questions JSON api', function(){
         "ingredient" : "Whiskey"
       }
     ],
-    "random" : 3
+    "random" : 300
   };
 
   it('can create a new first question', function(done){

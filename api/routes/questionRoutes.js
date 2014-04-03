@@ -15,30 +15,34 @@ var SecondQuestion = require('../models/SecondQuestion');
 
 exports.getFirstQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var rand = FirstQuestion.count();
-  var rand = Math.ceil(Math.random()*2);
-  FirstQuestion.findOne({ random: rand }, function(err, responseQuestion) {
-    if(err) {
-      res.send(500, {'error': err});
-    } else {
-      res.send(responseQuestion);
-    }
+  FirstQuestion.count({}, function(err, count){
+    var rand = Math.ceil(Math.random()*count);
+    FirstQuestion.findOne({ random: rand }, function(err, responseQuestion) {
+      if(err) {
+        res.send(500, {'error': err});
+      } else {
+        res.send(responseQuestion);
+      }
+    });
   });
 };
 
 exports.getSecondQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var rand = Math.ceil(Math.random()*1);
-  SecondQuestion.findOne({ random: rand }, function(err, responseQuestion) {
-    if(err) {
-      res.send(500, {'error': err});
-    } else {
-      res.send(responseQuestion);
-    }
+  FirstQuestion.count({}, function(err, count){
+    var rand = Math.ceil(Math.random()*count);
+    SecondQuestion.findOne({ random: rand }, function(err, responseQuestion) {
+      if(err) {
+        res.send(500, {'error': err});
+      } else {
+        res.send(responseQuestion);
+      }
+    });
   });
 };
 
 exports.createFirstQuestion = function(req, res) {
+  console.log(req.body);
   var question = new FirstQuestion(req.body);
   question.save(function(err, responseQuestion) {
     if(err) {
