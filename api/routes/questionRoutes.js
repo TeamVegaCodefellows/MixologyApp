@@ -42,24 +42,31 @@ exports.getSecondQuestion = function(req, res) {
 };
 
 exports.createFirstQuestion = function(req, res) {
-  var question = new FirstQuestion(req.body);
-  question.save(function(err, responseQuestion) {
-    if(err) {
-      res.send(500, {'error': err});
-    } else {
-      res.send(responseQuestion);
-    }
+  console.log(req.body);
+  FirstQuestion.count({}, function(err, count){
+    req.body.random = count + 1;
+    var question = new FirstQuestion(req.body);
+    question.save(function(err, responseQuestion) {
+      if(err) {
+        res.send(500, {'error': err});
+      } else {
+        res.send(responseQuestion);
+      }
+    });
   });
 };
 
 exports.createSecondQuestion = function(req, res) {
-  var question = new SecondQuestion(req.body);
-  question.save(function(err, responseQuestion) {
-    if(err) {
-      res.send(500, {'error': err});
-    } else {
-      res.send(responseQuestion);
-    }
+  SecondQuestion.count({}, function(err, count){
+    req.body.random = count + 1;
+    var question = new SecondQuestion(req.body);
+    question.save(function(err, responseQuestion) {
+      if(err) {
+        res.send(500, {'error': err});
+      } else {
+        res.send(responseQuestion);
+      }
+    });
   });
 };
 
