@@ -6,10 +6,12 @@ var SecondQuestion = require('../models/SecondQuestion.js');
 var FirstQuestionView = require('../views/FirstQuestionView.js');
 var SecondQuestionView = require('../views/SecondQuestionView.js');
 var IndexView = require('../views/IndexView.js');
+var LoginView = require('../views/LoginView.js');
 
 module.exports = Backbone.Router.extend({
 
     routes: {
+        "login": "showLoginPage",
         "": "showFirstQuestion",
         ":tag": 'showSecondQuestion',
         "results/:tag/:ingredient": "getResults"
@@ -31,6 +33,12 @@ module.exports = Backbone.Router.extend({
             }
         });
         this.secondQuestion = new SecondQuestion();
+    },
+    showLoginPage: function () {
+        var loginView = new LoginView();
+        $('.Question').empty();
+        $('.Result').empty();
+        $('.Result').append(loginView.el);
     },
 
     showFirstQuestion: function () {
