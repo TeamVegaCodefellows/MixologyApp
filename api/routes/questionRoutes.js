@@ -42,7 +42,6 @@ exports.getSecondQuestion = function(req, res) {
 };
 
 exports.createFirstQuestion = function(req, res) {
-  console.log(req.body);
   FirstQuestion.count({}, function(err, count){
     req.body.random = count + 1;
     var question = new FirstQuestion(req.body);
