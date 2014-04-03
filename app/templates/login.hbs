@@ -3,15 +3,15 @@
     <form class="loginForm" action="/login" method="post">
        
         <label for="email">Email</label>
-        <input class="shortInput" id="email" type="text">
+        <input id="emailInput" name="email" type="text">
 
         <label for="password">Password</label>
-        <input class="shortInput" id="password" type="text">
+        <input id="passwordInput" name="password" type="text">
         <a class="sub-line" href="">Forgot your password?</a>
 
-        <button type="submit">Login</button>
+        <button id="login" type="submit" class="button">Login</button>
         <div class="divider">or</div>
     </form>
    <div id="createAccount" class="small-12 medium-8 large-8 small-centered medium-centered large-centered columns"><a  href="/signup">Create an Account</a></div>
-    
+    <h1 id="badCredentials"></h1>
 </div>

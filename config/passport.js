@@ -81,6 +81,7 @@ function(token, tokenSecret, profile, done) {
 
   },
   function(req, email, password, done) {
+    console.log(email,password);
     // asynchronous
     // User.findOne won't fire unless data is sent back
     process.nextTick(function() {
