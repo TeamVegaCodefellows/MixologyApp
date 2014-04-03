@@ -2,7 +2,7 @@ node_modules
 build/
 dist/
 app/bower_components/
-test/acceptance/*-results.xml
+test/acceptance/*.xml
 .ds_store
 app/.DS_Store/
 app/styles/.DS_Store/
