@@ -84,12 +84,12 @@ describe('Questions JSON api', function(){
     });
   });
 
-  it('can throw and describe errors on malformed input', function(done){
-    superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
-      .send(badEntry)
-      .end(function(e, res){
-        expect(e).to.eql(null);
-      });
-  });
+  // it('can throw and describe errors on malformed input', function(done){
+  //   superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
+  //     .send(badEntry)
+  //     .end(function(e, res){
+  //       expect(e).to.eql(null);
+  //     });
+  // });
 
 });
