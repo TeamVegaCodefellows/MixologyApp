@@ -23,6 +23,17 @@ body {
     height: 100%;
     background-color: rgba($coffee, 0.5);
 }
+h1,
+h2,
+h3,
+label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    color: $white;
+}
+input {
+    border-radius: 0.3em;
+}
 //Navbar styling
 .tab-bar {
     background-color: $darkRed;
@@ -65,6 +76,24 @@ ul.off-canvas-list li a {
 .left-small {
     border: none;
 }
+//Login styling
+a.sub-line {
+    line-height: 0.5em;
+    font-size: 0.5em;
+    color: $white;
+    padding: 0;
+    height: 16px;
+}
+.divider {
+    text-align: center;
+}
+.loginForm h1 {
+        text-align: center;
+    }
+#createAccount {
+        text-align: center;
+    }
+
 //Question styling
 .question {
     text-align: center;
