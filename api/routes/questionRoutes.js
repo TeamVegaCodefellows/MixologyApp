@@ -29,7 +29,7 @@ exports.getFirstQuestion = function(req, res) {
 
 exports.getSecondQuestion = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  FirstQuestion.count({}, function(err, count){
+  SecondQuestion.count({}, function(err, count){
     var rand = Math.ceil(Math.random()*count);
     SecondQuestion.findOne({ random: rand }, function(err, responseQuestion) {
       if(err) {
