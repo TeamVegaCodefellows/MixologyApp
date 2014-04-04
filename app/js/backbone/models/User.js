@@ -7,6 +7,7 @@ module.exports = Backbone.Model.extend({
     twitterId          : String,
     twitterToken       : String,
     twitterDisplayName : String,
-    twitterUserName    : String
+    twitterUserName    : String,
+    savedDrinks        : []
   }
 });

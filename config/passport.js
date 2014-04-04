@@ -87,7 +87,7 @@ function(token, tokenSecret, profile, done) {
     process.nextTick(function() {
       // find a user whos email is the same as the form's email
       // we are checking to see if the user trying to login exists
-      User.findOne({ 'local.email' : email }, function(err, user) {
+      User.findOne({ 'localEmail' : email }, function(err, user) {
         // if there are any errors, return the error
         if (err)
           return done(err);
@@ -98,8 +98,8 @@ function(token, tokenSecret, profile, done) {
           // if there is no user with that email create the user
           var newUser = new User();
           // set the user's local credentials
-          newUser.local.email     = email;
-          newUser.local.password  = newUser.generateHash(password);
+          newUser.localEmail     = email;
+          newUser.localPassword  = newUser.generateHash(password);
 
           // save the user
           newUser.save(function(err) {
