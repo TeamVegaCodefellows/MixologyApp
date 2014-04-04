@@ -57,7 +57,8 @@ module.exports = Backbone.Router.extend({
 
     showSavedItems: function() {
       var savedItemsView = new SavedItemsView();
-      if (this.login !== undefined){
+      console.log(this.login);
+      if (this.login.localEmail !== undefined ){
         savedItemsView.setLogin(this.login.get('localEmail'));
         savedItemsView.fetch();
       }
