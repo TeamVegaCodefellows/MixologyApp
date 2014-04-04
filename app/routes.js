@@ -34,10 +34,18 @@ module.exports = function(app, passport) {
   app.post('/login', function(req, response){
     console.log(req.body);
     User.findOne({ localEmail : req.body.localEmail }, function(err, user) {
-      bcrypt.compare(req.body.localPassword, user.localPassword, function(err, res){
-        if (res === true) response.send("ok");
-        else response.send("fail");
-      })
+      if (user!==null){
+        bcrypt.compare(req.body.localPassword, user.localPassword, function(err, res){
+          if (res === true) {
+            req.session.loggedIn=true;
+            response.send("ok");
+          }
+          else response.send("fail");
+        });
+      }
+      else {
+        response.send("fail");
+      }
     });
   });
 
