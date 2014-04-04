@@ -14,14 +14,24 @@ module.exports = Backbone.View.extend({
   },
 
   saveRecipe: function(e){
+    if (this.email === undefined){
+      alert('You have to login first!');
+      Backbone.history.navigate('/login', {trigger:true});
+    }
     var saveDrink = new SaveDrink({
-      drink: $(e.currentTarget).attr('class'),
+      drink: this.$(e.currentTarget).parent().prev().find('.cocktailTitle').text(),
       localEmail: this.email
     });
+
     saveDrink.save([], {
       dataType:'text',
       success: function(model, response){
-        console.log('success!');
+        if (response === "Saved"){
+
+        }
+        if (response === "Duplicate"){
+          alert('Drink already in your list');
+        }
       }
     });
   },

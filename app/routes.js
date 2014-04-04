@@ -55,7 +55,7 @@ module.exports = function(app, passport) {
 //    if (req.session.loggedIn === true){
       User.findOne({localEmail : req.body.localEmail, 'savedDrinks.drink' : req.body.drink} , function(err, res){
         if (res !== null){
-          response.send('This drink is already in your list');
+          response.send('Duplicate');
         }
         else {
           User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:{"drink":req.body.drink}}} , function(err, res){
