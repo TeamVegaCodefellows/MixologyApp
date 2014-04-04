@@ -98,7 +98,7 @@ describe('Drinks JSON api', function(){
         expect(e).to.eql(null);
         expect(res.body[0].name).to.not.be.eql(null);
         expect(res.body[0].tag).to.be.eql("classy");
-        expect(res.body[0].servings).to.be.eql(2);
+        expect(res.body[0].servings).to.be.eql(1);
         expect(res.body[0].img).to.be.eql("");
         done();
     });
