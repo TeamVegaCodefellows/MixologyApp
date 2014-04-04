@@ -28,19 +28,19 @@ app.configure(function () {
     app.use(app.router);
 });
 
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/mydb';
+var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/mixology-development';
 
 app.configure('development', function () {
     app.use(express.errorHandler());
-    mongoose.connect('mongodb://localhost/mixology-development');
+    //mongoose.connect('mongodb://localhost/mixology-development');
 });
 
 app.configure('production', function () {
     app.use(express.errorHandler());
-    mongoose.connect(mongoUri);
+
 });
+
+mongoose.connect(mongoUri);
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
