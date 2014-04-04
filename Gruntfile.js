@@ -251,6 +251,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
     grunt.registerTask('travis', ['mochacov:unit', 'mochacov:coverage', 'mochacov:coveralls']);
     grunt.registerTask('build:dev', ['clean:dev', 'sass:dev', 'browserify:dev', 'copy:dev']);
-    grunt.registerTask('server:notest', ['build:dev', 'express:dev', 'watch:notest']);
+    grunt.registerTask('server:notest', ['mongoimport', 'build:dev', 'express:dev', 'watch:notest']);
 
 };

@@ -1,11 +1,12 @@
-var Backbone = require('backbone');
-
 module.exports = Backbone.Model.extend({
-  idAttribute: 'id',
-  urlRoot: 'http://localhost:3000/api/v1/users',
+  url: "http://localhost:3000/login/",
   defaults: {
-    first_name: '',
-    last_name: '',
-    email: ''
+    localEmail       : '',
+    localPassword    : '',
+    twitterId          : '',
+    twitterToken       : '',
+    twitterDisplayName : '',
+    twitterUserName    : '',
+    savedDrinks        : []
   }
 });

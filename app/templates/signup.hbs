@@ -4,6 +4,7 @@
     </h1>
     <!-- LOGIN FORM -->
     <form action="/signup" method="post">
+<<<<<<< HEAD
         <input type="text" class="form-control" name="name" placeholder="Name">
         <input type="text" class="form-control" name="email" placeholder="email">
         <input type="password" class="form-control" name="password" placeholder="password">
@@ -12,3 +13,20 @@
     </form>
     <button>Cancel</button>
 </div>
+=======
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" id="emailInput" name="email">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="passwordInput" name="password">
+      </div>
+      <button type="submit" id="signup" class="button">Signup</button>
+    </form>
+    <hr>
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <p>Or go <a href="/">home</a>.</p>
+      <h1 id="userExists"></h1>
+  </div>
+>>>>>>> e31d7cdd5e3e6f796e6399228007a371fd034020
