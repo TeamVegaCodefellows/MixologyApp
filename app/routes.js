@@ -86,23 +86,49 @@ module.exports = function(app, passport) {
     }
   });
 
+  app.post('/signup', function(req, response){
+    User.findOne({localEmail: req.body.localEmail}, function(err, user){
+      if (user !== null){
+        response.send('This user already exists')
+      }
+      else{
+        var newUser = new User();
+        newUser.localEmail = req.body.localEmail;
+        newUser.localPassword = newUser.generateHash(req.body.localPassword);
+        newUser.save(function(err){
+          if(err) throw err;
+          req.session.loggedIn = true;
+          req.session.email = req.body.localEmail;
+          response.redirect('/');
+        })
+      }
+    })
+  });
+
+  app.get('/logout', function(req, response){
+    req.session.loggedIn=false;
+    req.session.email=null;
+    response.redirect('/');
+  });
+
 
   // ============================
   // signup
   // ============================
   // show the signup form
-  app.get('/signup', function(req, res) {
 
-    // render the page and passs in any flash data if it exists
-    res.render('signup', { message: req.flash('signupMessage') });
-  });
-
-  // process the signup form
-  app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if error
-    failureFlash : true // allow flash messages
-  }));
+//  app.get('/signup', function(req, res) {
+//
+//    // render the page and passs in any flash data if it exists
+//    res.render('signup', { message: req.flash('signupMessage') });
+//  });
+//
+//  // process the signup form
+//  app.post('/signup', passport.authenticate('local-signup', {
+//    successRedirect : '/profile', // redirect to the secure profile section
+//    failureRedirect : '/signup', // redirect back to the signup page if error
+//    failureFlash : true // allow flash messages
+//  }));
 
   // ============================
   // profile section
