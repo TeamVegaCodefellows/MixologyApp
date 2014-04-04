@@ -224,6 +224,14 @@ module.exports = function (grunt) {
                       upsert: true, //optional
                       drop: true //optional
                   },
+                  {
+                    name: 'defaultusers',
+                    type: 'json',
+                    file: 'db/seeds/DefaultUsers.json',
+                    jsonArray: true, //optional
+                    upsert: true, //optional
+                    drop: true //optional
+                  },
             ]
           }
         },
