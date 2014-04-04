@@ -8,12 +8,14 @@ var SecondQuestionView = require('../views/SecondQuestionView.js');
 var IndexView = require('../views/IndexView.js');
 var User = require('../models/User.js');
 var LoginView = require('../views/LoginView.js');
+var SavedItemsView = require('../views/SavedItemsView.js');
+var CheckSession = require('../models/CheckSession.js');
 
 module.exports = Backbone.Router.extend({
 
 
     routes: {
-        "test": "test",
+        "savedItems": "showSavedItems",
         "login": "showLoginPage",
         "": "showFirstQuestion",
         ":tag": 'showSecondQuestion',
@@ -21,6 +23,18 @@ module.exports = Backbone.Router.extend({
     },
 
     initialize: function () {
+      console.log('initialized');
+      var thiz = this;
+
+      this.login = new User();
+      var checkSession = new CheckSession();
+        checkSession.fetch({
+          dataType:'text',
+          success: function(model, response){
+            thiz.login.set({localEmail:response});
+          }
+        });
+
         var indexView = new IndexView({
             model: {}
         });
@@ -39,12 +53,25 @@ module.exports = Backbone.Router.extend({
         this.secondQuestion.fetch();
     },
 
-    test: function() {
-      console.log(this.login);
+    showSavedItems: function() {
+      var savedItemsView = new SavedItemsView();
+      if (this.login !== undefined){
+        savedItemsView.setLogin(this.login.get('localEmail'));
+        savedItemsView.fetch();
+      }
+      else {
+        alert('sign in first biotch');
+        Backbone.history.navigate('/login', {trigger:true})
+        return;
+      }
+      $('.Question').empty();
+      $('.Result').empty();
+      $('.Result').append(savedItemsView.el);
     },
 
     showLoginPage: function () {
-        this.login = new User();
+//        this.login = new User();
+        console.log('this.login', this.login);
         var loginView = new LoginView({model:this.login});
         $('.Question').empty();
         $('.Result').empty();
@@ -52,7 +79,7 @@ module.exports = Backbone.Router.extend({
     },
 
     showFirstQuestion: function () {
-        $('.Result').empty();
+      $('.Result').empty();
         $('.Question').html(this.firstQuestionView.el);
     },
 
@@ -67,9 +94,10 @@ module.exports = Backbone.Router.extend({
     },
 
     getResults: function (tag, ingredient) {
+      console.log('this.login', this.login);
       var thiz = this;
       function renderDrinkCollection() {
-            var drinkCollectionsView = new DrinkCollectionsView({
+        var drinkCollectionsView = new DrinkCollectionsView({
                 collection: drinkCollection
             });
             //check to see if this has been set

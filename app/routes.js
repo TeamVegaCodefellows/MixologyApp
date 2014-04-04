@@ -38,6 +38,7 @@ module.exports = function(app, passport) {
         bcrypt.compare(req.body.localPassword, user.localPassword, function(err, res){
           if (res === true) {
             req.session.loggedIn=true;
+            req.session.email = req.body.localEmail;
             response.send("ok");
           }
           else response.send("fail");
@@ -52,7 +53,7 @@ module.exports = function(app, passport) {
   app.post('/saveDrink', function(req, response){
     console.log('here');
     console.log(req.body);
-//    if (req.session.loggedIn === true){
+    if (req.session.loggedIn === true){
       User.findOne({localEmail : req.body.localEmail, 'savedDrinks.drink' : req.body.drink} , function(err, res){
         if (res !== null){
           response.send('Duplicate');
@@ -64,8 +65,21 @@ module.exports = function(app, passport) {
           });
         }
       });
-//    }
+    }
   })
+
+  app.get('/checkSession', function(req, response){
+    if (req.session.loggedIn === true){
+      response.send(req.session.email);
+    }
+  });
+
+  app.get('/getSavedItems', function(req, response){
+    User.findOne({ localEmail : req.body.localEmail }, function(err, user) {
+      console.log(user.savedDrinks);
+    });
+  });
+
 
   // ============================
   // signup

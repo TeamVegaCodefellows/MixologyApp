@@ -4,7 +4,7 @@ var User= require('../models/User.js');
 module.exports = Backbone.View.extend({
 
 	initialize: function() {
-        this.loggedIn = false;
+    this.loggedIn = false;
 		this.render();
 	},
 
@@ -26,7 +26,9 @@ module.exports = Backbone.View.extend({
           if (response === "fail"){
             thiz.$('#badCredentials').html('wrong credentials');
           }
-          else Backbone.history.navigate('/', {trigger:true});
+          else {
+            Backbone.history.navigate('/', {trigger:true});
+          }
         },
         error: function(model, response){
           console.log(model, response);
