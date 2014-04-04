@@ -1,20 +1,21 @@
 $red:#9F1501;
-$lightCoffee:#D29C77;
-$rustRed:#cc6600;
-$darkRed: #6C0F00; //#590902; //6C1C12
-$lightRed: #520B00;
-$white:#FFFAF6; //#F3E0D2
+ $lightCoffee:#D29C77;
+ $rustRed:#cc6600;
+ $darkRed:#6C0F00; //#590902; //6C1C12
+$lightRed:#520B00;
+ $white:#FFFAF6; //#F3E0D2
 $coffee:#9F460B;
-$main-font-color: $darkRed;
-$question-font-color: $darkRed;
-$off-white: #FFEFC3; //#FFEFB7; //#FFEFDB;
-$off-white-hover: #F0E0B7;
-
-body,
+ $main-font-color:$darkRed;
+ $question-font-color:$darkRed;
+ $off-white:#FFEFC3; //#FFEFB7; //#FFEFDB;
+$off-white-hover:#D9CFBE;
+ $match-white:#F0EBDE;
+ body,
 html {
     height: 100%;
 }
 body {
+    height: 100%;
     background-image: url(../assets/images/sativa.png);
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
@@ -23,6 +24,9 @@ body {
     line-height: 1.3em;
     ul li {
         list-style: none;
+    }
+    form {
+        margin: 1rem 0 1rem;
     }
 }
 .page {
@@ -48,10 +52,9 @@ input {
         padding: 0.2em;
     }
 }
-
 // Side-bar menu
 .left-off-canvas-menu {
-  background-color: rgba($off-white, .3);
+    background-color: $match-white;
 }
 ul.off-canvas-list li a {
     color: $main-font-color;
@@ -59,14 +62,14 @@ ul.off-canvas-list li a {
     text-decoration: none;
 }
 ul.off-canvas-list li a:hover {
-    background-color: rgba($off-white-hover, .5);
+    background-color: $off-white-hover;
 }
 .off-canvas-wrap,
 .inner-wrap {
     height: 100%;
 }
 ul.off-canvas-list li a {
-    border-bottom: 1px solid $darkRed;
+    border-bottom: 2px solid $darkRed;
     padding: 7px;
     font-size: 1.1rem;
     font-weight: 100;
@@ -89,22 +92,42 @@ ul.off-canvas-list li a {
 }
 //Login styling
 a.sub-line {
-    line-height: 0.5em;
     font-size: 0.5em;
-    color: $white;
+    color: $darkRed;
     padding: 0;
     height: 16px;
 }
-.divider {
+input#passwordInput {
+    margin-bottom: 0;
+}
+span.divider {
+    width: 5em;
+    border-top: 1px solid $darkRed;
+}
+.dividerWord {
     text-align: center;
+    font-size: 0.6em;
 }
 .loginForm h1 {
-        text-align: center;
+    text-align: center;
+}
+.loginForm {
+    input {
+        background-color: $match-white;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $darkRed;
+        box-shadow: none;
+        color: $darkRed;
     }
+}
 #createAccount {
-        text-align: center;
+    text-align: center;
+    a {
+        color: $darkRed;
+        font-size: 0.8em;
     }
-
+}
 //Question styling
 .question {
     text-align: center;
@@ -114,8 +137,8 @@ a.sub-line {
 }
 button {
     border-radius: .2em;
-    border: 1px solid $darkRed;
-    background-color: rgba($off-white, .5);
+    border: 2px solid $darkRed;
+    background-color: $match-white;
     font-family: 'Oswald', sans-serif;
     font-size: 0.7em;
     color: $question-font-color;
@@ -125,22 +148,21 @@ button {
     padding-right: 0;
 }
 button:hover {
-    border: 1px solid $darkRed;
-    background-color: rgba($off-white-hover, .5);
+    border: 2px solid $darkRed;
+    background-color: $off-white-hover;
     color: $question-font-color;
 }
 button:focus {
-    border: 1px solid $darkRed;
-    background-color: rgba($off-white-hover, .5);
+    border: 2px solid $darkRed;
+    background-color: $off-white-hover;
     color: $question-font-color;
-
 }
 //Recipe Page Styling
 .cocktailRecipeItem {
-    border: 1px solid $darkRed;
+    border: 2px solid $darkRed;
     border-radius: .2em;
     color: $darkRed;
-    background-color: rgba($off-white, .5);
+    background-color: $match-white;
     margin-top: .5em;
     margin-bottom: .5em;
 }
@@ -160,7 +182,7 @@ button:focus {
     width: 47%;
     display: inline-block;
     font-size: 0.5em;
-    border: 3px solid $darkRed;
+    border: 2px solid $darkRed;
     margin: 0.2em 0.2em 0.5em 0.2em;
     background-color: $darkRed;
     color: $white;
@@ -168,11 +190,11 @@ button:focus {
 }
 .recipeButton:hover {
     background-color: $lightRed;
-    border: 3px solid $lightRed;
+    border: 2px solid $lightRed;
     color: $white;
 }
 .recipeButton:focus {
     background-color: $lightRed;
-    border: 3px solid $lightRed;
+    border: 2px solid $lightRed;
     color: $white;
 }

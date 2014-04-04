@@ -1,18 +1,17 @@
 <div class="loginForm small-12 medium-8 large-8 small-centered medium-centered large-centered columns">
     <form class="loginForm" action="/login" method="post">
-       
-        <label for="email">Email</label>
-        <input id="emailInput" name="email" type="text">
-
-        <label for="password">Password</label>
-        <input id="passwordInput" name="password" type="text">
+        <input id="emailInput" name="email" type="text" placeholder="email">
+        <input id="passwordInput" name="password" type="text" placeholder="passwords">
         <a class="sub-line" href="">Forgot your password?</a>
-
         <button id="login" type="submit">Sign-in</button>
-        <div class="divider">or</div>
+        <div class="DividerDiv small-12 medium-8 large-8 small-centered medium-centered large-centered columns">
+            <span class="divider"></span>
+            <span class="dividerWord">or</span>
+            <span class="divider"></span>
+        </div>
     </form>
-   <div id="createAccount" class="small-12 medium-8 large-8 small-centered medium-centered large-centered columns"><a  href="#signup">Create an Account</a></div>
-    <div>
-        <h1 id="badCredentials"></h1>
+    <div id="createAccount" class="small-12 medium-8 large-8 small-centered medium-centered large-centered columns">
+        <a href="#signup">Create an Account</a>
     </div>
+    <h1 id="badCredentials"></h1>
 </div>
