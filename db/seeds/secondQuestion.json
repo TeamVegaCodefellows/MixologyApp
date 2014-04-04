@@ -4,15 +4,15 @@
 		"question" : "Which food are you in the mood for?",
 		"choices" : [
 			{
-				"label" : "pizza",
+				"label" : "Pizza",
 				"ingredient" : "rum"
 			},
 			{
-				"label" : "steak",
+				"label" : "Steak",
 				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "tuna tartar",
+				"label" : "Tuna tartar",
 				"ingredient" : "gin"
 			}
 		],
@@ -27,11 +27,11 @@
 				"ingredient" : "champagne"
 			},
 			{
-				"label" : "Wrestling in a mud pitt",
+				"label" : "Wrestling in a mud pit",
 				"ingredient" : "rum"
 			},
 			{
-				"label" : "Fight club style",
+				"label" : "Fight club",
 				"ingredient" : "whiskey"
 			}
 		],
@@ -50,7 +50,7 @@
 				"ingredient" : "rum"
 			},
 			{
-				"label" : "Dougie at a hip hop club",
+				"label" : "Dougie",
 				"ingredient" : "whiskey"
 			}
 		],
@@ -61,15 +61,15 @@
 		"question" : "When you look in the mirror, what do you see?",
 		"choices" : [
 			{
-				"label" : "plaid",
+				"label" : "Plaid",
 				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "duck face",
+				"label" : "Duck face",
 				"ingredient" : "vodka"
 			},
 			{
-				"label" : "polo",
+				"label" : "Polo",
 				"ingredient" : "gin"
 			}
 		],
@@ -99,15 +99,15 @@
 		"question" : "What’s your hairstyle?",
 		"choices" : [
 			{
-				"label" : "unwashed",
+				"label" : "Unwashed",
 				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "immaculate",
+				"label" : "Immaculate",
 				"ingredient" : "vodka"
 			},
 			{
-				"label" : "what hair?",
+				"label" : "What hair?",
 				"ingredient" : "gin"
 			}
 		],
@@ -118,15 +118,15 @@
 		"question" : "Which fruit?",
 		"choices" : [
 			{
-				"label" : "cherry",
+				"label" : "Cherry",
 				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "cranberry",
+				"label" : "Cranberry",
 				"ingredient" : "vodka"
 			},
 			{
-				"label" : "pineapple",
+				"label" : "Pineapple",
 				"ingredient" : "rum"
 			}
 		],
@@ -141,7 +141,7 @@
 				"ingredient" : "whiskey"
 			},
 			{
-				"label" : "tumblr",
+				"label" : "Tumblr",
 				"ingredient" : "vodka"
 			},
 			{
@@ -150,6 +150,63 @@
 			}
 		],
 		"random" : 8
+	},
+
+	{
+		"question": "What's your favorite exercise?",
+		"choices": [
+			{
+				"label": "Squats",
+				"ingredient": "whiskey"
+			},
+			{
+				"label": "Running",
+				"ingredient": "vodka"
+			},
+			{
+				"label": "Haha exercising",
+				"ingredient": "rum"
+			}
+		],
+		"random": 9
+	},
+
+	{
+		"question": "What city do you want to go to?",
+		"choices": [
+			{
+				"label": "Los Angeles",
+				"ingredient": "Vodka"
+			},
+			{
+				"label": "Miami",
+				"ingredient": "rum"
+			},
+			{
+				"label": "Seattle",
+				"ingredient": "whiskey"
+			}
+		],
+		"random": 10
+	},
+
+	{
+		"question": "Favorite programming language?",
+		"choices": [
+			{
+				"label": "Javascript",
+				"ingredient": "rum"
+			},
+			{
+				"label": "Python",
+				"ingredient": "vodka"
+			},
+			{
+				"label": "Ruby",
+				"ingredient": "whiskey"
+			}
+		],
+		"random": 11
 	}
-    
+
 ]
