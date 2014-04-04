@@ -58,12 +58,11 @@ module.exports = Backbone.Router.extend({
     showSavedItems: function() {
       var savedItemsView = new SavedItemsView();
       console.log(this.login);
-      if (this.login.localEmail !== undefined ){
+      if (this.login.localEmail !== '' ){
         savedItemsView.setLogin(this.login.get('localEmail'));
         savedItemsView.fetch();
       }
       else {
-        alert('sign in first biotch');
         Backbone.history.navigate('/login', {trigger:true})
         return;
       }
