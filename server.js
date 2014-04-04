@@ -33,13 +33,16 @@ app.configure('development', function () {
     mongoose.connect('mongodb://localhost/mixology-development');
 });
 
-//mongoose.connect(uristring, function(err, res) {
-//	if(err) {
-//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-//	} else {
-//		console.log('Successfully connected to: ' + uristring);
-//	}
-//});
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/mydb';
+
+mongo.Db.connect(mongoUri, function (err, db) {
+  db.collection('mydocs', function(er, collection) {
+    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+    });
+  });
+});
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
