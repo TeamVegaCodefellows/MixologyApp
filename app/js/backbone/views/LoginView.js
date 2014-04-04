@@ -1,9 +1,10 @@
 var template = require('../../../templates/login.hbs');
+var User= require('../models/User.js');
 
 module.exports = Backbone.View.extend({
 
 	initialize: function() {
-        this.loggedIn = false;
+    this.loggedIn = false;
 		this.render();
 	},
 
@@ -13,30 +14,27 @@ module.exports = Backbone.View.extend({
 
 	attemptLogin: function(e) {
       e.preventDefault();
-      var thiz=this;
+      var thiz = this
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
+      var login = new User({localEmail:email, localPassword:password});
+      this.model.set({localEmail:email});
 
-      $.ajax({
-        type: "POST",
-        url: "/login",
-        data: { email: email, password: password }
-      })
-      .success (function(data, textStatus, xhr ){
-        if (textStatus === 'success'){
-          $(this.el).off('click', '#login');
-          thiz.trigger();
-          return;
+      login.save([],{
+        dataType:"text",
+        success: function(model, response){
+          if (response === "fail"){
+            thiz.$('#badCredentials').html('wrong credentials');
+          }
+          else {
+            Backbone.history.navigate('/', {trigger:true});
+          }
+        },
+        error: function(model, response){
+          console.log(model, response);
         }
-      })
-      .fail (function(message){
-        thiz.$('#badCredentials').html('wrong credentials');
       });
-	},
-
-    trigger: function(message) {
-      $(this.el).find('.loginForm').submit();
-    },
+  },
 
 	render: function() {
 		var loginHtml = template("");

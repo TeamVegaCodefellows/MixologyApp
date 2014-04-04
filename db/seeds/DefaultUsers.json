@@ -1,8 +1,15 @@
 [
   {
-    "local": {
-      "password": "$2a$08$mza1lo4.x/MrpUw9MTVnU.sirF6ogpmthe1bn1sC9jP2gJAIfCIOm",
-      "email": "jlim8612@gmail.com"
-    }
+    "localEmail" : "jlim8612@gmail.com",
+    "localPassword" : "$2a$08$mza1lo4.x/MrpUw9MTVnU.sirF6ogpmthe1bn1sC9jP2gJAIfCIOm",
+    "twitterId" : "",
+    "twitterToken" : "",
+    "twitterDisplayName" : "",
+    "twitterUserName" : "",
+    "savedDrinks" : [
+      {"drink": "Berry Little Cocktail"},
+      {"drink": "Bloody Mary"},
+      {"drink": "Martini"}
+    ]
   }
 ]
