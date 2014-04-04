@@ -24,18 +24,20 @@ module.exports = Backbone.Router.extend({
             model: {}
         });
         $('body').append(indexView.el);
-        var that = this;
         this.firstQuestion = new FirstQuestion();
         this.firstQuestionView = new FirstQuestionView({
             model: this.firstQuestion
         });
+        var that = this;
         this.firstQuestion.fetch({
             success: function () {
                 that.firstQuestionView.render();
             }
         });
         this.secondQuestion = new SecondQuestion();
+        this.secondQuestion.fetch();
     },
+
     showLoginPage: function () {
         var loginView = new LoginView();
         $('.Question').empty();
@@ -53,16 +55,12 @@ module.exports = Backbone.Router.extend({
         $('.Result').empty();
         $('.Question').html(this.firstQuestionView.el);
     },
+
     showSecondQuestion: function (tag) {
-        var that = this;
         this.secondQuestionView = new SecondQuestionView({
             model: this.secondQuestion
         });
-        this.secondQuestion.fetch({
-            success: function () {
-                that.secondQuestionView.render();
-            }
-        });
+        this.secondQuestionView.render();
         this.secondQuestionView.setTag(tag);
         $('.Result').empty();
         $('.Question').html(this.secondQuestionView.el);

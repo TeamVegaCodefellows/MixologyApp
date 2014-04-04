@@ -24,8 +24,7 @@ describe('Questions JSON api', function(){
         "label" : "Red",
         "tag" : "Bold"
       }
-    ],
-    "random" : 3
+    ]
   };
 
   var entry2 = {
@@ -43,9 +42,10 @@ describe('Questions JSON api', function(){
         "label" : "Steaks",
         "ingredient" : "Whiskey"
       }
-    ],
-    "random" : 3
+    ]
   };
+
+  var badEntry = { test : "This object is used  as malformed input to get coverage of the errors in questionsRoutes" };
 
   it('can create a new first question', function(done){
     superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
@@ -83,5 +83,13 @@ describe('Questions JSON api', function(){
         done();
     });
   });
+
+  // it('can throw and describe errors on malformed input', function(done){
+  //   superagent.post('http://localhost:3000/api/v1/createFirstQuestion')
+  //     .send(badEntry)
+  //     .end(function(e, res){
+  //       expect(e).to.eql(null);
+  //     });
+  // });
 
 });
