@@ -18,7 +18,7 @@
     "passport-twitter": "^1.0.2",
     "passport-facebook": "^1.0.3",
     "passport-google-oauth": "^0.1.5",
-    "bower": "0.6.x"
+    "bower": "^0.6.8"
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",
