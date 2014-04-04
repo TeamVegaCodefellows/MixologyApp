@@ -29,7 +29,7 @@
 				"tag" : "business"
 			},
 			{
-				"label" : "t shirt",
+				"label" : "Silk",
 				"tag" : "classy"
 			}
 		],
@@ -39,15 +39,15 @@
 		"question" : "What are you wearing?",
 		"choices" : [
 			{
-				"label" : "Black dress/ or tie",
+				"label" : "Black dress / tux",
 				"tag" : "classy"
 			},
 			{
-				"label" : "bikini",
+				"label" : "Stunner shades",
 				"tag" : "party"
 			},
 			{
-				"label" : "business casual",
+				"label" : "Pressed shirt",
 				"tag" : "business"
 			}
 		],
@@ -75,7 +75,7 @@
 		"question" : "What are your goals for tonight?",
 		"choices" : [
 			{
-				"label" : "Get drunk",
+				"label" : "Get toastie",
 				"tag" : "party"
 			},
 			{
@@ -129,15 +129,15 @@
 		"question" : "You take your pictures...",
 		"choices" : [
 			{
-				"label" : "what pictures?",
+				"label" : "What pictures?",
 				"tag" : "classy"
 			},
 			{
-				"label" : "on your yacht",
+				"label" : "On your yacht",
 				"tag" : "business"
 			},
 			{
-				"label" : "at arms length",
+				"label" : "At arms length",
 				"tag" : "party"
 			}
 		],
@@ -160,6 +160,45 @@
 			}
 		],
 		"random" : 9
-	}
+	},
 
+	{
+		"question": "Who would win in a fight? A bear, gorilla or a penguin?",
+		"choices": [
+			{
+				"label": "Bear",
+				"tag": "classy"
+			},
+			{
+				"label": "Gorilla",
+				"tag": "business"
+			},
+			{
+				"label": "Penguin",
+				"tag": "party"
+			}
+		],
+		"random": 10
+	},
+
+	{
+		"question": "What car would you drive?",
+		"choices": [
+			{
+				"label": "Porsche",
+				"tag": "classy"
+			},
+
+			{
+				"label": "Lamborghini",
+				"tag": "party"
+			},
+
+			{
+				"label": "Mercedes-Benz",
+				"tag": "business"
+			}
+		],
+		"random": 11
+	}
 ]
