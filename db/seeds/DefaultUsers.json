@@ -7,6 +7,9 @@
     "twitterDisplayName" : "",
     "twitterUserName" : "",
     "savedDrinks" : [
+      {"drink": "Berry Little Cocktail"},
+      {"drink": "Bloody Mary"},
+      {"drink": "Martini"}
     ]
   }
 ]

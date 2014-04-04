@@ -74,10 +74,16 @@ module.exports = function(app, passport) {
     }
   });
 
-  app.get('/getSavedItems', function(req, response){
-    User.findOne({ localEmail : req.body.localEmail }, function(err, user) {
-      console.log(user.savedDrinks);
-    });
+  app.post('/getSavedItems', function(req, response){
+    console.log(req.body);
+    if (req.session.loggedIn === true){
+      User.findOne({ localEmail : req.body.localEmail }, function(err, user) {
+        if (user !== null){
+          console.log(user.savedDrinks);
+          response.send(user.savedDrinks);
+        }
+      });
+    }
   });
 
 
