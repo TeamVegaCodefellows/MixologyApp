@@ -8,10 +8,12 @@ var SecondQuestionView = require('../views/SecondQuestionView.js');
 var IndexView = require('../views/IndexView.js');
 var LoginView = require('../views/LoginView.js');
 var SignupView = require('../views/signupView.js');
+var AccountView = require('../views/AccountView.js');
 
 module.exports = Backbone.Router.extend({
 
     routes: {
+        "myAccount":"showMyAccountPage",
         "signup":"showSignupPage",
         "login": "showLoginPage",
         "": "showFirstQuestion",
@@ -49,6 +51,12 @@ module.exports = Backbone.Router.extend({
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(signupView.el);
+    },
+    showMyAccountPage: function () {
+        var accountView = new AccountView();
+        $('.Question').empty();
+        $('.Result').empty();
+        $('.Result').append(accountView.el);
     },
 
     showFirstQuestion: function () {
