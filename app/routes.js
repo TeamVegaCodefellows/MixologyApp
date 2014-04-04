@@ -1,3 +1,7 @@
+var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcrypt-nodejs');
+var User = require('../api/models/User.js')
+
 module.exports = function(app, passport) {
   // ============================
   // home page with login links
@@ -20,14 +24,21 @@ module.exports = function(app, passport) {
 //  });
 
   // process the login form
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/profile', // redirect to the secure profile section
-//    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }), function(req, res) {
-    console.log('email', req.email);
+//  app.post('/login', passport.authenticate('local-login', {
+//    successRedirect : '/', // redirect to the secure profile section
+////    failureRedirect : '/signup', // redirect back to the signup page if there is an error
+//    failureFlash : true // allow flash messages
+//  }), function(req, res) {
+//    console.log('email', req.email);
+//  });
+  app.post('/login', function(req, response){
+    User.findOne({ localEmail : req.body.localEmail }, function(err, user) {
+      bcrypt.compare(req.body.localPassword, user.localPassword, function(err, res){
+        if (res === true) response.send('Authenticated');
+        else response.send('Fail!');
+      })
+    });
   });
-
 
   // ============================
   // signup
