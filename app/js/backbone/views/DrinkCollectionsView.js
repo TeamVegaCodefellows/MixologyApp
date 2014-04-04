@@ -2,9 +2,17 @@ var DrinkView = require('./DrinkView.js');
 module.exports = Backbone.View.extend({
 	tagName: 'div',
 
+  events: {
+    'click .recipeButton' : 'saveRecipe'
+  },
+
   setLogin: function(login) {
     this.login = login;
     console.log(this.login);
+  },
+
+  saveRecipe: function(){
+    alert('seems to work');
   },
 
 	render: function() {

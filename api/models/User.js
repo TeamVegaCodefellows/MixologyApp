@@ -8,7 +8,8 @@ var userSchema = mongoose.Schema({
     twitterId          : String,
     twitterToken       : String,
     twitterDisplayName : String,
-    twitterUsername    : String
+    twitterUserName    : String,
+    savedDrinks        : []
 });
 
 // generate a hash

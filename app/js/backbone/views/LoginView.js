@@ -1,5 +1,5 @@
 var template = require('../../../templates/login.hbs');
-var Login = require('../models/Login.js');
+var User= require('../models/User.js');
 
 module.exports = Backbone.View.extend({
 
@@ -17,7 +17,8 @@ module.exports = Backbone.View.extend({
       var thiz = this
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
-      var login = new Login({localEmail:email, localPassword:password});
+      var login = new User({localEmail:email, localPassword:password});
+      this.model.set({localEmail:email});
 
       login.save([],{
         dataType:"text",

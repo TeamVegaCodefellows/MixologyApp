@@ -6,7 +6,7 @@ var SecondQuestion = require('../models/SecondQuestion.js');
 var FirstQuestionView = require('../views/FirstQuestionView.js');
 var SecondQuestionView = require('../views/SecondQuestionView.js');
 var IndexView = require('../views/IndexView.js');
-var Login = require('../models/Login.js');
+var User = require('../models/User.js');
 var LoginView = require('../views/LoginView.js');
 
 module.exports = Backbone.Router.extend({
@@ -40,11 +40,11 @@ module.exports = Backbone.Router.extend({
     },
 
     test: function() {
-      console.log(this.loginSave);
+      console.log(this.login);
     },
 
     showLoginPage: function () {
-        this.login = new Login();
+        this.login = new User();
         var loginView = new LoginView({model:this.login});
         console.log('this.login', this.login);
         $('.Question').empty();
@@ -69,12 +69,11 @@ module.exports = Backbone.Router.extend({
 
     getResults: function (tag, ingredient) {
       var thiz = this;
-      console.log('this.login', this.login);
       function renderDrinkCollection() {
             var drinkCollectionsView = new DrinkCollectionsView({
                 collection: drinkCollection
             });
-            drinkCollectionsView.setLogin(thiz.login);
+            drinkCollectionsView.setLogin(this.login);
             drinkCollectionsView.render();
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
