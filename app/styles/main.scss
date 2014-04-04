@@ -1,18 +1,24 @@
 $red:#9F1501;
- $lightCoffee:#D29C77;
- $rustRed:#cc6600;
- $darkRed:#6C1C12;
- $white:#FFFAF6; //#F3E0D2
- $coffee:#9F460B;
- body,
+$lightCoffee:#D29C77;
+$rustRed:#cc6600;
+$darkRed: #6C0F00; //#590902; //6C1C12
+$lightRed: #520B00;
+$white:#FFFAF6; //#F3E0D2
+$coffee:#9F460B;
+$main-font-color: $darkRed;
+$question-font-color: $darkRed;
+$off-white: #FFEFC3; //#FFEFB7; //#FFEFDB;
+$off-white-hover: #F0E0B7;
+
+body,
 html {
     height: 100%;
 }
 body {
-    background-image: url(../assets/images/rough_diagonal.png);
+    background-image: url(../assets/images/sativa.png);
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    color: $white;
+    color: $main-font-color;
     font-size: 2em;
     line-height: 1.3em;
     ul li {
@@ -21,7 +27,7 @@ body {
 }
 .page {
     height: 100%;
-    background-color: rgba($coffee, 0.5);
+    background-color: rgba($off-white, .3);
 }
 h1,
 h2,
@@ -29,7 +35,7 @@ h3,
 label {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    color: $white;
+    color: $main-font-color;
 }
 input {
     border-radius: 0.3em;
@@ -42,30 +48,35 @@ input {
         padding: 0.2em;
     }
 }
+
+// Side-bar menu
 .left-off-canvas-menu {
-    background-color: $lightCoffee;
+  background-color: rgba($off-white, .3);
 }
 ul.off-canvas-list li a {
-    color: $white;
+    color: $main-font-color;
     text-transform: uppercase;
     text-decoration: none;
 }
 ul.off-canvas-list li a:hover {
-    background-color: $darkRed;
+    background-color: rgba($off-white-hover, .5);
 }
 .off-canvas-wrap,
 .inner-wrap {
     height: 100%;
 }
 ul.off-canvas-list li a {
-    border-bottom: 3px solid $white;
+    border-bottom: 1px solid $darkRed;
+    padding: 7px;
+    font-size: 1.1rem;
+    font-weight: 100;
 }
 .tab-bar .menu-icon span {
     -webkit-box-shadow: 1px 0px 1px 1px $white, 1px 7px 1px 1px $white, 1px 14px 1px 1px $white;
     box-shadow: 0 0px 0 1px $white, 0 7px 0 1px $white, 0 14px 0 1px $white;
 }
 .move-right .exit-off-canvas {
-    box-shadow: -4px 0 4px rgba($darkRed, 0.5), 4px 0 4px rgba($darkRed, 0.5);
+    box-shadow: -2px 0 2px rgba($darkRed, 0.5), 2px 0 2px rgba($darkRed, 0.5);
     background: rgba($white, 0.5);
 }
 @media (min-width: 40.063em) {
@@ -97,30 +108,41 @@ a.sub-line {
 //Question styling
 .question {
     text-align: center;
-    color: $white;
+    color: $main-font-color;
     padding: 1em;
-    font-weight: 300;
+    font-weight: 250;
 }
 button {
     border-radius: .2em;
-    border: 3px solid $white;
-    background-color: $lightCoffee;
+    border: 1px solid $darkRed;
+    background-color: rgba($off-white, .5);
     font-family: 'Oswald', sans-serif;
     font-size: 0.7em;
-    color: $white;
-    font-weight: 300;
+    color: $question-font-color;
+    font-weight: 100;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
 }
 button:hover {
-    background-color: $lightCoffee;
+    border: 1px solid $darkRed;
+    background-color: rgba($off-white-hover, .5);
+    color: $question-font-color;
+}
+button:focus {
+    border: 1px solid $darkRed;
+    background-color: rgba($off-white-hover, .5);
+    color: $question-font-color;
+
 }
 //Recipe Page Styling
 .cocktailRecipeItem {
-    border-bottom: 3px solid $darkRed;
+    border: 1px solid $darkRed;
+    border-radius: .2em;
     color: $darkRed;
-    background-color: $lightCoffee;
+    background-color: rgba($off-white, .5);
+    margin-top: .5em;
+    margin-bottom: .5em;
 }
 .cocktailTitle {
     padding-top: 1em;
@@ -145,5 +167,12 @@ button:hover {
     text-transform: uppercase;
 }
 .recipeButton:hover {
-    background-color: $darkRed;
+    background-color: $lightRed;
+    border: 3px solid $lightRed;
+    color: $white;
+}
+.recipeButton:focus {
+    background-color: $lightRed;
+    border: 3px solid $lightRed;
+    color: $white;
 }

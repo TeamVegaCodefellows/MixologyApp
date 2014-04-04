@@ -18,7 +18,7 @@
 		"random" : 1
 	},
 {
-		"question" : "What will you wearing to bed tonight?",
+		"question" : "What will you be wearing to bed tonight?",
 		"choices" : [
 			{
 				"label" : "Nothing",
@@ -163,4 +163,3 @@
 	}
 
 ]
-
