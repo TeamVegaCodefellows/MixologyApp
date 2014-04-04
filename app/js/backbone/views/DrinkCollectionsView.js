@@ -1,4 +1,6 @@
 var DrinkView = require('./DrinkView.js');
+var SaveDrink = require('../models/SaveDrink.js');
+
 module.exports = Backbone.View.extend({
 	tagName: 'div',
 
@@ -7,12 +9,21 @@ module.exports = Backbone.View.extend({
   },
 
   setLogin: function(login) {
-    this.login = login;
-    console.log(this.login);
+    console.log('login', login);
+    this.email = login;
   },
 
-  saveRecipe: function(){
-    alert('seems to work');
+  saveRecipe: function(e){
+    var saveDrink = new SaveDrink({
+      drink: $(e.currentTarget).attr('class'),
+      localEmail: this.email
+    });
+    saveDrink.save([], {
+      dataType:'text',
+      success: function(model, response){
+        console.log('success!');
+      }
+    });
   },
 
 	render: function() {

@@ -49,6 +49,24 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.post('/saveDrink', function(req, response){
+    console.log('here');
+    console.log(req.body);
+//    if (req.session.loggedIn === true){
+      User.findOne({localEmail : req.body.localEmail, 'savedDrinks.drink' : req.body.drink} , function(err, res){
+        if (res !== null){
+          response.send('This drink is already in your list');
+        }
+        else {
+          User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:{"drink":req.body.drink}}} , function(err, res){
+            console.log('saved',res);
+            response.send('Saved!');
+          });
+        }
+      });
+//    }
+  })
+
   // ============================
   // signup
   // ============================

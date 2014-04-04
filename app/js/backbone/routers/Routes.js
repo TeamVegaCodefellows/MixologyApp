@@ -46,7 +46,6 @@ module.exports = Backbone.Router.extend({
     showLoginPage: function () {
         this.login = new User();
         var loginView = new LoginView({model:this.login});
-        console.log('this.login', this.login);
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(loginView.el);
@@ -73,7 +72,10 @@ module.exports = Backbone.Router.extend({
             var drinkCollectionsView = new DrinkCollectionsView({
                 collection: drinkCollection
             });
-            drinkCollectionsView.setLogin(this.login);
+            //check to see if this has been set
+            if (thiz.login !== undefined){
+              drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
+            }
             drinkCollectionsView.render();
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
