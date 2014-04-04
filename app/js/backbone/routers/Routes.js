@@ -10,12 +10,14 @@ var User = require('../models/User.js');
 var LoginView = require('../views/LoginView.js');
 var SavedItemsView = require('../views/SavedItemsView.js');
 var CheckSession = require('../models/CheckSession.js');
+var SignupView = require('../views/signupView.js');
 
 module.exports = Backbone.Router.extend({
 
 
     routes: {
         "savedItems": "showSavedItems",
+        "signup":"showSignupPage",
         "login": "showLoginPage",
         "": "showFirstQuestion",
         ":tag": 'showSecondQuestion',
@@ -76,6 +78,12 @@ module.exports = Backbone.Router.extend({
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(loginView.el);
+    },
+    showSignupPage: function () {
+        var signupView = new SignupView();
+        $('.Question').empty();
+        $('.Result').empty();
+        $('.Result').append(signupView.el);
     },
 
     showFirstQuestion: function () {
