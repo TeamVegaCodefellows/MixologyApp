@@ -28,9 +28,11 @@ app.configure(function () {
     app.use(app.router);
 });
 
+var mongolab = process.env.MONGOLAB_URI;
+
 app.configure('development', function () {
     app.use(express.errorHandler());
-    mongoose.connect('mongodb://localhost/mixology-development');
+    mongoose.connect(mongolab || 'mongodb://localhost/mixology-development');
 });
 
 //mongoose.connect(uristring, function(err, res) {
