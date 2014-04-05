@@ -117,18 +117,21 @@ module.exports = function(app, passport) {
 
   app.post('/edit', function(req, response){
     User.findOne({localEmail: req.body.verifyEmail}, function(err, user){
-      bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
-        if (res === true) {
-          var salt = bcrypt.genSaltSync(10);
-          var hash = bcrypt.hashSync(req.body.newPassword, salt);
-          User.update({localEmail: req.body.verifyEmail},
-              {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
-                req.session.email=req.body.newEmail;
-                response.send('Update ok!');
-              });
-        }
-        else response.send('Wrong password!');
-      });
+      if (user) {
+        bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
+          if (res === true) {
+            var salt = bcrypt.genSaltSync(10);
+            var hash = bcrypt.hashSync(req.body.newPassword, salt);
+            User.update({localEmail: req.body.verifyEmail},
+                {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
+                  req.session.email=req.body.newEmail;
+                  response.send('Update ok!');
+                });
+          }
+          else response.send('Wrong password!');
+        });
+      }
+      else response.send('Wrong email!');
     });
   });
 

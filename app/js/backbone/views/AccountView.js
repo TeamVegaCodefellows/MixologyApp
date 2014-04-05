@@ -37,8 +37,11 @@ module.exports = Backbone.View.extend({
             $('#loggedInName').html(newEmail);
             Backbone.history.navigate('/', {trigger:true});
           }
-          if(response === 'Wrong password'){
+          if(response === 'Wrong password!'){
             alert('Wrong password!');
+          }
+          if(response === 'Wrong email!'){
+            alert('Wrong email!');
           }
         }
       })
