@@ -1,5 +1,6 @@
 [
   {
+    "name" : "jeong",
     "localEmail" : "jlim8612@gmail.com",
     "localPassword" : "$2a$08$mza1lo4.x/MrpUw9MTVnU.sirF6ogpmthe1bn1sC9jP2gJAIfCIOm",
     "twitterId" : "",
@@ -7,9 +8,18 @@
     "twitterDisplayName" : "",
     "twitterUserName" : "",
     "savedDrinks" : [
-      {"drink": "Berry Little Cocktail"},
-      {"drink": "Bloody Mary"},
-      {"drink": "Martini"}
+      {
+        "_id" : ObjectId("53405add4a24125d07df4c7e"),
+        "name" : "Lillet Rose Spring Cocktail",
+        "description" : "Lillet Rose, a fortified-wine blend of Sauvignon Blanc and Muscatel, has the aroma of flowers and ripe berries -- perfect for a springtime aperitif. Garnishing the drinks with edible flowers is a lovely touch.",
+        "ingredients" : "12 ounces Lillet Rose 12 ounces Ruby Red grapefruit juice 6 ounces gin 6 edible flower blossoms",
+        "directions" : "STEP 1 Combine 6 ounces Lillet, 6 ounces grapefruit juice, 3 ounces gin, and ice in a cocktail shaker. Shake until well chilled. Strain and divide cocktail among 3 stemmed cocktail glasses, such as Champagne coupes. Repeat.  STEP 2 Garnish with flowers. Serve immediately.",
+        "tag" : "classy",
+        "alcohol_tag" : "gin",
+        "servings" : 6,
+        "img" : "",
+        "random" : 11
+      }
     ]
   }
 ]

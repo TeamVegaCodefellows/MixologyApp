@@ -11,6 +11,7 @@ var LoginView = require('../views/LoginView.js');
 var SavedItemsView = require('../views/SavedItemsView.js');
 var CheckSession = require('../models/CheckSession.js');
 var SignupView = require('../views/signupView.js');
+var Account = require('../models/Account.js');
 var AccountView = require('../views/AccountView.js');
 
 module.exports = Backbone.Router.extend({
@@ -32,23 +33,25 @@ module.exports = Backbone.Router.extend({
 
       this.login = new User();
       this.checkSession();
-        var indexView;
-        indexView = new IndexView({
-            model: {}
-        });
-        $('body').append(indexView.el);
-        this.firstQuestion = new FirstQuestion();
-        this.firstQuestionView = new FirstQuestionView({
-            model: this.firstQuestion
-        });
-        var that = this;
-        this.firstQuestion.fetch({
-            success: function () {
-                that.firstQuestionView.render();
-            }
-        });
-        this.secondQuestion = new SecondQuestion();
-        this.secondQuestion.fetch();
+
+      var indexView;
+      indexView = new IndexView({
+          model: {}
+      });
+      $('body').append(indexView.el);
+      this.firstQuestion = new FirstQuestion();
+      this.firstQuestionView = new FirstQuestionView({
+          model: this.firstQuestion
+      });
+      var that = this;
+      this.firstQuestion.fetch({
+          success: function () {
+              that.firstQuestionView.render();
+          }
+      });
+      this.secondQuestion = new SecondQuestion();
+      this.secondQuestion.fetch();
+
     },
 
     checkSession: function() {
@@ -58,24 +61,26 @@ module.exports = Backbone.Router.extend({
         dataType:'text',
         success: function(model, response){
           thiz.login.set({localEmail:response});
+          $('#loggedInName').html(thiz.login.get('localEmail'));
         }
       });
     },
 
     showSavedItems: function() {
       var savedItemsView = new SavedItemsView();
-      console.log(this.login);
-      if (this.login.localEmail !== '' ){
-        savedItemsView.setLogin(this.login.get('localEmail'));
-        savedItemsView.fetch();
-      }
-      else {
+
+      if (this.login.get('localEmail') === ''){
         Backbone.history.navigate('/login', {trigger:true})
         return;
       }
-      $('.Question').empty();
-      $('.Result').empty();
-      $('.Result').append(savedItemsView.el);
+      else{
+        savedItemsView.setLogin(this.login.get('localEmail'));
+        savedItemsView.fetch();
+        $('.Question').empty();
+        $('.Result').empty();
+        $('.Result').append(savedItemsView.el);
+      }
+
     },
 
     showLoginPage: function () {
@@ -85,20 +90,27 @@ module.exports = Backbone.Router.extend({
         $('.Result').append(loginView.el);
     },
     showSignupPage: function () {
-        console.log('signup');
         var signupView = new SignupView({model:this.login});
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(signupView.el);
     },
     showMyAccountPage: function () {
-        var accountView = new AccountView();
+      if (this.login.get('localEmail') === ''){
+        Backbone.history.navigate('/login', {trigger:true})
+        return;
+      }
+      else{
+        var account = new Account();
+        var accountView = new AccountView({model:account, login:this.login});
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(accountView.el);
+      }
     },
 
     showFirstQuestion: function () {
+      console.log('hererere');
       this.checkSession();
       console.log('first Question: this.login', this.login);
       $('.Result').empty();
@@ -107,6 +119,7 @@ module.exports = Backbone.Router.extend({
     },
 
     showSecondQuestion: function (tag) {
+        this.checkSession();
         this.secondQuestionView = new SecondQuestionView({
             model: this.secondQuestion
         });
@@ -117,6 +130,7 @@ module.exports = Backbone.Router.extend({
     },
 
     getResults: function (tag, ingredient) {
+      this.checkSession();
       console.log('this.login', this.login);
       var thiz = this;
       function renderDrinkCollection() {

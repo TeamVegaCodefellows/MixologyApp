@@ -15,7 +15,6 @@ module.exports = Backbone.View.extend({
 
   saveRecipe: function(e){
     if (this.email === undefined || this.email === ''){
-      alert('You have to login first!');
       Backbone.history.navigate('/login', {trigger:true});
     }
     var saveDrink = new SaveDrink({

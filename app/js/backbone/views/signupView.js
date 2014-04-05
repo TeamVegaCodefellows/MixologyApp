@@ -13,12 +13,12 @@ module.exports = Backbone.View.extend({
     signup: function(e) {
       e.preventDefault();
       var thiz = this;
+      var name = $(this.el).find('#name').val();
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
-//      console.log('email:',email, 'password:', password);
-//      alert('here');
-//      return;
+
       var signUp = new SignUp({
+        name:name,
         localEmail:email,
         localPassword:password
       });
@@ -33,6 +33,7 @@ module.exports = Backbone.View.extend({
             thiz.model.set({localEmail:email});
             console.log('this.model', thiz.model);
 
+            $('#loggedInName').html(thiz.model.get('localEmail'));
             Backbone.history.navigate('/', {trigger:true});
           }
         }

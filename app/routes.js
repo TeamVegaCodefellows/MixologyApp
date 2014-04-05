@@ -1,6 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt-nodejs');
-var User = require('../api/models/User.js')
+var User = require('../api/models/User.js');
+var Drink = require('../api/models/Drink.js');
 
 module.exports = function(app, passport) {
   // ============================
@@ -54,14 +55,17 @@ module.exports = function(app, passport) {
     console.log('here');
     console.log(req.body);
     if (req.session.loggedIn === true){
-      User.findOne({localEmail : req.body.localEmail, 'savedDrinks.drink' : req.body.drink} , function(err, res){
+      User.findOne({localEmail : req.body.localEmail, 'savedDrinks.name' : req.body.drink} , function(err, res){
         if (res !== null){
           response.send('Duplicate');
         }
         else {
-          User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:{"drink":req.body.drink}}} , function(err, res){
-            console.log('saved',res);
-            response.send('Saved!');
+          Drink.findOne({name : req.body.drink}, function(err, res){
+            if (res) {
+              User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:res}} , function(err, res){
+                response.send('Saved!');
+              });
+            }
           });
         }
       });
@@ -93,8 +97,14 @@ module.exports = function(app, passport) {
       }
       else{
         var newUser = new User();
+        newUser.name =req.body.name;
         newUser.localEmail = req.body.localEmail;
         newUser.localPassword = newUser.generateHash(req.body.localPassword);
+        newUser.twitterId='';
+        newUser.twitterToken='';
+        newUser.twitterDisplayName='';
+        newUser.twitterUserName='';
+
         newUser.save(function(err){
           if(err) throw err;
           req.session.loggedIn = true;
@@ -103,6 +113,23 @@ module.exports = function(app, passport) {
         })
       }
     })
+  });
+
+  app.post('/edit', function(req, response){
+    User.findOne({localEmail: req.body.verifyEmail}, function(err, user){
+      bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
+        if (res === true) {
+          var salt = bcrypt.genSaltSync(10);
+          var hash = bcrypt.hashSync(req.body.newPassword, salt);
+          User.update({localEmail: req.body.verifyEmail},
+              {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
+                req.session.email=req.body.newEmail;
+                response.send('Update ok!');
+              });
+        }
+        else response.send('Wrong password!');
+      });
+    });
   });
 
   app.get('/logout', function(req, response){
