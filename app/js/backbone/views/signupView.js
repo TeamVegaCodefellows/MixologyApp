@@ -7,7 +7,6 @@ module.exports = Backbone.View.extend({
 	},
 
     events: {
-		'click #createAccount' : 'showSignupPage',
     'click #signup' : 'signup'
     },
 
@@ -16,6 +15,9 @@ module.exports = Backbone.View.extend({
       var thiz = this;
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
+//      console.log('email:',email, 'password:', password);
+//      alert('here');
+//      return;
       var signUp = new SignUp({
         localEmail:email,
         localPassword:password
@@ -28,6 +30,9 @@ module.exports = Backbone.View.extend({
             thiz.$(e.currentTarget).html('User already exists');
           }
           else{
+            thiz.model.set({localEmail:email});
+            console.log('this.model', thiz.model);
+
             Backbone.history.navigate('/', {trigger:true});
           }
         }
