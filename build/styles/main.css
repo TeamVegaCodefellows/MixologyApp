@@ -1,0 +1,172 @@
+body, html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  background-image: url(../assets/images/sativa.png);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: #6C0F00;
+  font-size: 2em;
+  line-height: 1.3em; }
+  body ul li {
+    list-style: none; }
+  body form {
+    margin: 1rem 0 1rem; }
+
+.page {
+  height: 100%;
+  background-color: rgba(255, 239, 195, 0.3); }
+
+h1, h2, h3, label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: #6C0F00; }
+
+input {
+  border-radius: 0.3em; }
+
+.tab-bar {
+  background-color: #6C0F00; }
+  .tab-bar #logo {
+    height: 1.8em;
+    padding: 0.2em; }
+
+.left-off-canvas-menu {
+  background-color: #F0EBDE; }
+
+ul.off-canvas-list li a {
+  color: #6C0F00;
+  text-transform: uppercase;
+  text-decoration: none; }
+
+ul.off-canvas-list li a:hover {
+  background-color: #D9CFBE; }
+
+.off-canvas-wrap, .inner-wrap {
+  height: 100%; }
+
+ul.off-canvas-list li a {
+  border-bottom: 2px solid #6C0F00;
+  padding: 7px;
+  font-size: 1.1rem;
+  font-weight: 100; }
+
+.tab-bar .menu-icon span {
+  -webkit-box-shadow: 1px 0px 1px 1px #FFFAF6, 1px 7px 1px 1px #FFFAF6, 1px 14px 1px 1px #FFFAF6;
+  box-shadow: 0 0px 0 1px #FFFAF6, 0 7px 0 1px #FFFAF6, 0 14px 0 1px #FFFAF6; }
+
+.move-right .exit-off-canvas {
+  box-shadow: -2px 0 2px rgba(108, 15, 0, 0.5), 2px 0 2px rgba(108, 15, 0, 0.5);
+  background: rgba(255, 250, 246, 0.5); }
+
+@media (min-width: 40.063em) {
+  .tab-bar-section {
+    text-align: center; } }
+
+.left-small {
+  border: none; }
+
+a.sub-line {
+  font-size: 0.5em;
+  color: #6C0F00;
+  padding: 0;
+  height: 16px; }
+
+input#passwordInput {
+  margin-bottom: 0; }
+
+span.divider {
+  width: 5em;
+  border-top: 1px solid #6C0F00; }
+
+.dividerWord {
+  text-align: center;
+  font-size: 0.6em; }
+
+.loginForm h1 {
+  text-align: center; }
+
+.loginForm input {
+  background-color: #F0EBDE;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #6C0F00;
+  box-shadow: none;
+  color: #6C0F00; }
+
+#createAccount {
+  text-align: center; }
+  #createAccount a {
+    color: #6C0F00;
+    font-size: 0.8em; }
+
+.question {
+  text-align: center;
+  color: #6C0F00;
+  padding: 1em;
+  font-weight: 250; }
+
+button {
+  border-radius: 0.2em;
+  border: 2px solid #6C0F00;
+  background-color: #F0EBDE;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7em;
+  color: #6C0F00;
+  font-weight: 100;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0; }
+
+button:hover {
+  border: 2px solid #6C0F00;
+  background-color: #D9CFBE;
+  color: #6C0F00; }
+
+button:focus {
+  border: 2px solid #6C0F00;
+  background-color: #D9CFBE;
+  color: #6C0F00; }
+
+.cocktailRecipeItem {
+  border: 2px solid #6C0F00;
+  border-radius: 0.2em;
+  color: #6C0F00;
+  background-color: #F0EBDE;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+.cocktailTitle {
+  padding-top: 1em;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #6C0F00;
+  text-transform: uppercase; }
+
+.titleRecipe {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #6C0F00; }
+
+.recipeButton {
+  width: 47%;
+  display: inline-block;
+  font-size: 0.5em;
+  border: 2px solid #6C0F00;
+  margin: 0.2em 0.2em 0.5em 0.2em;
+  background-color: #6C0F00;
+  color: #FFFAF6;
+  text-transform: uppercase; }
+
+.recipeButton:hover {
+  background-color: #520B00;
+  border: 2px solid #520B00;
+  color: #FFFAF6; }
+
+.recipeButton:focus {
+  background-color: #520B00;
+  border: 2px solid #520B00;
+  color: #FFFAF6; }
+
+/*# sourceMappingURL=main.css.map */
