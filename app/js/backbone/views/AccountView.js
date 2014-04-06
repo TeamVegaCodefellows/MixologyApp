@@ -40,7 +40,7 @@ module.exports = Backbone.View.extend({
       success: function(model, response){
         if (response === 'Update ok!'){
           alert('Account details changed!');
-          thiz.options.login.set({localEmail:newEmail});
+          thiz.options.login.set({localEmail:newEmail.toLowerCase()});
           $('#loggedInName').html(newEmail);
           Backbone.history.navigate('/', {trigger:true});
         }

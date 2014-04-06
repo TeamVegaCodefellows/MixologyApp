@@ -101,14 +101,15 @@ module.exports = function(app, passport) {
   });
 
   app.post('/signup', function(req, response){
-    User.findOne({localEmail: req.body.localEmail}, function(err, user){
+    User.findOne({localEmail: req.body.localEmail.toLowerCase()}, function(err, user){
+      console.log(user);
       if (user !== null){
         response.send('This user already exists')
       }
       else{
         var newUser = new User();
         newUser.name =req.body.name;
-        newUser.localEmail = req.body.localEmail;
+        newUser.localEmail = req.body.localEmail.toLowerCase();
         newUser.localPassword = newUser.generateHash(req.body.localPassword);
         newUser.twitterId='';
         newUser.twitterToken='';
@@ -118,7 +119,7 @@ module.exports = function(app, passport) {
         newUser.save(function(err){
           if(err) throw err;
           req.session.loggedIn = true;
-          req.session.email = req.body.localEmail;
+          req.session.email = req.body.localEmail.toLowerCase();
           req.session.name = req.body.name;
           response.redirect('/');
         })
@@ -128,23 +129,25 @@ module.exports = function(app, passport) {
 
   app.post('/edit', function(req, response){
     console.log(req.body);
-    User.findOne({localEmail: req.body.verifyEmail}, function(err, user){
+    User.findOne({localEmail: req.body.verifyEmail.toLowerCase()}, function(err, user){
       if (user) {
-        bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
+        bcrypt.compare( req.body.verifyPassword.toLowerCase(), user.localPassword, function(err, res){
           if (res === true) {
-            User.findOne({localEmail:req.body.newEmail}, function(err, res){
+            User.findOne({localEmail:req.body.newEmail.toLowerCase()}, function(err, res){
               console.log('res', res);
               function edit() {
                 var salt = bcrypt.genSaltSync(10);
                 var hash = bcrypt.hashSync(req.body.newPassword, salt);
-                User.update({localEmail: req.body.verifyEmail},
-                    {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
-                      req.session.email=req.body.newEmail;
+                User.update({localEmail: req.body.verifyEmail.toLowerCase()},
+                    {name:req.body.newName, localEmail:req.body.newEmail.toLowerCase(), localPassword:hash},function(err, res){
+                      console.log(req.body.newEmail, req.body.newEmail.toLowerCase());
+                      req.session.email=req.body.newEmail.toLowerCase();
                       req.session.name=req.body.newName;
                       response.send('Update ok!');
                     });
               }
-              if (res && user.localEmail === req.body.newEmail){
+              if (res && user.localEmail === req.body.newEmail.toLowerCase()){
+                console.log('edit');
                 edit();
               }
               else if (res){
