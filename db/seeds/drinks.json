@@ -5,8 +5,10 @@
     "ingredients":"6 tablespoons freshly squeezed orange juice 2 tablespoons freshly squeezed lemon juice 2 tablespoons orange flavored liqueur, such as Grand Marnier Prosecco, chilled Fresh mint leaf",
     "directions":"In a Champagne flute, mix together orange juice, lemon juice, and liqueur. Fill with Prosecco. Garnish with mint leaf and serve immediately.",
     "tag":"classy",
+    "alcohol_tag": "champagne",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 1
   },
   {
     "name":"Semifreddo Bellini",
@@ -14,8 +16,10 @@
     "ingredients":"1 cup peeled, chopped peaches, frozen until hardened 1/4 cup peach schnapps 3/4 cup plus 2 tablespoons chilled Champagne or sparkling white wine 2 tablespoons superfine sugar 1 cup small ice cubes Peach slices, for garnish",
     "directions":"Blend peaches, peach schnapps, 2 tablespoons Champagne, the sugar, and ice in a blender until smooth. Divide mixture between 2 glasses; top off each glass with 1/4 cup plus 2 tablespoons Champagne, and serve.",
     "tag":"classy",
+    "alcohol_tag": "champagne",
     "servings":2,
-    "img":""
+    "img":"",
+    "random": 2
   },
   {
     "name":"Bloody Mary",
@@ -23,17 +27,21 @@
     "ingredients":"4 cups tomato juice Juice of 2 large lemons 1 to 2 tablespoons Worcestershire sauce 1 heaping tablespoon prepared horseradish 1 1/2 cloves garlic, passed through a garlic press 2 teaspoons coarsely ground pepper 1/4 to 1/2 teaspoon Tabasco sauce Unflavored vodka, to taste Lemon wedges, for serving Celery sticks, for serving and munching",
     "directions":"STEP 1 Place tomato juice in a large container with a tight-fitting lid. Add lemon juice, Worcestershire sauce, horseradish, garlic, pepper, and Tabasco; shake vigorously. Taste, and adjust for seasoning; the mixture should be quite spicy.  STEP 2 Pour 1 part vodka and 3 parts Bloody Mary mix over ice in a shaker. Shake well. Pour into glasses. Squeeze a wedge of lemon over drink (do not subsequently stir or shake drink), discard used wedge. Garnish with a large stick of celery (reserve extra stalks for munching) and a large lemon wedge.",
     "tag":"business",
+    "alcohol_tag": "vodka",
     "servings":6,
-    "img":""
+    "img":"",
+    "random": 3
   },
   {
     "name":"Manhattan",
     "description":"Try serving this classic cocktail at your next gathering.",
     "ingredients":"2 1/2 ounces bourbon or rye 1/2 ounce sweet vermouth 2 dashes Angostura bitters Ice cubes Maraschino cherry, for garnish",
     "directions":"Shake bourbon, vermouth, and bitters over ice. Strain into a cocktail glass; garnish with cherry.",
-    "tag":"business",
+    "tag":"classy",
+    "alcohol_tag": "whiskey",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 4
   },
   {
     "name":"The Negroni",
@@ -41,8 +49,10 @@
     "ingredients":"1 ounce gin 1 ounce Campari 1 ounce sweet vermouth Orange twist, for garnish",
     "directions":"Pour all ingredients into an ice-filled mixing glass. Stir well. Strain into a cocktail glass. (Alternatively, combine ingredients in a tumbler and serve in the same glass.) Garnish with an orange twist.",
     "tag":"business",
+    "alcohol_tag": "gin",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 5
   },
   {
     "name":"Martini",
@@ -50,8 +60,10 @@
     "ingredients":"3/4 cup vodka or gin 2 teaspoons dry vermouth Cocktail olives",
     "directions":"In a cocktail shaker half full of ice cubes, combine gin or vodka and vermouth. Shake well, and strain into martini glasses. Garnish with olives, and serve.",
     "tag":"business",
+    "alcohol_tag": "vodka gin",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 6
   },
   {
     "name":"Lemon Shandies",
@@ -59,8 +71,10 @@
     "ingredients":"1/2 cup sugar 3/4 cup fresh lemon juice (from about 4 lemons), plus wedges, for serving (optional) 8 mild pilsner beers (12 ounces each)",
     "directions":"STEP 1 Place eight 16-ounce glasses or mugs in the freezer.  STEP 2 In a small saucepan, combine sugar and 3/4 cup water over medium heat. Cook, stirring, until sugar dissolves, about 1 minute. Refrigerate until cool, at least 10 minutes and up to 1 week.  STEP 3 In a 2-cup liquid measure or small pitcher, combine sugar mixture and lemon juice. Pour 1 beer into each chilled glass; add about 1/4 cup lemon mixture and, if desired, a lemon wedge. Serve immediately.",
     "tag":"party",
+    "alcohol_tag": "beer",
     "servings":8,
-    "img":""
+    "img":"",
+    "random": 7
   },
   {
     "name":"Peach Juleps",
@@ -68,8 +82,10 @@
     "ingredients":"1/3 cup fresh mint leaves, plus sprigs for garnish 2 teaspoons sugar 1 1/2 cups store-bought peach juice 1 can (12 ounces) club soda 1/2 cup bourbon Crushed ice, for serving",
     "directions":"STEP 1 In a medium bowl or pitcher, combine mint and sugar. With a wooden spoon, mash leaves until bruised. Stir in peach juice, club soda, and bourbon.  STEP 2 Serve over crushed ice; garnish with more mint.",
     "tag":"business",
+    "alcohol_tag": "whiskey",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 8
   },
   {
     "name":"Frozen Peach Margaritas",
@@ -77,8 +93,10 @@
     "ingredients":"1 package (16 ounces) frozen sliced peaches 3/4 cup tequila 1/4 cup triple sec 1/4 cup fresh lime juice (from 3 limes) 1/4 cup sugar 1 cup ice cubes",
     "directions":"In a blender, combine frozen sliced peaches, tequila, triple sec, fresh lime juice, sugar, and ice cubes. Puree until smooth (stop blender and stir if necessary) and serve immediately.",
     "tag":"party",
+    "alcohol_tag": "tequila liqueur",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 9
   },
   {
     "name":"Classic Champagne Cocktail",
@@ -86,8 +104,10 @@
     "ingredients":"3 drops bitters 1 sugar cube 1 ounce Cognac 4 ounces chilled Champagne",
     "directions":"Drop bitters onto sugar cube; let soak in. Place sugar cube in a Champagne flute. Add Cognac, and top with Champagne.",
     "tag":"classy",
+    "alcohol_tag": "champagne brandy",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 10
   },
   {
     "name":"Lillet Rose Spring Cocktail",
@@ -95,8 +115,10 @@
     "ingredients":"12 ounces Lillet Rose 12 ounces Ruby Red grapefruit juice 6 ounces gin 6 edible flower blossoms",
     "directions":"STEP 1 Combine 6 ounces Lillet, 6 ounces grapefruit juice, 3 ounces gin, and ice in a cocktail shaker. Shake until well chilled. Strain and divide cocktail among 3 stemmed cocktail glasses, such as Champagne coupes. Repeat.  STEP 2 Garnish with flowers. Serve immediately.",
     "tag":"classy",
+    "alcohol_tag": "gin",
     "servings":6,
-    "img":""
+    "img":"",
+    "random": 11
   },
   {
     "name":"Celery French 75",
@@ -104,8 +126,10 @@
     "ingredients":"1/2 cup sugar 1/2 cup water 2 tablespoons packed fresh celery leaves, plus more for garnish 3/4 cup fresh lemon juice (from 4 to 5 lemons) 6 ounces gin, chilled 1 bottle (750 mL) sparkling wine, such as Champagne or cava, chilled Candied lemon rinds or lemon twists, for garnish",
     "directions":"STEP 1 Combine sugar and water in a small saucepan. Bring to a simmer over medium heat, stirring until sugar is dissolved. Remove from heat; add celery leaves. Let syrup cool. Pour through a fine sieve into a bowl; discard leaves.  STEP 2 To assemble each cocktail, combine 1 tablespoon celery syrup, 1 tablespoon lemon juice, and 1/2 ounce gin in a Champagne glass. Top off with wine; gently stir to combine. Garnish with celery leaf and lemon rind or twist; serve immediately.",
     "tag":"business",
+    "alcohol_tag": "gin champagne",
     "servings":12,
-    "img":""
+    "img":"",
+    "random": 12
   },
   {
     "name":"Sparkling Strawberry Cocktail",
@@ -113,8 +137,10 @@
     "ingredients":"2 cups hulled strawberries 2 tablespoons water 1/4 cup orange juice 1 bottle chilled Prosecco or other dry sparkling wine 1 orange, sliced into rounds Mint sprigs, for garnish",
     "directions":"In a blender, puree 2 cups hulled and 2 tablespoons water until smooth. In a pitcher, combine strawberry puree, cup 1 bottle chilled or other dry sparkling wine, and 1 sliced into rounds, and stir gently. Serve garnished with sprigs.",
     "tag":"classy",
+    "alcohol_tag": "champagne",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 13
   },
   {
     "name":"Champagne Punch",
@@ -122,8 +148,10 @@
     "ingredients":"3 tablespoons grenadine 3 tablespoons Cointreau 2 tablespoons brandy 1 3/4 cups champagne Raspberries, apples, or other seasonal fruit",
     "directions":"Fill a small ice bucket halfway with ice. Pour grenadine, Cointreau, brandy, and champagne over ice. Stir gently, and ladle punch into 2 wide-mouthed stemmed glasses. Garnish punch with raspberries, apples, or any other fruit in season.",
     "tag":"classy",
+    "alcohol_tag": "brandy",
     "servings":6,
-    "img":""
+    "img":"",
+    "random": 14
   },
   {
     "name":"Pina Colada",
@@ -131,8 +159,10 @@
     "ingredients":"2 cups fresh or canned pineapple juice 3/4 cup cream of coconut, such as Coco Lopez 1 cup light rum 3 cups crushed ice 4 fresh pineapple spears, for garnish",
     "directions":"Combine all ingredients except garnish in a blender. Pour into tumblers, garnish with pineapple spears, and serve immediately.",
     "tag":"party",
+    "alcohol_tag": "rum",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 15
   },
   {
     "name":"Blue Hawaii",
@@ -140,8 +170,10 @@
     "ingredients":"3 ounces pineapple juice 3/4 ounce white rum 3/4 ounce vodka 1/2 ounce lemon juice 1/2 ounce blue Curacao 1/4 ounce simple syrup Ice Cherry and a pineapple wedge (for serving)",
     "directions":"In a cocktail shaker, combine pineapple juice, rum, vodka, lemon juice, blue Curacao, and simple syrup. Shake and strain over ice. Serve with a cherry and a pineapple wedge.",
     "tag":"party",
+    "alcohol_tag": "rum vodka",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 16
   },
   {
     "name":"Punchy Cocktail",
@@ -149,8 +181,10 @@
     "ingredients":"1 cup guava juice 1 cup passion fruit juice 1 cup lychee juice 1/2 cup packed basil leaves, plus more for garnish 1/3 cup fresh-squeezed key lime (or regular lime) juice 1/2 cup tangerine juice Lime slices, for garnish",
     "directions":"STEP 1 Mix guava, passion fruit, and lychee juices (we like Ceres brand) in a large pitcher. In a saucepan, combine 1 cup of the fruit-juice mixture with the basil. Bring to a boil, then reduce heat and simmer for 5 minutes. Remove from heat, let cool, and strain, discarding basil.  STEP 2 Pour infused juice back into pitcher, and stir in lime and tangerine juices. (Optional: Add 1 cup rum.) Ladle over ice and garnish with basil and lime.",
     "tag":"party",
+    "alcohol_tag": "rum",
     "servings":10,
-    "img":""
+    "img":"",
+    "random": 17
   },
   {
     "name":"Candy Cane Cocktail",
@@ -158,8 +192,10 @@
     "ingredients":"1 candy cane, crushed, for garnish 2 ounces strawberry vodka 4 dashes white creme de menthe 2 1/2 ounces cranberry juice Ice cubes",
     "directions":"STEP 1 Place crushed candy canes on a small plate or saucer. Wet the outside rim of a chilled martini glass with water. Holding the glass by the stem, rotate the rim to coat with candy.  STEP 2 In a cocktail shaker, combine vodka, creme de menthe, cranberry juice, and ice; shake until well combined. Strain into prepared glass; serve immediately.",
     "tag":"party",
+    "alcohol_tag": "vodka",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 18
   },
   {
     "name":"Sauternes and Frozen Stone Fruit",
@@ -167,8 +203,10 @@
     "ingredients":"1 large peach (about 7 ounces) 2 medium apricots (about 2 ounces each) 1/3 cup peach nectar 1 cup chilled Sauternes",
     "directions":"STEP 1 Pit and cut peach and apricots into 1/4-inch dice. Divide fruit evenly among 16 sections of an ice cube tray. Add 1 teaspoon peach nectar to each section (just enough to cover fruit). Freeze, about 6 hours.  STEP 2 Put 4 fruit cubes into each of 4 chilled wine glasses. Pour 1/4 cup chilled Sauternes into each glass. Let stand 5 minutes.",
     "tag":"party",
+    "alcohol_tag": "wine",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 19
   },
   {
     "name":"Watermelon Punch",
@@ -176,8 +214,10 @@
     "ingredients":"3 cups seeded watermelon, cut into 1 1/2-inch pieces 1 1/2 cups white vermouth 1 1/2 tablespoons superfine sugar 3 cups crushed ice Edible pansies, for garnish",
     "directions":"Place watermelon, vermouth, and sugar in a blender; process until watermelon has been liquefied, about 10 seconds. Add ice; process 3 seconds more. Garnish with pansies, and serve in chilled glasses.",
     "tag":"party",
+    "alcohol_tag": "vermouth",
     "servings":4,
-    "img":""
+    "img":"",
+    "random": 20
   },
   {
     "name":"Champagne-And-Orange Granita Cocktail",
@@ -185,8 +225,10 @@
     "ingredients":"4 1/2 cups fresh orange juice (from 14 oranges) 3/4 cup superfine sugar Elderflower liqueur, such as St-Germain 2 bottles (750 mL each) Champagne",
     "directions":"STEP 1 Combine orange juice and sugar, and stir until sugar dissolves. Transfer to an 8-inch square baking dish. Freeze, scraping around sides and breaking any lumps with a fork every 30 minutes, until evenly frozen, 2 1/2 to 3 hours. Cover with plastic wrap. Granita can be made 1 day ahead and kept in freezer until ready to serve.  STEP 2 Spoon 1/2 cup granita into each of 12 glasses, and add 1/2 teaspoon liqueur. Top off with Champagne.",
     "tag":"classy",
+    "alcohol_tag": "champagne",
     "servings":16,
-    "img":""
+    "img":"",
+    "random": 21
   },
   {
     "name":"Blood Orange Champagne Cocktails",
@@ -194,8 +236,10 @@
     "ingredients":"2 1/4 cups freshly squeezed or frozen blood-orange juice 2 750-ml bottles champagne, chilled",
     "directions":"Pour 3 tablespoons juice in each champagne flute. Fill flutes with champagne, and serve.",
     "tag":"classy",
+    "alcohol_tag": "champagne",
     "servings":12,
-    "img":""
+    "img":"",
+    "random": 22
   },
   {
     "name":"Berry Little Cocktail",
@@ -203,8 +247,10 @@
     "ingredients":"1/2 cup sugar 1 cup fresh cranberries 1 ounce Charbay ruby red grapefruit vodka 2 ounces Champagne 1 ounce cranberry juice 1 ounce black currant juice",
     "directions":"In a medium saucepan over medium-high heat, dissolve sugar into 1 1/2 cups water. Add cranberries and simmer for 5 minutes, or until softened. Remove from heat and let cool. Strain, discard liquid, and place cranberries on a tray in the freezer for at least 2 hours. Chill vodka, Champagne, and juices, then mix in a champagne glass. Garnish with skewer of 4 or 5 frozen candied cranberries. Reserve the rest for another drink.",
     "tag":"classy",
+    "alcohol_tag": "vodka champagne",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 23
   },
   {
     "name":"The Blizzard Cocktail",
@@ -212,7 +258,9 @@
     "ingredients":"1 1/2 ounces Irish whiskey or rum 1/2 ounce hazelnut liqueur, such as Frangelico 1/2 ounce Irish cream liqueur, such as Bailey's Hot coffee Dollop of Grand Marnier Whipped Cream",
     "directions":"In a glass coffee mug, stir together whiskey, hazelnut liqueur, and Irish cream; top with coffee. Garnish cocktail with whipped cream and serve immediately.",
     "tag":"business",
+    "alcohol_tag": "whiskey liqueur",
     "servings":1,
-    "img":""
+    "img":"",
+    "random": 24
   }
 ]

@@ -54,6 +54,8 @@ app.get('/api/v1/getDrink/:tag/:ingredient', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
 var server = http.createServer(app);
-server.listen(3000, function () {
-    console.log('App listening on port 3000');
+var port = process.env.PORT || 3000;
+
+server.listen(port, function () {
+    console.log('App listening on port ' + port);
 });

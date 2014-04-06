@@ -1,6 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt-nodejs');
-var User = require('../api/models/User.js')
+var User = require('../api/models/User.js');
+var Drink = require('../api/models/Drink.js');
 
 module.exports = function(app, passport) {
   // ============================
@@ -39,6 +40,8 @@ module.exports = function(app, passport) {
           if (res === true) {
             req.session.loggedIn=true;
             req.session.email = req.body.localEmail;
+            console.log('user.name',user.name);
+            req.session.name = user.name;
             response.send("ok");
           }
           else response.send("fail");
@@ -54,14 +57,17 @@ module.exports = function(app, passport) {
     console.log('here');
     console.log(req.body);
     if (req.session.loggedIn === true){
-      User.findOne({localEmail : req.body.localEmail, 'savedDrinks.drink' : req.body.drink} , function(err, res){
+      User.findOne({localEmail : req.body.localEmail, 'savedDrinks.name' : req.body.drink} , function(err, res){
         if (res !== null){
           response.send('Duplicate');
         }
         else {
-          User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:{"drink":req.body.drink}}} , function(err, res){
-            console.log('saved',res);
-            response.send('Saved!');
+          Drink.findOne({name : req.body.drink}, function(err, res){
+            if (res) {
+              User.update({localEmail : req.body.localEmail}, {$push: {savedDrinks:res}} , function(err, res){
+                response.send('Saved!');
+              });
+            }
           });
         }
       });
@@ -71,6 +77,14 @@ module.exports = function(app, passport) {
   app.get('/checkSession', function(req, response){
     if (req.session.loggedIn === true){
       response.send(req.session.email);
+    }
+  });
+
+  app.get('/getName', function(req,response){
+    if (req.session.loggedIn === true){
+      var res = {name: req.session.name};
+      console.log('res', JSON.stringify(res));
+      response.send(JSON.stringify(res));
     }
   });
 
@@ -93,16 +107,61 @@ module.exports = function(app, passport) {
       }
       else{
         var newUser = new User();
+        newUser.name =req.body.name;
         newUser.localEmail = req.body.localEmail;
         newUser.localPassword = newUser.generateHash(req.body.localPassword);
+        newUser.twitterId='';
+        newUser.twitterToken='';
+        newUser.twitterDisplayName='';
+        newUser.twitterUserName='';
+
         newUser.save(function(err){
           if(err) throw err;
           req.session.loggedIn = true;
           req.session.email = req.body.localEmail;
+          req.session.name = req.body.name;
           response.redirect('/');
         })
       }
     })
+  });
+
+  app.post('/edit', function(req, response){
+    console.log(req.body);
+    User.findOne({localEmail: req.body.verifyEmail}, function(err, user){
+      if (user) {
+        bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
+          if (res === true) {
+            User.findOne({localEmail:req.body.newEmail}, function(err, res){
+              console.log('res', res);
+              function edit() {
+                var salt = bcrypt.genSaltSync(10);
+                var hash = bcrypt.hashSync(req.body.newPassword, salt);
+                User.update({localEmail: req.body.verifyEmail},
+                    {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
+                      req.session.email=req.body.newEmail;
+                      req.session.name=req.body.newName;
+                      response.send('Update ok!');
+                    });
+              }
+              if (res && user.localEmail === req.body.newEmail){
+                edit();
+              }
+              else if (res){
+                response.send('The new email you entered already exists!')
+              }
+              else {
+                edit();
+              }
+            })
+          }
+          else response.send('Wrong password!');
+        });
+      }
+      else {
+        response.send('Wrong email!');
+      }
+    });
   });
 
   app.get('/logout', function(req, response){

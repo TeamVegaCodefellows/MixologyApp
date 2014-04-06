@@ -27,6 +27,7 @@ module.exports = Backbone.View.extend({
             thiz.$('#badCredentials').html('wrong credentials');
           }
           else {
+            $('#loggedInName').html(thiz.model.get('localEmail'));
             Backbone.history.navigate('/', {trigger:true});
           }
         },
