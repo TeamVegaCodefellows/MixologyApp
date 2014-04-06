@@ -23,7 +23,7 @@ module.exports = Backbone.Router.extend({
         "login": "showLoginPage",
         "": "showFirstQuestion",
         ":tag": 'showSecondQuestion',
-        "results/:tag/:ingredient": "getResults",
+        "results/:tag/:ingredient": "getResults"
     },
 
     initialize: function () {
