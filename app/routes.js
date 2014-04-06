@@ -134,10 +134,7 @@ module.exports = function(app, passport) {
           if (res === true) {
             User.findOne({localEmail:req.body.newEmail}, function(err, res){
               console.log('res', res);
-              if (res){
-                response.send('The new email you entered already exists!')
-              }
-              else {
+              function edit() {
                 var salt = bcrypt.genSaltSync(10);
                 var hash = bcrypt.hashSync(req.body.newPassword, salt);
                 User.update({localEmail: req.body.verifyEmail},
@@ -146,6 +143,15 @@ module.exports = function(app, passport) {
                       req.session.name=req.body.newName;
                       response.send('Update ok!');
                     });
+              }
+              if (res && user.localEmail === req.body.newEmail){
+                edit();
+              }
+              else if (res){
+                response.send('The new email you entered already exists!')
+              }
+              else {
+                edit();
               }
             })
           }
