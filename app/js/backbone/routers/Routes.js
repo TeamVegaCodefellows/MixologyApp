@@ -17,13 +17,13 @@ var AccountView = require('../views/AccountView.js');
 module.exports = Backbone.Router.extend({
 
     routes: {
-        "myAccount":"showMyAccountPage",
-        "savedItems": "showSavedItems",
-        "signup":"showSignupPage",
-        "login": "showLoginPage",
-        "": "showFirstQuestion",
-        ":tag": 'showSecondQuestion',
-        "results/:tag/:ingredient": "getResults",
+      "myAccount":"showMyAccountPage",
+      "savedItems": "showSavedItems",
+      "signup":"showSignupPage",
+      "login": "showLoginPage",
+      "": "showFirstQuestion",
+      ":tag": 'showSecondQuestion',
+      "results/:tag/:ingredient": "getResults",
     },
 
     initialize: function () {
@@ -45,9 +45,9 @@ module.exports = Backbone.Router.extend({
       });
       var that = this;
       this.firstQuestion.fetch({
-          success: function () {
-              that.firstQuestionView.render();
-          }
+        success: function () {
+          that.firstQuestionView.render();
+        }
       });
       this.secondQuestion = new SecondQuestion();
       this.secondQuestion.fetch();
@@ -84,16 +84,16 @@ module.exports = Backbone.Router.extend({
     },
 
     showLoginPage: function () {
-        var loginView = new LoginView({model:this.login});
-        $('.Question').empty();
-        $('.Result').empty();
-        $('.Result').append(loginView.el);
+      var loginView = new LoginView({model:this.login});
+      $('.Question').empty();
+      $('.Result').empty();
+      $('.Result').append(loginView.el);
     },
     showSignupPage: function () {
-        var signupView = new SignupView({model:this.login});
-        $('.Question').empty();
-        $('.Result').empty();
-        $('.Result').append(signupView.el);
+      var signupView = new SignupView({model:this.login});
+      $('.Question').empty();
+      $('.Result').empty();
+      $('.Result').append(signupView.el);
     },
     showMyAccountPage: function () {
       if (this.login.get('localEmail') === ''){
@@ -119,14 +119,14 @@ module.exports = Backbone.Router.extend({
     },
 
     showSecondQuestion: function (tag) {
-        this.checkSession();
-        this.secondQuestionView = new SecondQuestionView({
-            model: this.secondQuestion
-        });
-        this.secondQuestionView.render();
-        this.secondQuestionView.setTag(tag);
-        $('.Result').empty();
-        $('.Question').html(this.secondQuestionView.el);
+      this.checkSession();
+      this.secondQuestionView = new SecondQuestionView({
+        model: this.secondQuestion
+      });
+      this.secondQuestionView.render();
+      this.secondQuestionView.setTag(tag);
+      $('.Result').empty();
+      $('.Question').html(this.secondQuestionView.el);
     },
 
     getResults: function (tag, ingredient) {

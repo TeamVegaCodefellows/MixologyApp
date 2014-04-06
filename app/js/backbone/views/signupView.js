@@ -1,5 +1,6 @@
 var template = require('../../../templates/signup.hbs');
 var SignUp = require('../models/SignUp.js');
+var formValidation = require('../../Util/formValidation.js');
 
 module.exports = Backbone.View.extend({
 	initialize: function() {
@@ -7,7 +8,13 @@ module.exports = Backbone.View.extend({
 	},
 
     events: {
-    'click #signup' : 'signup'
+      'click #signup' : 'signup',
+      'click #Cancel' : 'cancel'
+    },
+
+    cancel: function(e){
+      e.preventDefault();
+      Backbone.history.navigate('/', {trigger:true});
     },
 
     signup: function(e) {
@@ -16,6 +23,11 @@ module.exports = Backbone.View.extend({
       var name = $(this.el).find('#name').val();
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
+      var verifyPassword =  $(this.el).find('#verifyPassword').val();
+
+      if (formValidation(name,email,password,verifyPassword)===false){
+        return;
+      }
 
       var signUp = new SignUp({
         name:name,

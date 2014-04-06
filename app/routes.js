@@ -40,6 +40,8 @@ module.exports = function(app, passport) {
           if (res === true) {
             req.session.loggedIn=true;
             req.session.email = req.body.localEmail;
+            console.log('user.name',user.name);
+            req.session.name = user.name;
             response.send("ok");
           }
           else response.send("fail");
@@ -78,6 +80,14 @@ module.exports = function(app, passport) {
     }
   });
 
+  app.get('/getName', function(req,response){
+    if (req.session.loggedIn === true){
+      var res = {name: req.session.name};
+      console.log('res', JSON.stringify(res));
+      response.send(JSON.stringify(res));
+    }
+  });
+
   app.post('/getSavedItems', function(req, response){
     console.log(req.body);
     if (req.session.loggedIn === true){
@@ -109,6 +119,7 @@ module.exports = function(app, passport) {
           if(err) throw err;
           req.session.loggedIn = true;
           req.session.email = req.body.localEmail;
+          req.session.name = req.body.name;
           response.redirect('/');
         })
       }
@@ -116,22 +127,34 @@ module.exports = function(app, passport) {
   });
 
   app.post('/edit', function(req, response){
+    console.log(req.body);
     User.findOne({localEmail: req.body.verifyEmail}, function(err, user){
       if (user) {
         bcrypt.compare( req.body.verifyPassword, user.localPassword, function(err, res){
           if (res === true) {
-            var salt = bcrypt.genSaltSync(10);
-            var hash = bcrypt.hashSync(req.body.newPassword, salt);
-            User.update({localEmail: req.body.verifyEmail},
-                {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
-                  req.session.email=req.body.newEmail;
-                  response.send('Update ok!');
-                });
+            User.findOne({localEmail:req.body.newEmail}, function(err, res){
+              console.log('res', res);
+              if (res){
+                response.send('The new email you entered already exists!')
+              }
+              else {
+                var salt = bcrypt.genSaltSync(10);
+                var hash = bcrypt.hashSync(req.body.newPassword, salt);
+                User.update({localEmail: req.body.verifyEmail},
+                    {name:req.body.newName, localEmail:req.body.newEmail, localPassword:hash},function(err, res){
+                      req.session.email=req.body.newEmail;
+                      req.session.name=req.body.newName;
+                      response.send('Update ok!');
+                    });
+              }
+            })
           }
           else response.send('Wrong password!');
         });
       }
-      else response.send('Wrong email!');
+      else {
+        response.send('Wrong email!');
+      }
     });
   });
 
