@@ -26,6 +26,7 @@ module.exports = Backbone.View.extend({
       dataType:'text',
       success: function(model, response){
         if (response === "Saved!"){
+          console.log(this.email);
           this.$(e.currentTarget).prop('disabled', true);
         }
         if (response === "Duplicate"){
