@@ -1,5 +1,6 @@
 var DrinkView = require('./DrinkView.js');
 var SaveDrink = require('../models/SaveDrink.js');
+var SavedItems = require('../models/SavedItems.js');
 
 module.exports = Backbone.View.extend({
 	tagName: 'div',
@@ -37,11 +38,29 @@ module.exports = Backbone.View.extend({
   },
 
 	render: function() {
-		this.collection.each(function(drink){
-			var drinkView = new DrinkView({model:drink});
-			this.$el.append(drinkView.el);
-		},this);
-		return this;
+    var thiz = this;
+    var savedItems = new SavedItems();
+
+    savedItems.set({localEmail:thiz.email});
+
+    savedItems.save([], {
+      success: function(model, response){
+        thiz.collection.each(function(drink){
+          for (var each in response){
+            console.log(response[each].name, drink.get('name'))
+            if (response[each].name === drink.get('name')){
+              var drinkView = new DrinkView({model:drink, match:true});
+              break;
+            }
+            else{
+              var drinkView = new DrinkView({model:drink, match:false});
+            }
+          }
+          thiz.$el.append(drinkView.el);
+        },thiz);
+      }
+    });
+    return this;
 	}
 
 });
