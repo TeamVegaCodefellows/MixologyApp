@@ -19,7 +19,7 @@
     "passport-facebook": "^1.0.3",
     "passport-google-oauth": "^0.1.5",
     "cors": "^2.2.0",
-    "bower": "^0.6.8"2
+    "bower": "^0.6.8"
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",
