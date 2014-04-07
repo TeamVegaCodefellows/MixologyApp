@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-  url: "http://ianjohnson.co/edit/",
+  url: "/edit/",
 	defaults: {
     verifyEmail: "",
     verifyPassword: "",
