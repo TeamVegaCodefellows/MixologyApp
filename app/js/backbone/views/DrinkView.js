@@ -1,11 +1,25 @@
 module.exports = Backbone.View.extend({
 	tagName: 'div',
-	initialize: function() {
-		this.render();
+	initialize: function(options) {
+    this.options = options || {};
 	},
-	render: function() {
-		var template = require('../../../templates/resultsView.hbs');
-		this.$el.html(template(this.model.toJSON()));
+	renderLoggedIn: function() {
+    if (this.options.match === true){
+      var template = require('../../../templates/resultsView_disabled.hbs');
+      this.$el.html(template(this.model.toJSON()));
+    }
+    else{
+      var template = require('../../../templates/resultsView.hbs');
+      this.$el.html(template(this.model.toJSON()));
+    }
 		return this;
-	}
+	},
+
+  renderNotLoggedIn: function() {
+    var template = require('../../../templates/resultsView.hbs');
+    this.$el.html(template(this.model.toJSON()));
+    return this;
+  }
+
 });
+ 
