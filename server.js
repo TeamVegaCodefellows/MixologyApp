@@ -1,33 +1,20 @@
-var express = require('express');
-var app = express();
-var cons = require('consolidate');
-var http = require('http');
-var passport = require('passport');
-var mongoose = require('mongoose');
-var mongo = require('mongodb');
-var flash = require('connect-flash');
+var express     = require('express');
+var app         = express();
+var cons        = require('consolidate');
+var http        = require('http');
+var passport    = require('passport');
+var mongoose    = require('mongoose');
+var mongo       = require('mongodb');
+var flash       = require('connect-flash');
+var cors        = require('cors');
 require('./config/passport')(passport); // pass for passport configuration
 
 app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs')
 app.set('views', __dirname + '/app/templates');
 
-// var allowCrossDomain = function(req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-
-//     // intercept OPTIONS method
-//     if ('OPTIONS' == req.method) {
-//       res.send(200);
-//     }
-//     else {
-//       next();
-//     }
-// };
-
 app.configure(function () {
-    //app.use(allowCrossDomain);          //for MongoLabs connection
+    app.use(cors());
     app.use(express.static(__dirname + '/build'));
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
@@ -49,14 +36,6 @@ app.configure('development', function () {
     app.use(express.errorHandler());
     mongoose.connect(mongolab || 'mongodb://localhost/mixology-development');
 });
-
-//mongoose.connect(uristring, function(err, res) {
-//	if(err) {
-//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-//	} else {
-//		console.log('Successfully connected to: ' + uristring);
-//	}
-//});
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
