@@ -248,7 +248,7 @@ module.exports = function (grunt) {
         },
     });
 
-	  grunt.registerTask('default',['express:dev', 'watch:express']);
+	grunt.registerTask('default',['express:dev', 'watch:express']);
     grunt.registerTask('server', ['build:dev', 'express:dev','watch:all']);
     grunt.registerTask('test', ['env:dev', 'mongo_drop', 'mongoimport', 'mochacov:unit', 'mochacov:coverage']);
     grunt.registerTask('test:acceptance',['build:dev', 'express:dev', 'casper']);
