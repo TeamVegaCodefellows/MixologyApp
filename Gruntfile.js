@@ -30,9 +30,6 @@ module.exports = function (grunt) {
             },
             test: {
                 NODE_ENV: 'test'
-            },
-            production: {
-                NODE_ENV: 'production'
             }
         },
         clean: {
