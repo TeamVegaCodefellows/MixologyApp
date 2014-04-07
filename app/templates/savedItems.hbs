@@ -1,9 +1,14 @@
 <div class="cocktailRecipeItem large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
-
-<div id="savedItems">
-    <h1>Saved Items</h1>
     {{#each this}}
-        <h2>{{drink}}</h2>
+        <ul>
+            <li class="cocktailImage">{{img}}</li>
+            <li class="cocktailTitle">{{name}}</li>
+            <li class="cocktailDescription">{{description}}</li>
+            <li class="cocktailServing">makes {{servings}} servings</li>
+            <li><span class="titleRecipe">Ingredients: </span>{{ingredients}}</li>
+            <li><span class="titleRecipe">Recipe:</span> {{directions}}</li>
+        </ul>
+    {{else}}
+        <h1>Nothing to display - add items</h1>
     {{/each}}
-</div>
 </div>

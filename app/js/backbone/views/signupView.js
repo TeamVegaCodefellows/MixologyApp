@@ -1,5 +1,6 @@
 var template = require('../../../templates/signup.hbs');
 var SignUp = require('../models/SignUp.js');
+var formValidation = require('../../Util/formValidation.js');
 
 module.exports = Backbone.View.extend({
 	initialize: function() {
@@ -7,16 +8,29 @@ module.exports = Backbone.View.extend({
 	},
 
     events: {
-		'click #createAccount' : 'showSignupPage',
-    'click #signup' : 'signup'
+      'click #signup' : 'signup',
+      'click #Cancel' : 'cancel'
+    },
+
+    cancel: function(e){
+      e.preventDefault();
+      Backbone.history.navigate('/', {trigger:true});
     },
 
     signup: function(e) {
       e.preventDefault();
       var thiz = this;
+      var name = $(this.el).find('#name').val();
       var email =  $(this.el).find('#emailInput').val();
       var password =  $(this.el).find('#passwordInput').val();
+      var verifyPassword =  $(this.el).find('#verifyPassword').val();
+
+      if (formValidation(name,email,password,verifyPassword)===false){
+        return;
+      }
+
       var signUp = new SignUp({
+        name:name,
         localEmail:email,
         localPassword:password
       });
@@ -28,6 +42,10 @@ module.exports = Backbone.View.extend({
             thiz.$(e.currentTarget).html('User already exists');
           }
           else{
+            thiz.model.set({localEmail:email});
+            console.log('this.model', thiz.model);
+
+            $('#loggedInName').html(thiz.model.get('localEmail'));
             Backbone.history.navigate('/', {trigger:true});
           }
         }

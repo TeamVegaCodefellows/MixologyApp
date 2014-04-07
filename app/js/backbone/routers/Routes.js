@@ -11,118 +11,147 @@ var LoginView = require('../views/LoginView.js');
 var SavedItemsView = require('../views/SavedItemsView.js');
 var CheckSession = require('../models/CheckSession.js');
 var SignupView = require('../views/signupView.js');
+var Account = require('../models/Account.js');
 var AccountView = require('../views/AccountView.js');
 
 module.exports = Backbone.Router.extend({
 
-
     routes: {
-        "myAccount":"showMyAccountPage",
-        "savedItems": "showSavedItems",
-        "signup":"showSignupPage",
-        "login": "showLoginPage",
-        "": "showFirstQuestion",
-        ":tag": 'showSecondQuestion',
-        "results/:tag/:ingredient": "getResults",
+      "myAccount":"showMyAccountPage",
+      "savedItems": "showSavedItems",
+      "signup":"showSignupPage",
+      "login": "showLoginPage",
+      "": "showFirstQuestion",
+      ":tag": 'showSecondQuestion',
+      "results/:tag/:ingredient": "getResults",
     },
 
     initialize: function () {
       console.log('initialized');
+      this.checkSession();
       var thiz = this;
 
       this.login = new User();
-      var checkSession = new CheckSession();
-        checkSession.fetch({
-          dataType:'text',
-          success: function(model, response){
-            thiz.login.set({localEmail:response});
-          }
-        });
+      this.checkSession();
 
-        var indexView = new IndexView({
-            model: {}
-        });
-        $('body').append(indexView.el);
-        this.firstQuestion = new FirstQuestion();
-        this.firstQuestionView = new FirstQuestionView({
-            model: this.firstQuestion
-        });
-        var that = this;
-        this.firstQuestion.fetch({
-            success: function () {
-                that.firstQuestionView.render();
-            }
-        });
-        this.secondQuestion = new SecondQuestion();
-        this.secondQuestion.fetch();
+      var indexView;
+      indexView = new IndexView({
+          model: {}
+      });
+      $('body').append(indexView.el);
+      this.firstQuestion = new FirstQuestion();
+      this.firstQuestionView = new FirstQuestionView({
+          model: this.firstQuestion
+      });
+      var that = this;
+      this.firstQuestion.fetch({
+        success: function () {
+          that.firstQuestionView.render();
+        }
+      });
+      this.secondQuestion = new SecondQuestion();
+      this.secondQuestion.fetch();
+
+    },
+
+    checkSession: function() {
+      var thiz = this;
+      var checkSession = new CheckSession();
+      checkSession.fetch({
+        dataType:'text',
+        success: function(model, response){
+          thiz.login.set({localEmail:response});
+          $('#loggedInName').html(thiz.login.get('localEmail'));
+        }
+      });
     },
 
     showSavedItems: function() {
       var savedItemsView = new SavedItemsView();
-      console.log(this.login);
-      if (this.login.localEmail !== '' ){
-        savedItemsView.setLogin(this.login.get('localEmail'));
-        savedItemsView.fetch();
-      }
-      else {
+
+      if (this.login.get('localEmail') === ''){
         Backbone.history.navigate('/login', {trigger:true})
         return;
       }
-      $('.Question').empty();
-      $('.Result').empty();
-      $('.Result').append(savedItemsView.el);
+      else{
+        savedItemsView.setLogin(this.login.get('localEmail'));
+        savedItemsView.fetch();
+        $('.Question').empty();
+        $('.Result').empty();
+        $('.Result').append(savedItemsView.el);
+      }
+
     },
 
     showLoginPage: function () {
-//        this.login = new User();
-        console.log('this.login', this.login);
-        var loginView = new LoginView({model:this.login});
-        $('.Question').empty();
-        $('.Result').empty();
-        $('.Result').append(loginView.el);
+      var loginView = new LoginView({model:this.login});
+      $('.Question').empty();
+      $('.Result').empty();
+      $('.Result').append(loginView.el);
     },
     showSignupPage: function () {
-        var signupView = new SignupView();
-        $('.Question').empty();
-        $('.Result').empty();
-        $('.Result').append(signupView.el);
+      var signupView = new SignupView({model:this.login});
+      $('.Question').empty();
+      $('.Result').empty();
+      $('.Result').append(signupView.el);
     },
     showMyAccountPage: function () {
-        var accountView = new AccountView();
+      if (this.login.get('localEmail') === ''){
+        Backbone.history.navigate('/login', {trigger:true})
+        return;
+      }
+      else{
+        var account = new Account();
+        var accountView = new AccountView({model:account, login:this.login});
         $('.Question').empty();
         $('.Result').empty();
         $('.Result').append(accountView.el);
+      }
     },
 
     showFirstQuestion: function () {
+      console.log('hererere');
+      this.checkSession();
+      console.log('first Question: this.login', this.login);
       $('.Result').empty();
-        $('.Question').html(this.firstQuestionView.el);
+      this.firstQuestionView.render();
+      $('.Question').html(this.firstQuestionView.el);
     },
 
     showSecondQuestion: function (tag) {
-        this.secondQuestionView = new SecondQuestionView({
-            model: this.secondQuestion
-        });
-        this.secondQuestionView.render();
-        this.secondQuestionView.setTag(tag);
-        $('.Result').empty();
-        $('.Question').html(this.secondQuestionView.el);
+      this.checkSession();
+      this.secondQuestionView = new SecondQuestionView({
+        model: this.secondQuestion
+      });
+      this.secondQuestionView.render();
+      this.secondQuestionView.setTag(tag);
+      $('.Result').empty();
+      $('.Question').html(this.secondQuestionView.el);
     },
 
     getResults: function (tag, ingredient) {
+      this.checkSession();
       console.log('this.login', this.login);
       var thiz = this;
-      function renderDrinkCollection() {
-        var drinkCollectionsView = new DrinkCollectionsView({
-                collection: drinkCollection
-            });
+        function renderDrinkCollection() {
+          var drinkCollectionsView = new DrinkCollectionsView({
+            collection: drinkCollection
+          });
             //check to see if this has been set
-            if (thiz.login !== undefined){
-              drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
-            }
-            drinkCollectionsView.render();
+
+          console.log(thiz.login.get('localEmail'));
+          if (thiz.login.get('localEmail') === ''){
+//            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
+            drinkCollectionsView.renderNotLoggedIn();
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
+          }
+          else{
+            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
+            drinkCollectionsView.renderLoggedIn();
+            $('.Question').empty();
+            $('.Result').html(drinkCollectionsView.el);
+          }
         }
         var drinkCollection = new DrinkCollection([], {
             tag: tag,
