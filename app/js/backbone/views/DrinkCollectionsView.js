@@ -25,8 +25,8 @@ module.exports = Backbone.View.extend({
     saveDrink.save([], {
       dataType:'text',
       success: function(model, response){
-        if (response === "Saved"){
-
+        if (response === "Saved!"){
+          this.$(e.currentTarget).prop('disabled', true);
         }
         if (response === "Duplicate"){
           alert('Drink already in your list');
