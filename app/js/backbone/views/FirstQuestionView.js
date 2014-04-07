@@ -19,6 +19,7 @@ module.exports = Backbone.View.extend({
 	render: function() {
 		var index = template(this.model.toJSON());
 		this.$el.html(index);
+    this.delegateEvents();
 		return this;
 	}
 
