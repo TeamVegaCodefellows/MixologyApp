@@ -18,7 +18,8 @@
     "passport-twitter": "^1.0.2",
     "passport-facebook": "^1.0.3",
     "passport-google-oauth": "^0.1.5",
-    "cors": "^2.2.0"
+    "cors": "^2.2.0",
+    "bower": "^0.6.8"2
   },
   "devDependencies": {
     "grunt-simple-mocha": "^0.4.0",
@@ -49,7 +50,8 @@
     "grunt-cli": "^0.1.13"
   },
   "scripts": {
-    "test": "grunt travis"
+    "test": "grunt travis",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "config": {
     "blanket": {

@@ -42,14 +42,16 @@ require('./app/routes.js')(app, passport); // load routes and pass in app and fu
 var drinks = require('./api/routes/drinkRoutes');
 var questions = require('./api/routes/questionRoutes');
 
-app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
-app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
+// Uncomment here and in API Routes.js for optional create questions routes
+// app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
+// app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
 app.get('/api/v1/getFirstQuestion', questions.getFirstQuestion);
 app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
 app.get('/api/v1/getDrink/:tag/:ingredient', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
 var server = http.createServer(app);
+
 var port = process.env.PORT || 3000;
 
 server.listen(port, function () {
