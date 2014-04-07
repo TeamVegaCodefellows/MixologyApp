@@ -5,7 +5,7 @@ module.exports = Backbone.Collection.extend({
 	initialize: function(models, options) {
 		this.ingredient = options.ingredient;
 		this.tag = options.tag;
-		this.url = 'ianjohnson.co/api/v1/getDrink/'+this.tag+'/'+this.ingredient;
+		this.url = '/api/v1/getDrink/'+this.tag+'/'+this.ingredient;
 	},
 
 	model: Drink
