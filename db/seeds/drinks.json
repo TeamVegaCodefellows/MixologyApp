@@ -136,7 +136,7 @@
     "description":"Fresh strawberry puree and a hint of orange juice blend with Prosecco (or the sparkling wine of your choice) to create a delightful brunch-time sipper.",
     "ingredients":"2 cups hulled strawberries 2 tablespoons water 1/4 cup orange juice 1 bottle chilled Prosecco or other dry sparkling wine 1 orange, sliced into rounds Mint sprigs, for garnish",
     "directions":"In a blender, puree 2 cups hulled and 2 tablespoons water until smooth. In a pitcher, combine strawberry puree, cup 1 bottle chilled or other dry sparkling wine, and 1 sliced into rounds, and stir gently. Serve garnished with sprigs.",
-    "tag":"classy",
+    "tag":"party",
     "alcohol_tag": "champagne",
     "servings":4,
     "img":"",
@@ -224,7 +224,7 @@
     "description":"Fresh orange juice is turned into a slushy granita which is then topped with Champagne and St.-Germain elderflower liquor.",
     "ingredients":"4 1/2 cups fresh orange juice (from 14 oranges) 3/4 cup superfine sugar Elderflower liqueur, such as St-Germain 2 bottles (750 mL each) Champagne",
     "directions":"STEP 1 Combine orange juice and sugar, and stir until sugar dissolves. Transfer to an 8-inch square baking dish. Freeze, scraping around sides and breaking any lumps with a fork every 30 minutes, until evenly frozen, 2 1/2 to 3 hours. Cover with plastic wrap. Granita can be made 1 day ahead and kept in freezer until ready to serve.  STEP 2 Spoon 1/2 cup granita into each of 12 glasses, and add 1/2 teaspoon liqueur. Top off with Champagne.",
-    "tag":"classy",
+    "tag":"party",
     "alcohol_tag": "champagne",
     "servings":16,
     "img":"",
@@ -235,7 +235,7 @@
     "description":"The blood-orange juice turns what would ordinarily be a mimosa into a lovely ruby-tinted cocktail.",
     "ingredients":"2 1/4 cups freshly squeezed or frozen blood-orange juice 2 750-ml bottles champagne, chilled",
     "directions":"Pour 3 tablespoons juice in each champagne flute. Fill flutes with champagne, and serve.",
-    "tag":"classy",
+    "tag":"business",
     "alcohol_tag": "champagne",
     "servings":12,
     "img":"",
@@ -262,5 +262,60 @@
     "servings":1,
     "img":"",
     "random": 24
+  },
+  {
+    "name": "Moscow Mule",
+    "description": "The Moscow Mule is a refreshing and easy vodka highball that uses ginger beer. It is one of the drinks that was designed to sell vodka to U.S. drinkers.",
+    "ingredients": "2 ounces vodka, 1 ounce lime juice, ginger beer, lime wedge for garnish",
+    "directions": "Pour the vodka and lime juice into a copper mug with ice cubes. Top it off with ginger beer and garnish with a wedge of lime.",
+    "tag": "classy",
+    "alcohol_tag": "vodka",
+    "servings": 1,
+    "img": "",
+    "random": 25
+  },
+  {
+    "name": "Dark and Stormy",
+    "description": "The Dark & Stormy embodies two great tastes of the tropics that and is darker than most tropical drinks, but is just as refreshing.",
+    "ingredients": "2 ounces dark rum, 3 ounces ginger beer, 1/2 ounce lime juice",
+    "directions": "Combine the rum, ginger beer, and the lime juice into a tall glass full of ice cubes. Stir and enjoy.",
+    "tag": "classy",
+    "alcohol_tag": "rum",
+    "servings": 1,
+    "img": "",
+    "random": 26
+  },
+  {
+    "name": "Bacardi Cocktail",
+    "description": "This is a great classic cocktail that is an excellent example of good marketing. In 1936 the New York Supreme Court ruled that an authentic Bacardi Cocktail had to be made with Bacardi Rum.",
+    "ingredients": "1 3/4 ounces Bacardi light rum, 3/4 ounce lemon or lime juice, 1/4 ounce grenadine",
+    "directions": "Pour the ingredients into a cocktail shaker with ice cubes. Shake well. Strain into a chilled cocktail glass.",
+    "tag": "business",
+    "alcohol_tag": "rum",
+    "servings": 1,
+    "img": "",
+    "random": 27
+  },
+  {
+    "name": "Highball",
+    "description": "Every aspiring professional bartender should put this easy highball on their list of drinks to memorize. It is, quite simply, whiskey and ginger ale and is a fantastic, refreshing way to enjoy any style of whiskey you choose.",
+    "ingredients": "2 ounces whiskey, ginger ale",
+    "directions": "Fill a highball glass with ice. Pour the whiskey into the glass and top it with ginger ale.",
+    "tag": "party",
+    "alcohol_tag": "whiskey",
+    "servings": 1,
+    "img": "",
+    "random": 28
+  },
+  {
+    "name": "Tom Collins",
+    "description": "The Tom Collins is an excellent sipper for hot summer days.",
+    "ingredients": "1 1/2 ounces gin, 1 ounce lemon juice, 1/2 ounce simple syrug, club soda, maraschino cherry, lemon slice",
+    "directions": "Pour the gin, lemon juice, and sugar syrup into a collins glass with ice cubes. Stir thoroughly and top with club soda. Add the cherry and lemon slice as garnish.",
+    "tag": "party",
+    "alcohol_tag": "gin",
+    "servings": 1,
+    "img": "",
+    "random": 29
   }
 ]
