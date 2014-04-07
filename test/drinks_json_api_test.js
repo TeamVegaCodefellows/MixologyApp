@@ -46,7 +46,7 @@ describe('Drinks JSON api', function(){
   };
 
   it('can create a new drink', function(done){
-    superagent.post('http://localhost:3000/api/v1/createDrink')
+    superagent.post('/api/v1/createDrink')
       .send(entry)
       .end(function(e, res){
         expect(e).to.eql(null);
@@ -62,7 +62,7 @@ describe('Drinks JSON api', function(){
   });
 
   it('can create a new drink', function(done){
-    superagent.post('http://localhost:3000/api/v1/createDrink')
+    superagent.post('/api/v1/createDrink')
       .send(entry1)
       .end(function(e, res){
         expect(e).to.eql(null);
@@ -78,7 +78,7 @@ describe('Drinks JSON api', function(){
   });
 
   it('can create a new drink', function(done){
-    superagent.post('http://localhost:3000/api/v1/createDrink')
+    superagent.post('/api/v1/createDrink')
       .send(entry2)
       .end(function(e, res){
         expect(e).to.eql(null);
@@ -94,7 +94,7 @@ describe('Drinks JSON api', function(){
   });
 
   it('can find a drink', function(done){
-    superagent.get('http://localhost:3000/api/v1/getDrink/' + 'classy' + '/' + 'champagne').end(function(e, res){
+    superagent.get('/api/v1/getDrink/' + 'classy' + '/' + 'champagne').end(function(e, res){
         expect(e).to.eql(null);
         expect(res.body[0].name).to.not.be.eql(null);
         expect(res.body[0].tag).to.be.eql("classy");
