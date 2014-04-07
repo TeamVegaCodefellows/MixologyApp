@@ -14,7 +14,7 @@ app.set('view engine', 'hbs')
 app.set('views', __dirname + '/app/templates');
 
 app.configure(function () {
-    app.use(cors());
+    //app.use(cors());
     app.use(express.static(__dirname + '/build'));
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
