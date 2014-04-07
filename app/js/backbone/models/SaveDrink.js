@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-  url: "http://localhost:3000/saveDrink/",
+  url: "http://ianjohnson.co/saveDrink/",
 	defaults: {
     localEmail: "",
     drink: ""

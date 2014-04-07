@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-  url: "http://localhost:3000/getName/",
+  url: "http://ianjohnson.co/getName/",
 	defaults: {
     name: ''
 	}

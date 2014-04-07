@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-	url: "http://localhost:3000/api/v1/getSecondQuestion/",
+	url: "http://ianjohnson.co/api/v1/getSecondQuestion/",
 	defaults: {
 		"question" : "",
 		"choices" : [
