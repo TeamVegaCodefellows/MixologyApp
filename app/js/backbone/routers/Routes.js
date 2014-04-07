@@ -133,17 +133,25 @@ module.exports = Backbone.Router.extend({
       this.checkSession();
       console.log('this.login', this.login);
       var thiz = this;
-      function renderDrinkCollection() {
-        var drinkCollectionsView = new DrinkCollectionsView({
-                collection: drinkCollection
-            });
+        function renderDrinkCollection() {
+          var drinkCollectionsView = new DrinkCollectionsView({
+            collection: drinkCollection
+          });
             //check to see if this has been set
-            if (thiz.login !== undefined){
-              drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
-            }
-            drinkCollectionsView.render();
+
+          console.log(thiz.login.get('localEmail'));
+          if (thiz.login.get('localEmail') === ''){
+//            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
+            drinkCollectionsView.renderNotLoggedIn();
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
+          }
+          else{
+            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
+            drinkCollectionsView.renderLoggedIn();
+            $('.Question').empty();
+            $('.Result').html(drinkCollectionsView.el);
+          }
         }
         var drinkCollection = new DrinkCollection([], {
             tag: tag,
