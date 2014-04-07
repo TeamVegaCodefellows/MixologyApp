@@ -46,19 +46,25 @@ module.exports = Backbone.View.extend({
 
     savedItems.save([], {
       success: function(model, response){
-        thiz.collection.each(function(drink){
-          for (var each in response){
-            console.log(response[each].name, drink.get('name'))
-            if (response[each].name === drink.get('name')){
-              var drinkView = new DrinkView({model:drink, match:true});
-              break;
+        console.log('length', thiz.collection.length);
+        if (response.length !== 0){
+          thiz.collection.each(function(drink){
+            for (var each in response){
+              console.log(response[each].name, drink.get('name'))
+              if (response[each].name === drink.get('name')){
+                var drinkView = new DrinkView({model:drink, match:true});
+                break;
+              }
+              else{
+                var drinkView = new DrinkView({model:drink, match:false});
+              }
             }
-            else{
-              var drinkView = new DrinkView({model:drink, match:false});
-            }
-          }
-          thiz.$el.append(drinkView.renderLoggedIn().el);
-        },thiz);
+            thiz.$el.append(drinkView.renderLoggedIn().el);
+          },thiz);
+        }
+        else {
+          thiz.renderNotLoggedIn();
+        }
       }
     });
     return this;

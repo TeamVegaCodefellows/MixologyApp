@@ -141,12 +141,14 @@ module.exports = Backbone.Router.extend({
 
           console.log(thiz.login.get('localEmail'));
           if (thiz.login.get('localEmail') === ''){
+            console.log('here');
 //            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
             drinkCollectionsView.renderNotLoggedIn();
             $('.Question').empty();
             $('.Result').html(drinkCollectionsView.el);
           }
           else{
+            console.log('another');
             drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
             drinkCollectionsView.renderLoggedIn();
             $('.Question').empty();
