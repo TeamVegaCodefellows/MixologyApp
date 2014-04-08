@@ -6,6 +6,10 @@ MixologyApp
 
 ~~~~~~~~~~TeamVega~~~~~~~~~~~
 
+http://ianjohnson.co
+
+
+
 Grunt tasks:
 
     build:dev - for initial build
