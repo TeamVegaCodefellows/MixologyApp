@@ -1,11 +1,16 @@
 <div class="cocktailRecipeItem large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
     <ul>
         <li class="cocktailImage">{{img}}</li>
-        <li class="cocktailTitle">{{name}}</li>
+        <li class="cocktailTitle" property="og:title" content="">{{name}}  <div class="fb-share-button fb_iframe_widget" fb-xfbml-state="rendered" data-href="http://ianjohnson.co" data-type="button"></div>
+</li>
         <li class="cocktailDescription">{{description}}</li>
-        <li class="cocktailServing">Makes {{servings}} servings</li>
-        <li><span class="titleRecipe">Ingredients: </span>{{ingredients}}</li>
-        <li><span class="titleRecipe">Recipe:</span> {{directions}}</li>
+        <li class="cocktailServing">makes {{servings}} servings</li>
+        <li>
+            <span class="titleRecipe">Ingredients:</span>{{ingredients}}</li>
+        <li>
+            <span class="titleRecipe">Recipe:</span>{{directions}}</li>
     </ul>
-   <div class="large-8 medium-8 small-10 large-centered medium-centered small-centered columns"> <button class="recipeButton">Save Item</button><button class="recipeButton">Share!</button></div>
+    <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
+        <button class="recipeButton">Save Item</button>
+    </div>
 </div>

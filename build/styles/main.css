@@ -76,13 +76,8 @@ a.sub-line {
 input#passwordInput {
   margin-bottom: 0; }
 
-span.divider {
-  width: 5em;
-  border-top: 1px solid #6C0F00; }
-
-.dividerWord {
-  text-align: center;
-  font-size: 0.6em; }
+button#create-account {
+  margin-top: 1em; }
 
 .loginForm h1 {
   text-align: center; }
@@ -93,7 +88,10 @@ span.divider {
   border-radius: 0;
   border-bottom: 1px solid #6C0F00;
   box-shadow: none;
-  color: #6C0F00; }
+  color: #6C0F00;
+  padding: 0;
+  margin: 0;
+  height: 3em; }
 
 #createAccount {
   text-align: center; }
@@ -150,7 +148,6 @@ button:focus {
   color: #6C0F00; }
 
 .recipeButton {
-  width: 47%;
   display: inline-block;
   font-size: 0.5em;
   border: 2px solid #6C0F00;
@@ -168,5 +165,8 @@ button:focus {
   background-color: #520B00;
   border: 2px solid #520B00;
   color: #FFFAF6; }
+
+.fb-share-button {
+  margin-top: -10px; }
 
 /*# sourceMappingURL=main.css.map */
