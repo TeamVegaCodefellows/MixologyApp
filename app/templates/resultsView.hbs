@@ -1,6 +1,5 @@
-<div class="cocktailRecipeItem large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
-
-    <div id="fb-root"></div>
+        <div class="cocktailRecipeItem large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
+        <div id="fb-root"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -18,17 +17,16 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
     <ul>
         <li class="cocktailImage">{{img}}</li>
-        <li class="cocktailTitle" property="og:title" content="">{{name}}   <div class="fb-share-button" data-href="http://ianjohnson.co" data-type="button"></div>
+        <li class="cocktailTitle" property="og:title" content="">{{name}}<div class="fb-share-button" data-href="http://ianjohnson.co" data-type="button"></div>
 </li>
         <li class="cocktailDescription">{{description}}</li>
         <li class="cocktailServing">makes {{servings}} servings</li>
         <li>
-            <span class="titleRecipe">Ingredients:</span>{{ingredients}}</li>
+            <span class="titleRecipe">Ingredients: </span>{{ingredients}}</li>
         <li>
-            <span class="titleRecipe">Recipe:</span>{{directions}}</li>
+            <span class="titleRecipe">Recipe: </span>{{directions}}</li>
     </ul>
     <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
         <button class="recipeButton">Save Item</button>

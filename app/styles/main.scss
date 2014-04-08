@@ -181,7 +181,6 @@ button:focus {
     color: $darkRed;
 }
 .recipeButton {
-
     display: inline-block;
     font-size: 0.5em;
     border: 2px solid $darkRed;
@@ -201,5 +200,11 @@ button:focus {
     color: $white;
 }
 .fb-share-button {
-    margin-top: -10px;
+   margin-top: -10px;   
+}
+
+.fb_iframe_widget {
+    vertical-align: top;
+    padding-top: 5px;
+    padding-left: 5px;
 }
