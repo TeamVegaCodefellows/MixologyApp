@@ -39,7 +39,7 @@ module.exports = Backbone.Router.extend({
     indexView = new IndexView({
       model: {}
     });
-    $('body').append(indexView.el);
+    $('#content').append(indexView.el);
     this.firstQuestion = new FirstQuestion();
     this.firstQuestionView = new FirstQuestionView({
       model: this.firstQuestion
