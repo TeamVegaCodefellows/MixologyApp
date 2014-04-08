@@ -10,7 +10,6 @@ module.exports = Backbone.View.extend({
   },
 
   setLogin: function(login) {
-    console.log('login', login);
     this.email = login;
   },
 
@@ -27,7 +26,6 @@ module.exports = Backbone.View.extend({
       dataType:'text',
       success: function(model, response){
         if (response === "Saved!"){
-          console.log(this.email);
           this.$(e.currentTarget).attr('disabled', true);
           this.$(e.currentTarget).html('Saved!');
         }
@@ -46,11 +44,9 @@ module.exports = Backbone.View.extend({
 
     savedItems.save([], {
       success: function(model, response){
-        console.log('length', thiz.collection.length);
         if (response.length !== 0){
           thiz.collection.each(function(drink){
             for (var each in response){
-              console.log(response[each].name, drink.get('name'))
               if (response[each].name === drink.get('name')){
                 var drinkView = new DrinkView({model:drink, match:true});
                 break;
