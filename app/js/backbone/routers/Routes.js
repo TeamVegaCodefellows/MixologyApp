@@ -111,9 +111,7 @@ module.exports = Backbone.Router.extend({
   },
 
   showFirstQuestion: function () {
-    console.log('hererere');
     this.checkSession();
-    console.log('first Question: this.login', this.login);
     $('.Result').empty();
     this.firstQuestionView.render();
     $('.Question').html(this.firstQuestionView.el);
@@ -132,7 +130,6 @@ module.exports = Backbone.Router.extend({
 
   getResults: function (tag, ingredient) {
     this.checkSession();
-    console.log('this.login', this.login);
     var thiz = this;
     function renderDrinkCollection() {
       var drinkCollectionsView = new DrinkCollectionsView({
@@ -141,15 +138,12 @@ module.exports = Backbone.Router.extend({
 
       //check to see if this has been set
 
-      console.log(thiz.login.get('localEmail'));
       if (thiz.login.get('localEmail') === ''){
-        console.log('here');
         drinkCollectionsView.renderNotLoggedIn();
         $('.Question').empty();
         $('.Result').html(drinkCollectionsView.el);
       }
       else{
-        console.log('another');
         drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
         drinkCollectionsView.renderLoggedIn();
         $('.Question').empty();

@@ -3,15 +3,14 @@ var formValidation = require('../../Util/formValidation.js');
 var Account_userName = require('../models/Account_userName.js');
 
 module.exports = Backbone.View.extend({
-	initialize: function(options) {
+  initialize: function(options) {
     this.options = options || {};
-    console.log(this.options.test);
-		this.render();
-	},
+    this.render();
+  },
 
-    events: {
-		'click #editInfo' : 'editInfo'
-	},    
+  events: {
+    'click #editInfo' : 'editInfo'
+  },
 
   editInfo: function(e){
     e.preventDefault();
@@ -61,7 +60,6 @@ module.exports = Backbone.View.extend({
     var account_UserName = new Account_userName();
     account_UserName.fetch({
       success: function(){
-        console.log(account_UserName);
         this.$('#userName').replaceWith(account_UserName.get('name'));
       }
     });
