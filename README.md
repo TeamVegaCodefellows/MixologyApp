@@ -6,7 +6,7 @@ MixologyApp
 
 ~~~~~~~~~~TeamVega~~~~~~~~~~~
 
-ianjohnson.co
+http://ianjohnson.co
 
 Grunt tasks:
 
