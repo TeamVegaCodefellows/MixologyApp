@@ -17,13 +17,14 @@ var AccountView = require('../views/AccountView.js');
 module.exports = Backbone.Router.extend({
 
     routes: {
-      "myAccount":"showMyAccountPage",
-      "savedItems": "showSavedItems",
-      "signup":"showSignupPage",
-      "login": "showLoginPage",
-      "": "showFirstQuestion",
-      ":tag": 'showSecondQuestion',
-      "results/:tag/:ingredient": "getResults",
+        "myAccount":"showMyAccountPage",
+        "savedItems": "showSavedItems",
+        "signup":"showSignupPage",
+        "login": "showLoginPage",
+        "": "showFirstQuestion",
+        ":tag": 'showSecondQuestion',
+        "results/:tag/:ingredient": "getResults"
+
     },
 
     initialize: function () {
