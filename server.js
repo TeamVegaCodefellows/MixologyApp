@@ -6,7 +6,6 @@ var passport    = require('passport');
 var mongoose    = require('mongoose');
 var mongo       = require('mongodb');
 var flash       = require('connect-flash');
-var cors        = require('cors');
 require('./config/passport')(passport); // pass for passport configuration
 
 app.engine('hbs', cons.handlebars);
@@ -14,7 +13,6 @@ app.set('view engine', 'hbs')
 app.set('views', __dirname + '/app/templates');
 
 app.configure(function () {
-    //app.use(cors());
     app.use(express.static(__dirname + '/build'));
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
