@@ -178,7 +178,7 @@ button:focus {
     color: $darkRed;
 }
 .recipeButton {
-    width: 47%;
+    
     display: inline-block;
     font-size: 0.5em;
     border: 2px solid $darkRed;
@@ -196,4 +196,7 @@ button:focus {
     background-color: $lightRed;
     border: 2px solid $lightRed;
     color: $white;
+}
+.fb-share-button {
+    margin-top: -10px;
 }
