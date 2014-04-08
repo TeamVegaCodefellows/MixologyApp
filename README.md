@@ -8,6 +8,8 @@ MixologyApp
 
 *([http://ianjohnson.co](http://ianjohnson.co))
 
+* Thanks to Cactus([https://github.com/cactus](https://github.com/cactus)) for creating the blog feed
+
 Grunt tasks:
 
     build:dev - for initial build
