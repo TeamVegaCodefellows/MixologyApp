@@ -21,7 +21,8 @@
 
     <ul>
         <li class="cocktailImage">{{img}}</li>
-        <li class="cocktailTitle">{{name}}</li>
+        <li class="cocktailTitle" property="og:title" content="">{{name}}<div class="fb-share-button" data-href="http://ianjohnson.co" data-type="button"></div>
+        </li>
         <li class="cocktailDescription">{{description}}</li>
         <li class="cocktailServing">makes {{servings}} servings</li>
         <li>
@@ -31,5 +32,4 @@
     </ul>
     <div class="large-8 medium-8 small-10 large-centered medium-centered small-centered columns">
         <button class="recipeButton" disabled>Already Saved</button>
-        <div class="fb-share-button" data-href="http://ianjohnson.co" data-type="button"></div>
     </div>
