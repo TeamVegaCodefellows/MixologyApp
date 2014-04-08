@@ -111,9 +111,11 @@ module.exports = Backbone.Router.extend({
   },
 
   showFirstQuestion: function () {
+    console.log('OK!');
     this.checkSession();
     $('.Result').empty();
     this.firstQuestionView.render();
+    console.log('firstQuestion', this.firstQuestionView.el);
     $('.Question').html(this.firstQuestionView.el);
   },
 
