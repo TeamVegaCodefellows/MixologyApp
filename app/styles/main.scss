@@ -55,6 +55,11 @@ input {
         padding: 0.2em;
     }
 }
+
+#loggedInName {
+  font-weight: 200;
+  color: $white;
+}
 // Side-bar menu
 .left-off-canvas-menu {
     background-color: $match-white;
@@ -197,6 +202,22 @@ button:focus {
 .recipeButton:focus {
     background-color: $lightRed;
     border: 2px solid $lightRed;
+    color: $white;
+}
+.recipeButton[disabled] {
+    background-color: $darkRed;
+    border: 2px solid $darkRed;
+    color: $white;
+}
+.recipeButton[disabled]:hover {
+    background-color: $darkRed;
+    border: 2px solid $darkRed;
+    color: $white;
+}
+
+.recipeButton[disabled]:focus {
+    background-color: $darkRed;
+    border: 2px solid $darkRed;
     color: $white;
 }
 .fb-share-button {
