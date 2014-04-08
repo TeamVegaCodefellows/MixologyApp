@@ -5,6 +5,7 @@ var SavedItems = require('../models/SavedItems.js');
 module.exports = Backbone.View.extend({
 	tagName: 'div',
 
+
   events: {
     'click .recipeButton' : 'saveRecipe'
   },
@@ -15,11 +16,14 @@ module.exports = Backbone.View.extend({
   },
 
   saveRecipe: function(e){
+    console.log('button triggered');
     if (this.email === undefined || this.email === ''){
       Backbone.history.navigate('/login', {trigger:true});
     }
+    var inputDrink = this.$(e.currentTarget).parent().prev().find('.cocktailTitle').text().split('\n')[0];
+    console.log('inputDrink', inputDrink, inputDrink.trim());
     var saveDrink = new SaveDrink({
-      drink: this.$(e.currentTarget).parent().prev().find('.cocktailTitle').text(),
+      drink: inputDrink.trim(),
       localEmail: this.email
     });
 
