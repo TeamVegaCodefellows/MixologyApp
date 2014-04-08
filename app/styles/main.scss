@@ -55,6 +55,14 @@ input {
         padding: 0.2em;
     }
 }
+
+#loggedInName {
+  font-weight: 200;
+  color: $white;
+  padding-right: 5px;
+  font-size: .5em;
+  padding-top: 9px
+}
 // Side-bar menu
 .left-off-canvas-menu {
     background-color: $match-white;
