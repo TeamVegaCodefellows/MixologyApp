@@ -29,9 +29,12 @@ body {
         margin: 1rem 0 1rem;
     }
 }
+#content {
+  height: 100%;
+  background-color: rgba($off-white, .3);
+}
 .page {
     height: 100%;
-    background-color: rgba($off-white, .3);
 }
 h1,
 h2,
@@ -178,7 +181,7 @@ button:focus {
     color: $darkRed;
 }
 .recipeButton {
-    
+
     display: inline-block;
     font-size: 0.5em;
     border: 2px solid $darkRed;
