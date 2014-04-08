@@ -1,1 +1,1 @@
-web: grunt server
+web: sudo node server.js

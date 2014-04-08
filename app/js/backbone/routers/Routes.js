@@ -111,11 +111,9 @@ module.exports = Backbone.Router.extend({
   },
 
   showFirstQuestion: function () {
-    console.log('OK!');
     this.checkSession();
     $('.Result').empty();
     this.firstQuestionView.render();
-    console.log('firstQuestion', this.firstQuestionView.el);
     $('.Question').html(this.firstQuestionView.el);
   },
 
@@ -137,10 +135,10 @@ module.exports = Backbone.Router.extend({
       var drinkCollectionsView = new DrinkCollectionsView({
         collection: drinkCollection
       });
+
       //check to see if this has been set
 
       if (thiz.login.get('localEmail') === ''){
-//            drinkCollectionsView.setLogin(thiz.login.get('localEmail'));
         drinkCollectionsView.renderNotLoggedIn();
         $('.Question').empty();
         $('.Result').html(drinkCollectionsView.el);
@@ -161,5 +159,6 @@ module.exports = Backbone.Router.extend({
         renderDrinkCollection();
       }
     });
-  },
+  }
+
 });

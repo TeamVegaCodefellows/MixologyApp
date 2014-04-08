@@ -41,33 +41,36 @@ exports.getSecondQuestion = function(req, res) {
   });
 };
 
-exports.createFirstQuestion = function(req, res) {
-  FirstQuestion.count({}, function(err, count){
-    req.body.random = count + 1;
-    var question = new FirstQuestion(req.body);
-    question.save(function(err, responseQuestion) {
-      if(err) {
-        res.send(500, {'error': err});
-      } else {
-        res.send(responseQuestion);
-      }
-    });
-  });
-};
+// Uncomment here and in Server.js for optional create question routes:
+//
+// exports.createFirstQuestion = function(req, res) {
+//   FirstQuestion.count({}, function(err, count){
+//     console.log(req.body);
+//     req.body.random = count + 1;
+//     var question = new FirstQuestion(req.body);
+//     question.save(function(err, responseQuestion) {
+//       if(err) {
+//         res.send(500, {'error': err});
+//       } else {
+//         res.send(responseQuestion);
+//       }
+//     });
+//   });
+// };
 
-exports.createSecondQuestion = function(req, res) {
-  SecondQuestion.count({}, function(err, count){
-    req.body.random = count + 1;
-    var question = new SecondQuestion(req.body);
-    question.save(function(err, responseQuestion) {
-      if(err) {
-        res.send(500, {'error': err});
-      } else {
-        res.send(responseQuestion);
-      }
-    });
-  });
-};
+// exports.createSecondQuestion = function(req, res) {
+//   SecondQuestion.count({}, function(err, count){
+//     req.body.random = count + 1;
+//     var question = new SecondQuestion(req.body);
+//     question.save(function(err, responseQuestion) {
+//       if(err) {
+//         res.send(500, {'error': err});
+//       } else {
+//         res.send(responseQuestion);
+//       }
+//     });
+//   });
+// };
 
 // exports.update = function(req, res) {
 //   var id = req.params.id;

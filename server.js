@@ -1,11 +1,11 @@
-var express = require('express');
-var app = express();
-var cons = require('consolidate');
-var http = require('http');
-var passport = require('passport');
-var mongoose = require('mongoose');
-var mongo = require('mongodb');
-var flash = require('connect-flash');
+var express     = require('express');
+var app         = express();
+var cons        = require('consolidate');
+var http        = require('http');
+var passport    = require('passport');
+var mongoose    = require('mongoose');
+var mongo       = require('mongodb');
+var flash       = require('connect-flash');
 require('./config/passport')(passport); // pass for passport configuration
 
 app.engine('hbs', cons.handlebars);
@@ -28,34 +28,32 @@ app.configure(function () {
     app.use(app.router);
 });
 
+var mongolab = process.env.MONGOLAB_URI;
+
 app.configure('development', function () {
     app.use(express.errorHandler());
-    mongoose.connect('mongodb://localhost/mixology-development');
+    mongoose.connect(mongolab || 'mongodb://localhost/mixology-development');
 });
-
-//mongoose.connect(uristring, function(err, res) {
-//	if(err) {
-//		console.log('ERROR connecting to: ' + uristring + '. ' + err);
-//	} else {
-//		console.log('Successfully connected to: ' + uristring);
-//	}
-//});
 
 require('./app/routes.js')(app, passport); // load routes and pass in app and fully configured passport
 
 var drinks = require('./api/routes/drinkRoutes');
 var questions = require('./api/routes/questionRoutes');
 
-app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
-app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
+// Uncomment here and in API Routes.js for optional create questions routes
+// app.post('/api/v1/createFirstQuestion', questions.createFirstQuestion);
+// app.post('/api/v1/createSecondQuestion', questions.createSecondQuestion);
 app.get('/api/v1/getFirstQuestion', questions.getFirstQuestion);
 app.get('/api/v1/getSecondQuestion', questions.getSecondQuestion);
 app.get('/api/v1/getDrink/:tag/:ingredient', drinks.findById);
 app.post('/api/v1/createDrink', drinks.create);
 
 var server = http.createServer(app);
-var port = process.env.PORT || 3000;
+
+var port = 80;
 
 server.listen(port, function () {
     console.log('App listening on port ' + port);
 });
+
+//test

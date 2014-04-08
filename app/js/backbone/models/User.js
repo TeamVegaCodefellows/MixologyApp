@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-  url: "http://localhost:3000/login/",
+  url: "/login/",
   defaults: {
     localEmail       : '',
     localPassword    : '',

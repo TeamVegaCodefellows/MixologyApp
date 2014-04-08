@@ -13,7 +13,7 @@ exports.findById = function(req, res) {
       } else if (responseDrink.length === 0){
         Drink.count({}, function(err, count) {
           var rand = Math.ceil(Math.random() * count);
-          console.log("random drink");
+          console.log("random drink", count, rand);
           Drink.findOne({random: rand}, function(err, drink) {
             if (err) {
               res.send({error: err});
