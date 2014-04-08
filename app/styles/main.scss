@@ -100,6 +100,13 @@ a.sub-line {
     padding: 0;
     height: 16px;
 }
+.dividerWord {
+    display: inline-block;
+}
+.divider {
+border-top: 1px solid $darkRed;
+    display: inline-block;
+}
 input#passwordInput {
     margin-bottom: 0;
 }
@@ -181,7 +188,6 @@ button:focus {
     color: $darkRed;
 }
 .recipeButton {
-
     display: inline-block;
     font-size: 0.5em;
     border: 2px solid $darkRed;
@@ -201,7 +207,10 @@ button:focus {
     color: $white;
 }
 .fb-share-button {
-    margin-top: -10px;
+    vertical-align: top;
+    padding-top: 5px;
+    margin-left: 5px;
+    
 }
 .fb_iframe_widget {
     vertical-align: top;
