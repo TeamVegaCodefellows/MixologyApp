@@ -29,9 +29,12 @@ body {
         margin: 1rem 0 1rem;
     }
 }
+#content {
+  height: 100%;
+  background-color: rgba($off-white, .3);
+}
 .page {
     height: 100%;
-    background-color: rgba($off-white, .3);
 }
 h1,
 h2,
@@ -204,5 +207,4 @@ button:focus {
     color: $white;
 }
 .fb-share-button {
-   
 }

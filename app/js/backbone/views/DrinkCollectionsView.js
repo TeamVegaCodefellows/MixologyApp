@@ -5,21 +5,23 @@ var SavedItems = require('../models/SavedItems.js');
 module.exports = Backbone.View.extend({
 	tagName: 'div',
 
+
   events: {
     'click .recipeButton' : 'saveRecipe'
   },
 
   setLogin: function(login) {
-    console.log('login', login);
     this.email = login;
   },
 
   saveRecipe: function(e){
+    console.log('button triggered');
     if (this.email === undefined || this.email === ''){
       Backbone.history.navigate('/login', {trigger:true});
     }
+    var inputDrink = this.$(e.currentTarget).parent().prev().find('.cocktailTitle').text().split('\n')[0];
     var saveDrink = new SaveDrink({
-      drink: this.$(e.currentTarget).parent().prev().find('.cocktailTitle').text(),
+      drink: inputDrink.trim(),
       localEmail: this.email
     });
 
@@ -27,7 +29,6 @@ module.exports = Backbone.View.extend({
       dataType:'text',
       success: function(model, response){
         if (response === "Saved!"){
-          console.log(this.email);
           this.$(e.currentTarget).attr('disabled', true);
           this.$(e.currentTarget).html('Saved!');
         }
@@ -46,11 +47,9 @@ module.exports = Backbone.View.extend({
 
     savedItems.save([], {
       success: function(model, response){
-        console.log('length', thiz.collection.length);
         if (response.length !== 0){
           thiz.collection.each(function(drink){
             for (var each in response){
-              console.log(response[each].name, drink.get('name'))
               if (response[each].name === drink.get('name')){
                 var drinkView = new DrinkView({model:drink, match:true});
                 break;
