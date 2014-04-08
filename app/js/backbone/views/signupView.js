@@ -39,7 +39,7 @@ module.exports = Backbone.View.extend({
         dataType: 'text',
         success: function(model, response){
           if(response === 'This user already exists'){
-            thiz.$(e.currentTarget).html('User already exists');
+            thiz.$('#errors').html('User already exists');
           }
           else{
             thiz.model.set({localEmail:email});
