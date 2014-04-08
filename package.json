@@ -51,7 +51,7 @@
   },
   "scripts": {
     "test": "grunt travis",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/lib/bower install"
   },
   "config": {
     "blanket": {
